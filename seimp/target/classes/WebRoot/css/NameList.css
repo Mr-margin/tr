@@ -1,0 +1,38 @@
+.nameList .img-border{
+    height:50px;
+    width:350px;
+    background:linear-gradient(rgb(38,168,224),rgb(15,106,191));
+    text-align:center;
+    line-height:50px;
+    color:#fff;
+    font-size:20px;
+}
+
+.nameList .floor-compare{
+    height:2186px;
+    padding:10px 60px;
+}
+.nameList table{
+    width: 100%;
+}
+ .nameList table tr{
+ 	height:65px;
+ 	line-height:20px;
+ 
+ }
+ .nameList .all-news{
+ 	padding:40px;
+ }
+  .nameList table tr td{
+  	text-align:center;
+  }
+  
+ .nameList table tr td .btn-enter{
+    width:70px;
+  }
+  
+  .nameList .floor {
+    width: 100%;
+    margin-top:0px;
+    /*border:1px solid red;*/
+}

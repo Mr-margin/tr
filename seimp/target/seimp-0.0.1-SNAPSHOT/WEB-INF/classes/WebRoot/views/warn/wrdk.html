@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>污染地块</title>
+    <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../css/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
+    <link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-select.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-slider.min.css">
+    <link href="../../css/warn/wangluo.css" rel="stylesheet">
+    <link href="../../css/sweetalert.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="../../css/awesome-bootstrap-checkbox.css" rel="stylesheet" media="screen">
+    <link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+        .megl{
+            background: #337ab7;
+            color:#fff;
+
+        }
+    </style>
+</head>
+<body>
+<div class="col-xs-12 no-padding" style="position: relative; height: 100%;">
+
+    <div id="map"></div>
+    <div>
+        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem">
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">省份</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <select name="" id="wrdk1" class="form-control xfyq1" onchange="getCity()" >
+                        <option value="">全部</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">市</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <select name="" id="wrdk2" class="form-control xfyq2" onchange="getCounty()">
+                        <option value="">全部</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">县</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <select name="" id="wrdk3" class="form-control xfyq5" >
+                        <option value="">全部</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">污染地块编码</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <input type="text" id="wrdk4" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">污染地块名称</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <input type="text" id="wrdk5" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="col-sm-12 no-padding">
+                    <span style="font-size:1.5rem;">所处阶段</span>
+                </div>
+                <div class="col-sm-12 no-padding ">
+                    <select name="" id="wrdk6" class="form-control">
+                        <option value="">全部</option>
+                        <option value="S0">疑似地块</option>
+                        <option value="S1">初步调查</option>
+                        <option value="S2">详细调查</option>
+                        <option value="S3">风险评估</option>
+                        <option value="S4">风险管控</option>
+                        <option value="S5">土壤修复与治理</option>
+                        <option value="S6">土壤修复与治理评估</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                        onclick="search()"></i> 查询
+                </button>
+            </div>
+        </div>
+        <table id="wrdkTable"></table>
+    </div>
+    </div>
+    <script type="text/javascript">
+        var dojoConfig = {
+            paths: {
+                extras: location.pathname.replace(/\/[^/]+$/, "") + "../../../extras"
+            }
+        };
+    </script>
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-slider.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script src="../../js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/tianditu.js"></script>
+    <script src="../../js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../../js/arcgisPublic.js"></script>
+    <script type="text/javascript" src="../../js/app/warn/wrdk.js"></script>
+</body>
+</html>

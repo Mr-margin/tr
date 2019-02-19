@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+    <title>全国土壤环境信息平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit"/>
+	<meta name="force-rendering" content="webkit"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="alifonts/iconfont.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/plugins/jquery-ui/jquery-ui.css"/>
+    <link href="css/warn/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+    <link href="css/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+    <!--     <link href="css/plugins/bootstrap-table/bootstrap-responsive.css" rel="stylesheet"/> -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-select.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="css/plugins/datepicker/datepicker3.css"/>
+ <!--   <link href="css/zTreeStyle.css" rel="stylesheet">-->
+    <link href="css/metroStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/public/public.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/informationOld.css">
+    <link rel="stylesheet" href="css/dataOld.css">
+    <link rel="stylesheet" href="css/warn.css">
+    <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/entrance.css">
+    <link rel="stylesheet" href="css/system.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/warn/qianzaiwurandikuai.css">
+    
+    <link type="text/css" href="css/ol.css" rel="stylesheet"/>
+    <link type="text/css" href="css/magic-input.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/simditor/simditor.css"/>
+    <link href="css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/bootstrap-datepaginator.min.css" rel="stylesheet">
+<!--     <link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/> -->
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<!--     <link rel="stylesheet" type="text/css" -->
+<!--           href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/dijit/themes/claro/claro.css"> -->
+<!--     <link rel="stylesheet" type="text/css" -->
+<!--           href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/esri/css/esri.css"/> -->
+    <link href="css/sweetalert.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <!–[if gte IE 9]> 
+	<link href="css/ie.css" rel="stylesheet"> 
+	<![endif]–> 
+	
+	<style>
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			#tongjituDivPublic #main_tabletitle{
+				top:calc(20.2% + 40px);
+				left:calc(32.5% + 9px);
+			}
+		}
+		
+    </style>
+	
+</head>
+<body >
+
+<div class="header" style="min-width: 1440px;">
+    <div class="logo">
+        <img src="img/logo.png" alt="">
+    </div>
+    <div class="menu-head">
+        <ul class="clear" id="menus"></ul>
+    </div>
+    <div class="admin">
+    	<span class="admin_1"><a class="msgAlert iconfont icon-msg" id="msgAlert" href="#system?type=message"><span id="adkDataCount" style="display:none;"></span></a></span>
+        <img src="img/index/admin-people.png" alt="">
+        <span id="welcome"></span>
+        <span class="exit"><a  onclick="logout()">退出登录</a></span>
+    </div>
+</div>
+<div class="view" id="ui-view">
+
+</div>
+<div class="footer">
+    <div style="padding: 8px 0;">
+        <p class="text-center">中华人民共和国生态环境部 版权所有</p>
+        <p class="text-center">建设单位：中华人民共和国生态环境部土壤生态环境司&nbsp;&nbsp; 技术支持单位：中华人民共和国生态环境部信息中心</p>
+        <!--<p style=" text-align: center;">联系电话：010-86437722 电子邮箱：support@mep.gov.cn</p>-->
+    </div>
+</div>
+
+<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+        }
+    };
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script src="js/tagcanvas.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.treemenu.js"></script>
+<script src="js/plugins/form/jquery.form.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/system/bootstrap-select/bootstrap-select.js"></script>
+<script src="js/system/bootstrap-select/defaults-zh_CN.js"></script>
+<script src="js/plugins/echarts/echarts-all.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-slider.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/plugins/menu/jquery.metisMenu.js"></script>
+<script type='text/javascript' src='js/echarts.js'></script>
+<script src="js/vipspa.js"></script>
+<script src="js/homeRoute.js"></script>
+<script src="js/add.js"></script>
+<script src="js/config.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="js/bootstrap-paginator.min.js"></script>
+<script src="js/bootstrap-datepaginator.min.js"></script>
+<script src="js/toastr.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script src="ueditor/ueditor.config.js"></script>
+<script src="ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/tianditu.js"></script>
+<script src="js/jquery.cxscroll.js"></script>
+
+<script src="js/modernizr.js"></script>
+<script src="js/jquery.blockUI.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.ztree.core.min.js"></script>
+<script src="js/jquery.ztree.all.min.js"></script>
+
+<script src="js/zh-cn.js"></script>
+
+<script src="js/app/bootstrap-treeview.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/dateFormat.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/app/information/RangeSlider.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/plugins/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="js/arcgisUrl.js"></script>
+<!-- <script type="text/javascript" -->
+<!--         src="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/init.js"></script> -->
+<script src="js/config.js"></script>        
+<script src="js/index.js"></script>
+<!-- <script type="text/javascript" src="js/plugins/base-loading.js"></script> -->
+
+
+
+<script>
+
+</script>
+</body>

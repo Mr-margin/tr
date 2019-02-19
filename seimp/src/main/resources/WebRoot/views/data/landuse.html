@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>土地利用</title>
+<!-- 	<link rel="stylesheet" type="text/css" href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/dijit/themes/claro/claro.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/esri/css/esri.css" /> -->
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/data/landuse.css" rel="stylesheet">
+</head>
+<body>
+	<div id="map"></div>
+	
+	<div id="mylegend" style="bottom:10px;left:10px;border: solid 1px #ccc;">
+			<p class="text-center" ><strong>图例</strong>
+				<small class="pull-right">
+					<img src="../../img/arrow_down.png" onclick="showHide()" style="height: 20px; width:20px;cursor:pointer;">
+				</small>
+			</p>
+			<div class="sldeDown">
+				<p>全国土地利用类型</p>
+				<ul id="ditu" class="col-xs-12 no-padding">
+					<li class="col-xs-6">
+						<div class="lColor" style="background:#6FDE6B"></div>
+						<div class="lCharacter">水田</div>
+					</li>
+					<li class="col-xs-6">
+						<div class="lColor" style="background:#DD3800"></div>
+						<div class="lCharacter">旱地</div>
+					</li>
+					<li class="col-xs-6">
+						<div class="lColor" style="background:#00B703"></div>
+						<div class="lCharacter">林地</div>
+					</li>
+					<li class="col-xs-6">
+						<div class="lColor" style="background:#80FEFD"></div>
+						<div class="lCharacter">水域</div>
+					</li>
+					
+					<li  class="col-xs-6 ">
+						<div class="lColor" style="background:#FE9F81"></div>
+						<div class="lCharacter">沙地</div>
+					</li>
+					<li  class="col-xs-6" style="padding-right:0;">
+						<div class="lColor" style="background:#B8BB60"></div>
+						<div class="lCharacter">未利用地</div>
+					</li>
+					<li  class="col-xs-12">
+						<div class="lColor" style="background:#E0DE6D"></div>
+						<div class="lCharacter">城镇住宅用地</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+	<!-- 图例 -->
+	<!-- <div id="mylegend" style="bottom:0;right:4%;">
+		<ul>
+			<li>
+				<div class="lColor" style="background:#F5EF6C"></div>
+				<div class="lCharacter">水田</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#F9F7C7"></div>
+				<div class="lCharacter">旱地</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#388E37"></div>
+				<div class="lCharacter">林地</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#A6D6E3"></div>
+				<div class="lCharacter">水域</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#E4707D"></div>
+				<div class="lCharacter">建设用地</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#C9BEAA"></div>
+				<div class="lCharacter">沙地、戈壁</div>
+			</li>
+			<li>
+				<div class="lColor" style="background:#B8BB60"></div>
+				<div class="lCharacter">未利用地</div>
+			</li>
+		</ul>
+	</div> -->
+	
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-slider.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	
+<!-- 	<script type="text/javascript" src="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/init.js"></script> -->
+	<script type="text/javascript" src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../js/tianditu.js"></script>
+	<script type="text/javascript" src="../../js/app/data/landuse.js"></script>
+</body>
+</html>

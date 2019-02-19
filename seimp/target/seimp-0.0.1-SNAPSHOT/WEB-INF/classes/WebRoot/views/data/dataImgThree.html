@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>土壤网格</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/system.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../css/dataOld.css" rel="stylesheet">
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../css/sweetalert.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="data_bottom_table col-xs-12 no-padding" >
+        <img src="../../img/data_zxjk.png" style="margin-bottom: 10px;">
+        <table class="table table-bordered table-striped col-xs-12 no-padding">
+            <thead>
+            <tr>
+                <td width="50px">序号</td>
+                <td width="300px">接口名称</td>
+                <td>接口地址</td>
+                <td>接口提供单位</td>
+                <td>服务状态</td>
+            </tr>
+            </thead>
+            <tbody class="tr_backcolor">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center"><a href="dataJiekou.html" class="btn btn-info button_blue showUploadAdd" style="width:initial">接口注册</a></div>
+    <div class="data_bottom_table col-xs-12 no-padding" style="margin-top:30px;">
+        <img src="../../img/data_qzjh.png" style="margin-bottom: 10px;">
+        <table class="table table-bordered table-striped col-xs-12 no-padding">
+            <thead>
+            <tr>
+                <td width="50px">序号</td>
+                <td width="300px">数据名称</td>
+                <td width="290px">数据提供单位</td>
+                <td width="290px">前置机地址</td>
+                <td>前置机状态</td>
+            </tr>
+            </thead>
+            <tbody class="tr_backcolor3">
+            <tr>
+                <td>1</td>
+                <td>酸雨</td>
+                <td>生态环境部</td>
+                <td>10.100.244.19</td>
+                <td>正在运行<span><img class='' src='../../img/button_play.png' height='20px' width='20px'
+                                   style="margin-left:10px;"></span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>土壤舆情</td>
+                <td>生态环境部</td>
+                <td>10.100.244.19</td>
+                <td>正在运行<span><img class='' src='../../img/button_play.png' height='20px' width='20px'
+                                   style="margin-left:10px;"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="data_bottom_table col-xs-12 no-padding" style="margin-top:30px;">
+        <img src="../../img/data_lxgx.png" style="margin-bottom: 10px;">
+        <table class="table table-bordered table-striped col-xs-12 no-padding">
+            <thead>
+            <tr>
+                <td width="50px">序号</td>
+                <td width="300px">数据名称</td>
+                <td width="290px">数据提供单位</td>
+                <td width="290px">联系人</td>
+                <td>联系电话</td>
+            </tr>
+            </thead>
+            <tbody class="tr_backcolor2">
+            <tr>
+                <td>1</td>
+                <td><a href="javascript:void(0);" onclick="toMetaDataInfoPage('27','De2')" style="text-decoration: underline">土地利用</a>
+                </td>
+                <td>生态环境部</td>
+                <td>信息中心</td>
+                <td>010-86437722</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="javascript:void(0);" onclick="toMetaDataInfoPage('39','De2')" style="text-decoration: underline">灌区</a>
+                </td>
+                <td>生态环境部</td>
+                <td>信息中心</td>
+                <td>010-86437722</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+	<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+        }
+    };
+</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../js/app/data/dataImgThree.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>

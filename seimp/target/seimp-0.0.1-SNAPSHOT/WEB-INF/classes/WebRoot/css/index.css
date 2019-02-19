@@ -1,0 +1,259 @@
+html{
+    height:100%;
+}
+body{
+    height: auto;
+    overflow: auto;
+
+}
+.header {
+    width: 90%;
+    height: 110px;
+    margin: 0 auto;
+    position:relative;
+    top:0;
+    left:0;
+    background:url('../img/index/head-background.png') no-repeat;
+    background-size:100% 100%;
+    /*flex: 0 0 auto;*/
+}
+.header .logo{
+    position:absolute;
+    left:100px;
+    width:221px;
+    height:55px;
+    top:22px;
+}
+
+
+.menu-head{
+    position:absolute;
+    right:8%;
+    width:60%;
+    top:50%;
+    margin-top:-12px;
+    padding:0 20px;
+}
+.menu-head>ul{
+    border-bottom:5px solid rgb(178,209,224);
+}
+
+.menu-head>ul>li{
+    width:11.5%;
+    float:left;
+    position:relative;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    height:40px;
+    line-height:30px;
+    margin-bottom:-6px;
+    margin-left:1%;
+}
+
+.menu-head>ul>li:first-child{
+    margin-left:0;
+}
+
+.menu-head>ul>li.bottom-color{
+    border-bottom:6px solid rgb(44,168,214);
+}
+
+.menu-head li:hover{
+    border-bottom:6px solid rgb(44,168,214);
+}
+.menu-head li a{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+/*管理员*/
+
+.admin{
+    background:url('../img/index/admin.png') no-repeat;
+    position: absolute;
+    top:0;
+    right:4%;
+    height:30px;
+    width:382px;
+    color:#fff;
+    font-size:12px;
+    text-align:center;
+    line-height:30px;
+}
+.admin span.admin_1{
+	margin: 0;
+    position: absolute;
+    left: 30px;
+    top: 1px;
+}
+.admin img{
+    margin: 0;
+    position: absolute;
+    left: 75px;
+    top: 7px;
+}
+.admin span.exit{
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+}
+.admin .msgAlert{
+	display:inline-block;
+	position:relative;
+	line-height: initial;
+	margin-right: 20px;
+	top: 2px;
+}
+.admin .icon-msg:before{
+	content:"\e716";
+	color:#fff;
+	font-size: 22px;
+    vertical-align: middle;
+    
+}
+.admin .msgAlert span{
+	/* display:none; */
+	margin-left:0;
+	min-width: 14px;
+    text-align: center;
+    line-height: 14px;
+    /*display: inline-block;*/
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background: red;
+    color: #fff;
+    border-radius: 17px;
+    padding: 6px;
+    font-size: 16px;
+    transform: scale(.7);
+}
+/*路由窗口的样式view*/
+.view{
+    /*position: absolute;*/
+    /*top:177px;*/
+    /*left:0;*/
+    /*right:0;*/
+    height:auto;
+    /*flex: 1 0 auto;*/
+    min-width: 1440px;
+}
+
+/*底部版权信息*/
+.footer {
+	min-width: 1440px;
+    width: 100%;
+    background:rgb(59,101,173);
+    margin: 0 auto;
+    font-size: 14px;
+    color: #fff;
+    line-height:25px;
+}
+.footer p{
+	margin:0;
+}
+/*表格行内垂直对齐样式*/
+table tr td{
+    vertical-align: middle !important;
+}
+
+.ol-popup {
+	position: absolute;
+  	background-color: white;
+  	-webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+ 	filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+  	padding: 15px;
+  	border-radius: 10px;
+  	/*border: 1px solid #cccccc;*/
+  	bottom: 30px;
+  	left: -50px;
+  	min-width: 280px;
+}
+
+.ol-popup:after, .ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+.ol-popup-closer {
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+}
+.ol-popup-closer:after {
+  	content: "✖";
+}
+
+.ol-popup-echarts {
+	position: absolute;
+  	background-color: white;
+  	-webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+ 	filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+  	padding: 15px;
+  	border-radius: 10px;
+  	/*border: 1px solid #cccccc;*/
+  	bottom: -39px;
+  	left: -50px;
+  	min-width: 0px;
+}
+
+.ol-popup-echarts:after, .ol-popup-echarts:before {
+	top: 100%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.ol-popup-echarts:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+.ol-popup-echarts:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+#welcome{
+	width: 160px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+#welcome b,#welcome i{
+	font-style: normal;
+	display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#welcome b{
+	width: 59%;
+	text-align: right;
+}
+#welcome i{
+	width: 38%;
+	text-align: left;
+}

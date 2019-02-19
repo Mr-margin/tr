@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>土壤网格</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+</head>
+<body>
+	<div class="dataWrap">
+		<div class="data-input v1" id="searchPart1">
+		    <div class="input-color">
+		     	 	<i class="iconfont icon-search"></i>
+		         	<input type="text"id="keyname">
+		         	<button onclick="gloSearch()">搜&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+		     </div>
+		     <div class="clearfix info-tip">
+		       		<div class="pull-left clearfix">
+		       			<label class="pull-left radioShow dataShow1">
+							<input type="radio" name="data" data="排污许可证" value="排污许可证" onclick="keyName(this)"/>
+			                <span>排污许可证</span>
+			            </label>
+			            <!-- <label class="pull-left radioShow dataShow1" style="width:172px">
+							<input type="radio" name="data" data="排污许可注销、撤销数据" value="排污许可注销、撤销数据" class="radio2" onchange="keyName(this)"/>
+			                <span>排污许可注销、撤销数据</span>
+			            </label> -->
+			            <label class="pull-left radioShow dataShow1" >
+							<input type="radio" name="data" data="组织机构代码" value="组织机构代码" onchange="keyName(this)"/>
+			                <span>组织机构代码</span>
+			            </label>
+			            <label class="pull-left radioShow dataShow1" >
+							<input type="radio" class="dataT" name="data" data="建设项目环评" value="建设项目环评" onchange="keyName(this)"/>	
+			                <span>建设项目环评</span>
+			            </label>
+					</div>
+					<p class="pull-right">
+						<a href="javascript:void(0);"><span class="tip1" onclick="getAllMetadataList()"></span></a>
+						<span class="tip2"></span>
+						<span class="tip3"></span>
+					</p>
+		     </div>
+		</div>
+		<div style="margin-top:30px">
+			<h2 class="pgfx_title clearfix">数据资源概览</h2>
+			<div class="pgfx_box1 pwhz pwhz1">
+				<div style="background: #da534f;" >
+					<dl>
+						<dt>数据集个数</dt>
+						<dd id="datasNum"></dd>
+					</dl>
+					<span class="iconfont" style="right:2%;top: 18%;font-size: 35px;">&#xe641;</span>
+				</div>
+				<div style="background: #efad4f;" >
+					<dl>
+						<dt>数据总量</dt>
+						<dd id="ttlh"></dd>
+					</dl>
+					<span class="iconfont"  style="font-size: 35px;">&#xe638;</span>
+				</div>
+				<div style="background: #5cbee1;" >
+					<dl>
+						<dt>数据容量</dt>
+						<dd id="sz">0KB</dd>
+					</dl>
+					<span class="iconfont" style="right:2%;top: 18%;">&#xe63c;</span>
+				</div>
+				<div style="background: #5bb85d;margin:0" >
+					<dl>
+						<dt>服务次数</dt>
+						<dd id="servicesNum"></dd>
+					</dl>
+					<span class="iconfont" style="right:2%;top: 18%;font-size: 35px;">&#xe602;</span>
+				</div>
+				<!--<div style="background: #347ab6;" onclick=toMetaDataInfoPage("10","De1")>
+					<dl>
+						<dt>上报污染地块</dt>
+						<dd id="wrdk"></dd>
+					</dl>
+					<span class="iconfont icon-seimp1"></span>
+				</div>
+				<div style="background: #347ab6;" onclick=toMetaDataInfoPage("10","De1")>
+					<dl>
+						<dt>上报污染地块</dt>
+						<dd id="wrdk"></dd>
+					</dl>
+					<span class="iconfont icon-seimp1"></span>
+				</div>
+				<div style="background: #da534f;" onclick=toMetaDataInfoPage("7","De2")>
+					<dl>
+						<dt>建设项目环评</dt>
+						<dd id="jshp"></dd>
+					</dl>
+					<span class="iconfont icon-seimp2"></span>
+				</div>
+				<div style="background: #5bb85d;margin-right:0;" onclick=toMetaDataInfoPage("5","De1")>
+					<dl>
+						<dt>重点行业监管企业</dt>
+						<dd id="zdhy"></dd>
+					</dl>
+					<span class="iconfont icon-seimp3"></span>
+				</div>  -->
+				<!-- <div style="background: #efad4f;" onclick=toMetaDataInfoPage("30","De1")>
+					<dl>
+						<dt>淘汰落后产能企业</dt>
+						<dd id="ttlh"></dd>
+					</dl>
+					<span class="iconfont icon-seimp4"></span>
+				</div>
+				<div style="background: #5cbee1;margin-right:0;" onclick=toMetaDataInfoPage("28","De1")>
+					<dl>
+						<dt>涉重有色金属采矿权项目</dt>
+						<dd id="sz"></dd>
+					</dl>
+					<span class="iconfont icon-seimp5" style="right:2%;top: 18%;"></span>
+				</div> -->
+			</div>
+		</div>
+		<div class="data-ksll">
+			<h2 class="pgfx_title">数据快速浏览</h2>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<h3><i class="iconfont icon-dataI1"></i>最新发布数据</h3>
+					<ul id="TimeList"></ul>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<h3><i class="iconfont icon-dataI2"></i>访问量最多数据</h3>
+					<ul id="visitCount"></ul>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<h3><i class="iconfont icon-dataI3"></i>下载量最多数据</h3>
+					<ul class="no-border" id="downCount"></ul>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="data-sjtj">
+			<h2 class="pgfx_title">部委数据统计</h2>
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>生态环境部</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p id="sjtj1"></p>
+					<div></div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>工业和信息化部</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p id="sjtj2"></p>
+					<div></div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>自然资源部</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p id="sjtj3"></p>
+					<div></div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>住房城乡建设部</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p  id="sjtj4"></p>
+					<div></div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>卫生计生委</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p id="sjtj5"></p>
+					<div></div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<h3>中科院</h3>
+					<img class="img-responsive" src="../../img/data/data-line.png" alt="">
+					<p id="sjtj6"></p>
+					<div></div>
+				</div>
+			</div>
+		</div> -->
+		<div class="clearfix row mt30">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left pull-left data-BWsjtj">
+				<h2 class="pgfx_title1 clearfix">
+					部委数据统计
+					<span class="pull-right clearfix mr15">
+						<label class="pull-right radioShow dataShow2" >
+							<input type="radio" name="dataType1" data="表格" value=""/>
+			                <span>表格</span>
+			            </label>
+			            <label class="pull-right radioShow dataShow2 dataShow_active2" >
+							<input type="radio" name="dataType1" data="统计图" value="" checked/>
+			                <span>统计图</span>
+			            </label>
+					</span>
+				</h2>
+				<div>
+					<div id="mychart1" style="height: 300px;"></div>
+					<table class="table-bordered table table-striped" id="bw_table"></table>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left pull-left data-fltj">
+				<h2 class="pgfx_title1 clearfix">
+					数据分类统计
+					<span class="pull-right clearfix mr15">
+						<label class="pull-right radioShow dataShow3" >
+							<input type="radio" name="dataType2" data="表格" value=""/>
+			                <span>表格</span>
+			            </label>
+			            <label class="pull-right radioShow dataShow3 dataShow_active2" >
+							<input type="radio" name="dataType2" data="统计图" value="" checked/>
+			                <span>统计图</span>
+			            </label>
+						<!-- <input type="radio" name="dataType2" data="统计图" value="" checked/>
+						<input type="radio" name="dataType2" data="表格" value=""/> -->
+					</span>
+				</h2>
+				<div>
+					<div id="mychart" style="height: 300px;"></div>
+					<table class="table-bordered table table-striped" id="sj_table">
+						<tr><th>序号</th><th>数据分类</th><th>数据量</th></tr>
+						<tr><td class="num"></td><td class="name"></td><td class="val"></td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="data-share mt30">
+			<h2 class="pgfx_title clearfix">
+				资源共享情况统计
+				<!-- 
+				<span class="pull-right clearfix mr15">
+					<label class="pull-right radioShow dataShow4" >
+						<input type="radio" name="dataType3" data="资源下载量统计" value="2" class="share_ipt"/>
+		                <span>资源下载量统计</span>
+		            </label>
+		            <label class="pull-right radioShow dataShow4 dataShow_active2" >
+						<input type="radio" name="dataType3" data="资源访问量统计" value="1" checked class="share_ipt"/>
+		                <span>资源访问量统计</span>
+		            </label>
+				</span>
+				-->
+			</h2>
+			<div>
+		        <div class="input-group">
+		            <input type="text" class="form_date form-control" id="startTime" onchange="RefreshData()">
+		            <span class="input-group-addon">至</span>
+		            <input type="text" class="form_date form-control" id="endTime" onchange="RefreshData()">
+		            <span class="input-group-btn">
+		                <button class="btn btn-default" type="button" onclick="search()">查询</button>
+		            </span>
+		        </div>
+		        <div id="mychart2" style="height: 600px;"></div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/app/data/dataIndex.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>

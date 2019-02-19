@@ -1,0 +1,40 @@
+/* html, body, #map {
+ 	height: 100%;
+ 	margin: 0;
+ 	padding: 0;
+ }*/
+
+/*************图例************/
+#mylegend{
+	position: absolute;
+    z-index: 4;
+    background: white;
+    width: 350px;
+    padding: 10px;
+}
+
+#mylegend ul li{
+	height:30px;
+}
+/*  #map{
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}  */
+li.left{
+	margin-left: -25px;
+}
+
+#mylegend div.lColor{
+	width: 40px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+    background: #2F4554;
+}
+
+#mylegend div.lCharacter{
+	margin-top: 3px;
+	font-size: 10px;
+}

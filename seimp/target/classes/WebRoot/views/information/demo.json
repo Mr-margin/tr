@@ -1,0 +1,785 @@
+[
+  {
+    "year": 2016,
+    "value": [
+      {
+        "SLIGHT": 373,
+        "CODE": "420000",
+        "LIGHT": 35,
+        "MIDDLE": 14,
+        "SERVERE": 19,
+        "NAME": "湖北省"
+      },
+      {
+        "SLIGHT": 155,
+        "CODE": "500000",
+        "LIGHT": 26,
+        "MIDDLE": 1,
+        "SERVERE": 3,
+        "NAME": "重庆市"
+      },
+      {
+        "SLIGHT": 214,
+        "CODE": "520000",
+        "LIGHT": 90,
+        "MIDDLE": 57,
+        "SERVERE": 62,
+        "NAME": "贵州省"
+      },
+      {
+        "SLIGHT": 296,
+        "CODE": "510000",
+        "LIGHT": 54,
+        "MIDDLE": 13,
+        "SERVERE": 13,
+        "NAME": "四川省"
+      },
+      {
+        "SLIGHT": 561,
+        "CODE": "530000",
+        "LIGHT": 132,
+        "MIDDLE": 79,
+        "SERVERE": 41,
+        "NAME": "云南省"
+      },
+      {
+        "SLIGHT": 78,
+        "CODE": "610000",
+        "LIGHT": 15,
+        "MIDDLE": 9,
+        "SERVERE": 14,
+        "NAME": "陕西省"
+      },
+      {
+        "SLIGHT": 23,
+        "CODE": "140000",
+        "LIGHT": 0,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "山西省"
+      },
+      {
+        "SLIGHT": 83,
+        "CODE": "320000",
+        "LIGHT": 13,
+        "MIDDLE": 5,
+        "SERVERE": 4,
+        "NAME": "江苏省"
+      },
+      {
+        "SLIGHT": 2,
+        "CODE": "660000",
+        "LIGHT": 0,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "新疆生产建设兵团"
+      },
+      {
+        "SLIGHT": 675,
+        "CODE": "430000",
+        "LIGHT": 123,
+        "MIDDLE": 57,
+        "SERVERE": 29,
+        "NAME": "湖南省"
+      },
+      {
+        "SLIGHT": 97,
+        "CODE": "540000",
+        "LIGHT": 13,
+        "MIDDLE": 8,
+        "SERVERE": 11,
+        "NAME": "西藏自治区"
+      },
+      {
+        "SLIGHT": 88,
+        "CODE": "350000",
+        "LIGHT": 16,
+        "MIDDLE": 6,
+        "SERVERE": 6,
+        "NAME": "福建省"
+      },
+      {
+        "SLIGHT": 20,
+        "CODE": "650000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "新疆维吾尔自治区"
+      },
+      {
+        "SLIGHT": 189,
+        "CODE": "450000",
+        "LIGHT": 70,
+        "MIDDLE": 58,
+        "SERVERE": 142,
+        "NAME": "广西壮族自治区"
+      },
+      {
+        "SLIGHT": 158,
+        "CODE": "210000",
+        "LIGHT": 19,
+        "MIDDLE": 11,
+        "SERVERE": 4,
+        "NAME": "辽宁省"
+      },
+      {
+        "SLIGHT": 281,
+        "CODE": "440000",
+        "LIGHT": 82,
+        "MIDDLE": 63,
+        "SERVERE": 13,
+        "NAME": "广东省"
+      },
+      {
+        "SLIGHT": 82,
+        "CODE": "130000",
+        "LIGHT": 11,
+        "MIDDLE": 4,
+        "SERVERE": 4,
+        "NAME": "河北省"
+      },
+      {
+        "SLIGHT": 101,
+        "CODE": "330000",
+        "LIGHT": 11,
+        "MIDDLE": 17,
+        "SERVERE": 5,
+        "NAME": "浙江省"
+      },
+      {
+        "SLIGHT": 99,
+        "CODE": "370000",
+        "LIGHT": 16,
+        "MIDDLE": 9,
+        "SERVERE": 2,
+        "NAME": "山东省"
+      },
+      {
+        "SLIGHT": 885,
+        "CODE": "220000",
+        "LIGHT": 135,
+        "MIDDLE": 95,
+        "SERVERE": 90,
+        "NAME": "吉林省"
+      },
+      {
+        "SLIGHT": 99,
+        "CODE": "620000",
+        "LIGHT": 9,
+        "MIDDLE": 2,
+        "SERVERE": 0,
+        "NAME": "甘肃省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "640000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "宁夏回族自治区"
+      },
+      {
+        "SLIGHT": 10,
+        "CODE": "460000",
+        "LIGHT": 3,
+        "MIDDLE": 8,
+        "SERVERE": 3,
+        "NAME": "海南省"
+      },
+      {
+        "SLIGHT": 13,
+        "CODE": "110000",
+        "LIGHT": 2,
+        "MIDDLE": 2,
+        "SERVERE": 2,
+        "NAME": "北京市"
+      },
+      {
+        "SLIGHT": 26,
+        "CODE": "150000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "内蒙古自治区"
+      },
+      {
+        "SLIGHT": 15,
+        "CODE": "310000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "上海市"
+      },
+      {
+        "SLIGHT": 596,
+        "CODE": "360000",
+        "LIGHT": 58,
+        "MIDDLE": 27,
+        "SERVERE": 18,
+        "NAME": "江西省"
+      },
+      {
+        "SLIGHT": 17,
+        "CODE": "410000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "河南省"
+      },
+      {
+        "SLIGHT": 12,
+        "CODE": "120000",
+        "LIGHT": 2,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "天津市"
+      },
+      {
+        "SLIGHT": 34,
+        "CODE": "230000",
+        "LIGHT": 7,
+        "MIDDLE": 2,
+        "SERVERE": 3,
+        "NAME": "黑龙江省"
+      },
+      {
+        "SLIGHT": 69,
+        "CODE": "340000",
+        "LIGHT": 12,
+        "MIDDLE": 6,
+        "SERVERE": 3,
+        "NAME": "安徽省"
+      },
+      {
+        "SLIGHT": 17,
+        "CODE": "630000",
+        "LIGHT": 3,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "青海省"
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "value": [
+      {
+        "SLIGHT": 0,
+        "CODE": "420000",
+        "LIGHT": 3,
+        "MIDDLE": 1,
+        "SERVERE": 1,
+        "NAME": "湖北省"
+      },
+      {
+        "SLIGHT": 15,
+        "CODE": "500000",
+        "LIGHT": 6,
+        "MIDDLE": 1,
+        "SERVERE": 3,
+        "NAME": "重庆市"
+      },
+      {
+        "SLIGHT": 24,
+        "CODE": "520000",
+        "LIGHT": 0,
+        "MIDDLE": 7,
+        "SERVERE": 6,
+        "NAME": "贵州省"
+      },
+      {
+        "SLIGHT": 26,
+        "CODE": "510000",
+        "LIGHT": 4,
+        "MIDDLE": 13,
+        "SERVERE": 13,
+        "NAME": "四川省"
+      },
+      {
+        "SLIGHT": 61,
+        "CODE": "530000",
+        "LIGHT": 12,
+        "MIDDLE": 7,
+        "SERVERE": 1,
+        "NAME": "云南省"
+      },
+      {
+        "SLIGHT": 8,
+        "CODE": "610000",
+        "LIGHT": 15,
+        "MIDDLE": 9,
+        "SERVERE": 4,
+        "NAME": "陕西省"
+      },
+      {
+        "SLIGHT": 3,
+        "CODE": "140000",
+        "LIGHT": 0,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "山西省"
+      },
+      {
+        "SLIGHT": 8,
+        "CODE": "320000",
+        "LIGHT": 3,
+        "MIDDLE": 5,
+        "SERVERE": 4,
+        "NAME": "江苏省"
+      },
+      {
+        "SLIGHT": 2,
+        "CODE": "660000",
+        "LIGHT": 0,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "新疆生产建设兵团"
+      },
+      {
+        "SLIGHT": 65,
+        "CODE": "430000",
+        "LIGHT": 13,
+        "MIDDLE": 7,
+        "SERVERE": 9,
+        "NAME": "湖南省"
+      },
+      {
+        "SLIGHT": 7,
+        "CODE": "540000",
+        "LIGHT": 3,
+        "MIDDLE": 8,
+        "SERVERE": 1,
+        "NAME": "西藏自治区"
+      },
+      {
+        "SLIGHT": 8,
+        "CODE": "350000",
+        "LIGHT": 6,
+        "MIDDLE": 6,
+        "SERVERE": 6,
+        "NAME": "福建省"
+      },
+      {
+        "SLIGHT": 2,
+        "CODE": "650000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "新疆维吾尔自治区"
+      },
+      {
+        "SLIGHT": 19,
+        "CODE": "450000",
+        "LIGHT": 70,
+        "MIDDLE": 5,
+        "SERVERE": 1,
+        "NAME": "广西壮族自治区"
+      },
+      {
+        "SLIGHT": 18,
+        "CODE": "210000",
+        "LIGHT": 1,
+        "MIDDLE": 11,
+        "SERVERE": 4,
+        "NAME": "辽宁省"
+      },
+      {
+        "SLIGHT": 1,
+        "CODE": "440000",
+        "LIGHT": 82,
+        "MIDDLE": 3,
+        "SERVERE": 13,
+        "NAME": "广东省"
+      },
+      {
+        "SLIGHT": 2,
+        "CODE": "130000",
+        "LIGHT": 11,
+        "MIDDLE": 4,
+        "SERVERE": 4,
+        "NAME": "河北省"
+      },
+      {
+        "SLIGHT": 1,
+        "CODE": "330000",
+        "LIGHT": 1,
+        "MIDDLE": 1,
+        "SERVERE": 5,
+        "NAME": "浙江省"
+      },
+      {
+        "SLIGHT": 9,
+        "CODE": "370000",
+        "LIGHT": 16,
+        "MIDDLE": 9,
+        "SERVERE": 2,
+        "NAME": "山东省"
+      },
+      {
+        "SLIGHT": 8,
+        "CODE": "220000",
+        "LIGHT": 1,
+        "MIDDLE": 95,
+        "SERVERE": 90,
+        "NAME": "吉林省"
+      },
+      {
+        "SLIGHT": 9,
+        "CODE": "620000",
+        "LIGHT": 9,
+        "MIDDLE": 2,
+        "SERVERE": 0,
+        "NAME": "甘肃省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "640000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "宁夏回族自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "460000",
+        "LIGHT": 3,
+        "MIDDLE": 8,
+        "SERVERE": 3,
+        "NAME": "海南省"
+      },
+      {
+        "SLIGHT": 3,
+        "CODE": "110000",
+        "LIGHT": 2,
+        "MIDDLE": 2,
+        "SERVERE": 2,
+        "NAME": "北京市"
+      },
+      {
+        "SLIGHT": 6,
+        "CODE": "150000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "内蒙古自治区"
+      },
+      {
+        "SLIGHT": 5,
+        "CODE": "310000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "上海市"
+      },
+      {
+        "SLIGHT": 6,
+        "CODE": "360000",
+        "LIGHT": 5,
+        "MIDDLE": 7,
+        "SERVERE": 1,
+        "NAME": "江西省"
+      },
+      {
+        "SLIGHT": 17,
+        "CODE": "410000",
+        "LIGHT": 1,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "河南省"
+      },
+      {
+        "SLIGHT": 12,
+        "CODE": "120000",
+        "LIGHT": 2,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "天津市"
+      },
+      {
+        "SLIGHT": 34,
+        "CODE": "230000",
+        "LIGHT": 7,
+        "MIDDLE": 2,
+        "SERVERE": 3,
+        "NAME": "黑龙江省"
+      },
+      {
+        "SLIGHT": 6,
+        "CODE": "340000",
+        "LIGHT": 12,
+        "MIDDLE": 6,
+        "SERVERE": 3,
+        "NAME": "安徽省"
+      },
+      {
+        "SLIGHT": 7,
+        "CODE": "630000",
+        "LIGHT": 3,
+        "MIDDLE": 1,
+        "SERVERE": 0,
+        "NAME": "青海省"
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "value": [
+      {
+        "SLIGHT": 0,
+        "CODE": "420000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "湖北省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "500000",
+        "LIGHT": 0,
+        "MIDDLE": 1,
+        "SERVERE": 3,
+        "NAME": "重庆市"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "520000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "贵州省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "510000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "四川省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "530000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "云南省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "610000",
+        "LIGHT": 15,
+        "MIDDLE": 9,
+        "SERVERE": 14,
+        "NAME": "陕西省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "140000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "山西省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "320000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "江苏省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "660000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "新疆生产建设兵团"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "430000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "湖南省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "540000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "西藏自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "350000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "福建省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "650000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "新疆维吾尔自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "450000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "广西壮族自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "210000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "辽宁省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "440000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "广东省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "130000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "河北省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "330000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "浙江省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "370000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "山东省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "220000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "吉林省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "620000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "甘肃省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "640000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "宁夏回族自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "460000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "海南省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "110000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "北京市"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "150000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "内蒙古自治区"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "310000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "上海市"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "360000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "江西省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "410000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "河南省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "120000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "天津市"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "230000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "黑龙江省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "340000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "安徽省"
+      },
+      {
+        "SLIGHT": 0,
+        "CODE": "630000",
+        "LIGHT": 0,
+        "MIDDLE": 0,
+        "SERVERE": 0,
+        "NAME": "青海省"
+      }
+    ]
+  }
+]

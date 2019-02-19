@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <Document>
+        <name>2012 Earthquakes, Magnitude 5</name>
+        <atom:author>
+            <atom:name>U.S. Geological Survey</atom:name>
+        </atom:author>
+        <atom:link href="http://earthquake.usgs.gov"/>
+        <Folder>
+            <name>Magnitude 5</name>
+           <Placemark id="2012 Jan 15 13:40:16.40 UTC"><name>14.2772383</name><magnitude>14.2772383</magnitude><Point><coordinates>120.737174972,30.9700955334,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.41 UTC"><name>40.16401472</name><magnitude>40.16401472</magnitude><Point><coordinates>113.210381761,26.9819633277,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.42 UTC"><name>83.37039669</name><magnitude>83.37039669</magnitude><Point><coordinates>109.690720895,18.5617718507,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.43 UTC"><name>73.8174007</name><magnitude>73.8174007</magnitude><Point><coordinates>113.676114958,28.7079827735,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.44 UTC"><name>37.04166957</name><magnitude>37.04166957</magnitude><Point><coordinates>118.969949884,33.1997524323,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.45 UTC"><name>89.61211635</name><magnitude>89.61211635</magnitude><Point><coordinates>109.564427214,23.1597689889,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.46 UTC"><name>64.38434672</name><magnitude>64.38434672</magnitude><Point><coordinates>110.835072727,25.9801145329,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.47 UTC"><name>99.46455956</name><magnitude>99.46455956</magnitude><Point><coordinates>118.65567299,28.1541791972,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.48 UTC"><name>24.07085068</name><magnitude>24.07085068</magnitude><Point><coordinates>108.610526963,23.606925371,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.49 UTC"><name>77.03540215</name><magnitude>77.03540215</magnitude><Point><coordinates>122.246219173,29.4814861336,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.50 UTC"><name>82.26854846</name><magnitude>82.26854846</magnitude><Point><coordinates>111.448271038,25.9250642536,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.51 UTC"><name>82.9165811</name><magnitude>82.9165811</magnitude><Point><coordinates>109.086080439,25.8829788499,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.52 UTC"><name>54.03705088</name><magnitude>54.03705088</magnitude><Point><coordinates>107.392462098,28.0981550908,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.53 UTC"><name>10.58041881</name><magnitude>10.58041881</magnitude><Point><coordinates>116.723965841,29.6280477592,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.54 UTC"><name>7.090532046</name><magnitude>7.090532046</magnitude><Point><coordinates>109.823514608,30.0484070822,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.55 UTC"><name>70.4430122</name><magnitude>70.4430122</magnitude><Point><coordinates>117.941946475,34.2309279972,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.56 UTC"><name>56.17000431</name><magnitude>56.17000431</magnitude><Point><coordinates>111.666554199,25.3260400995,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.57 UTC"><name>98.78458316</name><magnitude>98.78458316</magnitude><Point><coordinates>119.577487228,27.3340926678,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.58 UTC"><name>49.37647272</name><magnitude>49.37647272</magnitude><Point><coordinates>106.699235385,25.207064901,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.59 UTC"><name>87.8697159</name><magnitude>87.8697159</magnitude><Point><coordinates>117.364705469,31.9405658334,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.60 UTC"><name>11.3025575</name><magnitude>11.3025575</magnitude><Point><coordinates>109.489707465,23.8364995658,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.61 UTC"><name>11.40606653</name><magnitude>11.40606653</magnitude><Point><coordinates>117.839235325,32.843961951,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.62 UTC"><name>44.33373747</name><magnitude>44.33373747</magnitude><Point><coordinates>108.880288415,30.8729775945,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.63 UTC"><name>2.697070751</name><magnitude>2.697070751</magnitude><Point><coordinates>105.619707107,27.6731204738,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.64 UTC"><name>52.6787944</name><magnitude>52.6787944</magnitude><Point><coordinates>112.672906847,30.1556795931,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.65 UTC"><name>28.19245972</name><magnitude>28.19245972</magnitude><Point><coordinates>110.174458247,27.9378723235,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.66 UTC"><name>19.37750338</name><magnitude>19.37750338</magnitude><Point><coordinates>113.523305384,29.5455549546,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.67 UTC"><name>33.144899</name><magnitude>33.144899</magnitude><Point><coordinates>107.449595787,24.9953683129,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.68 UTC"><name>16.60386564</name><magnitude>16.60386564</magnitude><Point><coordinates>118.881482807,28.9029168784,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.69 UTC"><name>11.46218518</name><magnitude>11.46218518</magnitude><Point><coordinates>112.343422266,28.4760393108,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.70 UTC"><name>66.32356999</name><magnitude>66.32356999</magnitude><Point><coordinates>118.507101167,30.6905780052,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.71 UTC"><name>37.69788404</name><magnitude>37.69788404</magnitude><Point><coordinates>118.9455962,27.397913811,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.72 UTC"><name>43.64641686</name><magnitude>43.64641686</magnitude><Point><coordinates>120.371691827,32.6822096244,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.73 UTC"><name>69.83380912</name><magnitude>69.83380912</magnitude><Point><coordinates>119.961975918,29.6103444996,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.74 UTC"><name>84.48954607</name><magnitude>84.48954607</magnitude><Point><coordinates>105.287798996,26.8908729601,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.75 UTC"><name>97.3839082</name><magnitude>97.3839082</magnitude><Point><coordinates>108.496906728,22.7915720111,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.76 UTC"><name>32.99669029</name><magnitude>32.99669029</magnitude><Point><coordinates>107.633023005,23.1929081175,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.77 UTC"><name>22.04918599</name><magnitude>22.04918599</magnitude><Point><coordinates>118.506808866,31.6925365996,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.78 UTC"><name>29.78786973</name><magnitude>29.78786973</magnitude><Point><coordinates>113.387929602,29.0914959008,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.79 UTC"><name>60.32471243</name><magnitude>60.32471243</magnitude><Point><coordinates>113.368389833,28.1877081609,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.80 UTC"><name>56.10107033</name><magnitude>56.10107033</magnitude><Point><coordinates>109.548985818,28.6988374889,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.81 UTC"><name>87.65948054</name><magnitude>87.65948054</magnitude><Point><coordinates>119.357963018,31.6352264301,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.82 UTC"><name>37.39086822</name><magnitude>37.39086822</magnitude><Point><coordinates>120.104429983,32.0251356726,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.83 UTC"><name>54.41623672</name><magnitude>54.41623672</magnitude><Point><coordinates>108.696143209,26.3290905522,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.84 UTC"><name>24.40879854</name><magnitude>24.40879854</magnitude><Point><coordinates>107.213475285,24.6442021905,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.85 UTC"><name>46.0526146</name><magnitude>46.0526146</magnitude><Point><coordinates>105.823683825,23.7686424525,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.86 UTC"><name>64.7471115</name><magnitude>64.7471115</magnitude><Point><coordinates>119.588328679,33.7952063995,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.87 UTC"><name>77.19592611</name><magnitude>77.19592611</magnitude><Point><coordinates>120.71540912,28.8487185955,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.88 UTC"><name>58.8121763</name><magnitude>58.8121763</magnitude><Point><coordinates>119.777318604,28.2063595335,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.89 UTC"><name>10.88903162</name><magnitude>10.88903162</magnitude><Point><coordinates>110.630303151,22.1307045008,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.90 UTC"><name>34.3391094</name><magnitude>34.3391094</magnitude><Point><coordinates>106.364763596,28.5486037663,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.91 UTC"><name>72.22176058</name><magnitude>72.22176058</magnitude><Point><coordinates>116.814039908,30.4882397338,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.92 UTC"><name>21.90056052</name><magnitude>21.90056052</magnitude><Point><coordinates>116.884704715,31.3045827432,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.93 UTC"><name>44.82924836</name><magnitude>44.82924836</magnitude><Point><coordinates>119.052681361,29.6472782889,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.94 UTC"><name>15.28786552</name><magnitude>15.28786552</magnitude><Point><coordinates>112.180936399,27.6591091355,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.95 UTC"><name>55.11912831</name><magnitude>55.11912831</magnitude><Point><coordinates>109.763112982,24.8497275352,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.96 UTC"><name>10.48327223</name><magnitude>10.48327223</magnitude><Point><coordinates>111.020311381,27.0208586127,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.97 UTC"><name>36.02384851</name><magnitude>36.02384851</magnitude><Point><coordinates>117.590840362,28.9396062111,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.98 UTC"><name>96.72201962</name><magnitude>96.72201962</magnitude><Point><coordinates>111.231612114,28.4567955711,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.99 UTC"><name>24.21332968</name><magnitude>24.21332968</magnitude><Point><coordinates>118.404262336,32.3278078308,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.100 UTC"><name>71.80564209</name><magnitude>71.80564209</magnitude><Point><coordinates>112.132658799,29.5307455122,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.101 UTC"><name>40.80447254</name><magnitude>40.80447254</magnitude><Point><coordinates>108.419805975,30.2878864441,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.102 UTC"><name>73.06303934</name><magnitude>73.06303934</magnitude><Point><coordinates>110.654528769,29.2259778309,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.103 UTC"><name>91.2237646</name><magnitude>91.2237646</magnitude><Point><coordinates>117.775211576,33.5989553782,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.104 UTC"><name>18.90161019</name><magnitude>18.90161019</magnitude><Point><coordinates>110.759790916,23.9436115194,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.105 UTC"><name>24.96777769</name><magnitude>24.96777769</magnitude><Point><coordinates>108.29860468,26.7630223488,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.106 UTC"><name>0.371390942</name><magnitude>0.371390942</magnitude><Point><coordinates>106.218446122,26.8377146597,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.107 UTC"><name>27.33198698</name><magnitude>27.33198698</magnitude><Point><coordinates>109.638059198,29.2905825403,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.108 UTC"><name>39.91325272</name><magnitude>39.91325272</magnitude><Point><coordinates>112.629417802,26.1834933209,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.109 UTC"><name>92.63225728</name><magnitude>92.63225728</magnitude><Point><coordinates>112.582220592,25.1126399583,0</coordinates></Point></Placemark>
+<Placemark id="2012 Jan 15 13:40:16.110 UTC"><name>6.95684</name><magnitude>6.95684</magnitude><Point><coordinates>104.485211785,25.8189175294,0</coordinates></Point></Placemark>
+
+        
+        </Folder>
+    </Document>
+</kml>

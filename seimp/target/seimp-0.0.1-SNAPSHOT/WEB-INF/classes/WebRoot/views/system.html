@@ -1,0 +1,1944 @@
+<div class="system" >
+    <div class="map clearfix" id="">
+        <div class="map-menu">
+            <div class="map-control" style="position:relative;">
+                <img src="img/warn/map-ball.png" alt="">
+                <span>系统管理</span>
+                <img src="img/warn/map-slide.png" alt="" class="map-slide">
+            </div>
+            <div class="menu-con map-view">
+                <div class="sidebar-collapse">
+                    <ul class="nav nav-main" id="side-menu">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="map-con">
+            <div class="mapId" id="map">
+                <!--添加用户-->
+                <div class="parts" id="addUser" style="margin-left: 40px" hidden>
+                    <p class="page_title"><a onclick="updateUserBack()">用户列表</a> > 增加用户</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">登录账号<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="loginName" placeholder="5到16位字母或数字" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">登录密码<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="password" oninput="if(this.value==''){this.type='text'}else(this.type='password')" placeholder="8到20位字母和数字" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">姓名<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">确认密码<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="password2" oninput="if(this.value==''){this.type='text'}else(this.type='password')" placeholder="8到20位字母和数字" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">角色<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <select class="form-control" id="userType">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">用户级别<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <select class="form-control" id="userlevel" onchange="changeLevel()">
+                                        <option value="1">国家级用户</option>
+                                        <option value="2">省级用户</option>
+                                        <!--  <option value="3">市级用户</option>
+                                          <option value="4">县级用户</option>-->
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">部门</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="part" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 city_show3 my-3">
+                                <div class="col-sm-4 text-right no-padding" style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;" id="code1">行政区划</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="col-sm-4 no-padding">
+                                        <select class="form-control" id="province3">
+
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select class="form-control " id="city3">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 no-padding">
+                                        <select class="form-control " id="county3">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">手机号</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="mobile" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">邮箱</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 " style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px" onclick="addUser()"
+                            ><i class='fa fa-check'></i> 确定添加
+                            </button>
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="updateUserBack()">
+                                <i class='fa fa-undo'></i> 取消
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--用户列表-->
+                <div class="parts" id="userList" style="margin-left: 40px" hidden>
+                    <p class="page_title">用户列表</p>
+                    <div class="page_body" style="padding: 20px">
+                        <!--<div class="col-sm-3" style="text-align: left">
+                            <span style="font-size:1.5rem;">查询<code>*</code></span>
+                        </div>-->
+                        <div class="col-xs-12">
+                            <div class="pull-left no-padding" style="margin-bottom: 10px;width: 20%;">
+                                <label class="pull-left no-padding text-center"
+                                       style="width: 40%;">登录账号：</label>
+                                <div class="pull-left" style="width: 60%">
+                                    <input class="form-control" id="k1">
+                                </div>
+                            </div>
+                            <div class="pull-left no-padding" style="margin-bottom: 10px;width: 20%;">
+                                <label class="pull-left no-padding text-center"
+                                       style="width: 40%;">姓名：</label>
+                                <div class="pull-left" style="width: 60%">
+                                    <input class="form-control" id="k2">
+                                </div>
+                            </div>
+                            <div class="pull-left no-padding" style="margin-bottom: 10px;width: 20%;">
+                                <label class="pull-left no-padding text-center"
+                                       style="width: 40%;">部门：</label>
+                                <div class="pull-left" style="width: 60%">
+                                    <input class="form-control" id="k3">
+                                </div>
+                            </div>
+                            <div class="pull-left no-padding" style="margin-bottom: 10px;width: 20%;">
+                                <label class="pull-left no-padding text-center"
+                                       style="width: 40%;">用户级别：</label>
+                                <div class="pull-left" style="width: 60%">
+                                    <select class="form-control" id="k4">
+                                        <option value="">全部</option>
+                                        <option value="1">国家级用户</option>
+                                        <option value="2">省级用户</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="pull-left no-padding" style="margin-bottom: 10px;width: 20%;">
+                                <label class="pull-left no-padding text-center"
+                                       style="width: 40%;">角色：</label>
+                                <div class="pull-left" style="width: 60%">
+                                    <select class="form-control" id="k5">
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary ml-5 pull-right"
+                                    style="width: 120px;margin-top: 0px" id="search"
+                                    onclick="search()"></i> 查询
+                            </button>
+                        </div>
+
+                        <div class="col-xs-12 no-padding">
+                            <div class="table-all pt-3">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped table-hover" id="table_template"
+                                           style="margin-top: 20px;">
+
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--用户编辑-->
+                <div class="parts" id="updateUser" style="margin-left: 40px" hidden>
+                    <p class="page_title"></p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">登录账号<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="loginName1" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">登录密码</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="password" id="password1" placeholder="8到20位字母和数字" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">姓名<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="name1" class="form-control name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">确认密码</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="password" id="password3" placeholder="8到20位字母和数字" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">角色<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <select class="form-control userType" id="role1">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">用户级别<code>*</code></span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <select class="form-control userlevel" id="level1" onchange="changeLevel2()">
+                                        <option value="1">国家级用户</option>
+                                        <option value="2">省级用户</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">部门</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="section1" class="form-control part">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 city_show4 my-3">
+                                <div class="col-sm-4 text-right no-padding"  style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;" id="code2">行政区划</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="col-xs-4 no-padding">
+                                        <select class="form-control " id="province4">
+
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select class="form-control " id="city4">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 no-padding">
+                                        <select class="form-control " id="county4">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">手机号</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="tel1" class="form-control mobile">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-4 no-padding text-right">
+                                    <span style="font-size:1.5rem;">邮箱</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input type="text" id="email1" class="form-control email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 " style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px" onclick="modifyUser()"
+                                    id="update_button"><i class='fa fa-check'></i> 确定修改
+                            </button>
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="updateUserBack()"><i class='fa fa-undo'></i> 取消
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--角色管理-->
+                <div class="parts" id="roleManage" style="margin-left: 40px" hidden>
+                    <p class="page_title">角色列表</p>
+                    <div class="page_body" style="padding: 20px">
+                        <!--<div class="col-sm-3" style="text-align: left">
+                            <span style="font-size:1.5rem;">查询<code>*</code></span>
+                        </div>-->
+                        <div class="col-sm-3">
+                            <div class="col-sm-4 no-padding text-right">
+                                <span style="font-size:1.5rem; line-height: 36px;">角色名称</span>
+                            </div>
+                            <div class="col-sm-8 ">
+                                <input type="text" id="key2" class="form-control">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary ml-5" style="width: 120px"
+                                onclick="initBootstrapTable1()"></i> 查询
+                        </button>
+                        <div>
+                            <div class=" pt-3">
+                                <div class="">
+                                    <table class="table table-bordered table-striped table-hover" id="table_template2">
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--信息录入-->
+                <div class="parts" id="recordInfo" style="margin-left: 40px" hidden>
+                    <p class="page_title">资讯动态管理 > 增加资讯动态</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">标题<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="title1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">来源</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="source" class="form-control">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">资讯类型<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select class="form-control" id="newsType">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">作者</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="author1" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <div class="col-xs-6 city_show my-3" style="display: none;">
+                                <div class="col-sm-3 text-right" style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;">行政区划<code>*</code></span>
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="col-xs-4 no-padding">
+                                        <select class="form-control province" id="province1">
+
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <select class="form-control city" id="city1">
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4 no-padding">
+                                        <select class="form-control county" id="county1">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 ministry_show my-3" style="display: none;">
+                                <div class="col-sm-3 text-right" style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;">部委<code>*</code></span>
+                                </div>
+                                <div class="col-xs-9 ">
+                                    <select class="form-control ministry" id="ministry">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3" id="kpart" style="float: right">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">关键词</span>
+                                </div>
+                                <div class="col-sm-9 " style="position: relative">
+                                    <div class="col-xs-12 no-padding">
+                                        <div class="col-xs-11 no-padding" id="keyword"
+                                             style="border: 1px solid rgba(169, 163, 163, 0.55);border-radius: 3px;height: 34px;overflow: hidden;">
+
+                                        </div>
+                                        <div class="col-xs-1 no-padding" style="text-align: center" title="添加关键词">
+                                            <span onclick="addKeyword(1)">
+                                                <i class="fa fa-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 search_input spart1"
+                                         style="display: none;margin-left: 15px;width: 85.7%">
+                                        <div class="col-xs-12 pt-1">
+                                            <input class="form-control" placeholder="查询新关键词" id="searchkeyword">
+                                        </div>
+                                        <div class="col-xs-12 keywordpart">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-12 ministry_show" >
+
+
+                         </div>-->
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3  text-right">
+                                    <span style="font-size:1.5rem;">发布时间</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="date1"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">校核人</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="checker" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <!--<div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">原文地址</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="url1" class="form-control">
+                                </div>
+                            </div>-->
+                            <div class="col-sm-6  my-3" style="float: right">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">是否置顶</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <div class="col-sm-3">
+                                        <label><input type="radio" name="radio3" data_value="0" class="mgr mgr-primary">
+                                            是</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label><input type="radio" name="radio3" data_value="1" class="mgr mgr-primary"
+                                                      checked="checked">
+                                            否</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-xs-6">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">附件</span>
+                                </div>
+                                <div class="col-sm-9 daoru clearfix">
+                                	<input type="text" class="form-control input_text pull-left" id="file0"> 
+                                	<button class="btn btn-default input_sub">选择文件</button>
+                                	<input id="file00" type="file" class="input_file" contenteditable="false" onchange="document.getElementById('file0').value=this.value">  
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">资讯图片</span>
+                                </div>
+                                <div class="col-sm-9 daoru clearfix">
+                                	<input type="text" class="form-control input_text pull-left" id="pic0"> 
+                                	<button class="btn btn-default input_sub">选择文件</button> 
+                                	<input id="pic00" type="file" class="input_file" contenteditable="false" onchange="document.getElementById('pic0').value=this.value">  
+                                </div>
+                            </div>
+                            <div class="col-sm-12  my-3" style="position: sticky">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <span style="font-size:1.5rem;">正文<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                    <script id="editor" type="text/plain"></script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 " style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    id="add_button1" onclick="publishNews()"><i class='fa fa-check'></i> 确定添加
+                            </button>
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="changeDiv(1)"
+                            ><i class='fa fa-undo'></i> 取消
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--信息导入-->
+                <div class="parts" id="importInfo" style="margin-left: 40px" hidden>
+                    <p class="page_title">信息导入</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-8  my-3">
+                                <div class="col-sm-2 col-sm-offset-2" style="text-align: left">
+                                    <span style="font-size:1.5rem;">选择文件<code>*</code></span>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <input type="file" id="file1" class="form-control">
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-w-m btn-info ml-5"
+                                            style="width: 120px;margin-right: 200px"
+                                            id="add_button9"><i class='fa fa-check'></i> 确定录入
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--信息管理-->
+                <div class="parts" id="infoManage" style="margin-left: 40px">
+                    <p class="page_title">资讯动态管理</p>
+                    <div class="page_body clearfix">
+                    	<div class="clearfix mt10">
+                    		<div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">标题</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <input type="text" id="title6" class="form-control">
+	                            </div>
+	                        </div>
+	                        <div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">资讯类型</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <select class="form-control" id="newsType1">
+	
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">审核状态</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <select class="form-control" id="checkType">
+	                                    <option value="">全部</option>
+	                                    <option value="-1">未审核</option>
+	                                    <option value="1">未通过</option>
+	                                    <option value="0">通过</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">置顶状态</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <select class="form-control" id="topSel">
+	                                	<option value="">全部</option>
+	                                    <option value="0">置顶</option>
+	                                    <option value="1">未置顶</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="pull-right text-right no-padding">
+		                        <button type="button" class="btn btn-primary ml-4" style="width: 100px" id="search6" onclick="initBootstrapTable2()"> 查询</button> 
+	                        </div>
+                    	</div>
+						<div class="text-right mt20">
+                            <button type="button" class="btn btn-danger ml-4"
+                                    style="width: 100px;display: none;"
+                                    onclick="deleteSelected1()" id="deletenews"> 批量删除
+                            </button>
+                            <button type="button" class="btn btn-warning ml-4 checknews"
+                                    style="width: 100px;display: none;"
+                                    onclick="rejectSelected1()"> 审核不通过
+                            </button>
+                            <button type="button" class="btn btn-success checknews ml-4"
+                                    style="width: 100px;display: none;"
+                                    onclick="passSelected1()"> 审核通过
+                            </button>
+                            <button type="button" class="btn btn-default ml-4 topNews"
+                                    style="width: 100px;display: none;"
+                                    onclick="cancelTop()"> 取消置顶
+                            </button>
+                            <button type="button" class="btn btn-info topNews ml-4"
+                                    style="width: 100px;display: none;"
+                                    onclick="setupTop()"> 置顶
+                            </button>
+                        </div>
+                        <div>
+                            <div class=" pt-3 mt10">
+                                <table class="table table-bordered table-striped table-hover" id="table_template6">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--网络舆情管理-->
+                <div class="parts" id="networkManage" style="margin-left: 40px" hidden>
+                    <p class="page_title">网络舆情管理</p>
+                    <div class="page_body clearfix" style="margin-top:10px">
+                        <div class="col-sm-2 no-padding "  style="width: 16%;">
+                            <div class="col-sm-5 " >
+                                <span style="font-size:1.5rem; line-height: 36px;">标题</span>
+                            </div>
+                            <div class="col-sm-7 no-padding">
+                                <input type="text" id="title11" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2  no-padding"  style="width: 16%;">
+                            <div class="col-sm-5" >
+                                <span style="font-size:1.5rem; line-height: 36px;">来源</span>
+                            </div>
+                            <div class="col-sm-7 no-padding">
+                                <input type="text" id="soutce11" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2 no-padding" style="width:19%">
+                            <div class="col-sm-6 ">
+                                <span style="font-size:1.5rem; line-height: 36px;">审核状态</span>
+                            </div>
+                            <div class="col-sm-6 no-padding">
+                                <select class="form-control" id="checkType1">
+                                    <option value="">全部</option>
+                                    <option value="-1">未审核</option>
+                                    <option value="1">未通过</option>
+                                    <option value="0">通过</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 no-padding pull-right" style="width:48%">
+                            <button type="button" class="btn btn-primary" style="width: 82px" id="search11"
+                                    onclick="initBootstrapTable4()"> 查询
+                            </button>
+                            <button type="button" class="btn ml-2 btn-info pull-right"
+                                    onclick="exportFile()"> 导出记录
+                            </button>
+                            <button type="button" class="btn btn-danger ml-2 pull-right"
+                                    style="display: none;"
+                                    onclick="deleteSelected()" id="deletenet"> 批量删除
+                            </button>
+
+                            <button type="button" class="btn btn-warning ml-2 checknet pull-right"
+                                    style="display: none;"
+                                    onclick="rejectSelected()"> 审核不通过
+                            </button>
+                            <button type="button" class="btn btn-success checknet pull-right"
+                                    style="display: none;"
+                                    onclick="passSelected()"> 审核通过
+                            </button>
+
+                        </div>
+
+                        <div>
+                            <div class=" pt-3" style="margin-top: 40px">
+                                <div class="">
+                                    <table class="table table-bordered table-striped table-hover" id="table_template11">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--信息编辑-->
+                <div class="parts" id="updateInfo" style="margin-left: 40px" hidden>
+                    <p class="page_title">资讯动态编辑</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">标题<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="title" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">来源</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="source1" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">资讯类型<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select class="form-control" id="newsType2">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">作者</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="author" class="form-control">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6 city_show2 my-3" style="display: none;">
+                                <div class="col-sm-3 text-right" style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;">行政区划<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="col-sm-4 no-padding">
+                                        <select class="form-control province" id="province2">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select class="form-control city" id="city2">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 ">
+                                        <select class="form-control county" id="county2">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 ministry_show2 my-3" style="display: none;">
+                                <div class="col-sm-3 text-right" style="padding-left: 0; ">
+                                    <span style="font-size:1.5rem;">部委<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select class="form-control ministry" id="ministry1">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3" id="kpart1" style="float: right;">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">关键词</span>
+                                </div>
+                                <div class="col-sm-9 " style="position: relative">
+                                    <div class="col-sm-12 no-padding" id="checkwords">
+                                        <div class="col-sm-11 no-padding" id="keyword1"
+                                             style="border: 1px solid rgba(169, 163, 163, 0.55);border-radius: 3px;height: 34px;overflow: hidden;">
+
+                                        </div>
+                                        <div class="col-sm-1 no-padding" title="添加新关键词" style="text-align: center;">
+                                            <span onclick="addKeyword(2)">
+                                                <i class="fa fa-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 search_input spart2"
+                                         style="display: none;margin-left: 15px;width: 85.7%">
+                                        <div class="col-sm-12 pt-1">
+                                            <input class="form-control" placeholder="查询关键词" id="searchkeyword1">
+                                        </div>
+                                        <div class="col-sm-12 keywordpart1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3  text-right">
+                                    <span style="font-size:1.5rem;">发布时间</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="date2"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">校核人</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="checker1" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <!--<div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">原文地址</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="url2" class="form-control">
+                                </div>
+                            </div>-->
+                            <div class="col-sm-6  my-3" style="float: right">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">是否置顶</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <div class="col-xs-3" style="padding-top: 10px;">
+                                        <input type="radio" name="top" data_value="0" class="mgr mgr-primary">是
+                                    </div>
+                                    <div class="col-xs-3" style="padding-top: 10px;">
+                                        <input type="radio" name="top" data_value="1" class="mgr mgr-primary"
+                                               checked="checked">否
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-xs-6">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">附件</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="file" id="file2">
+                                </div>
+                                <div class="col-sm-9 col-sm-offset-3 filename">
+                                    <label id="filename"></label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">资讯图片</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="file" id="pic2">
+                                </div>
+                                <div class="col-sm-9 col-sm-offset-3 filename">
+                                    <label id="picname"></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12  my-3" style="position: sticky" id="compare1">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <div class="col-sm-12 no-padding"><span
+                                            style="font-size:1.5rem;">正文<code>*</code></span></div>
+                                    <div class="col-sm-12 no-padding" hidden id="compare0">
+                                        <button class="btn btn-default btn-xs" onclick="compare()">对比原文</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                    <script id="editor1" type="text/plain"></script>
+                                </div>
+                            </div>
+                            <div class="col-sm-12  my-3" style="position: sticky" id="compare2" hidden>
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <div class="col-sm-12 no-padding"><span
+                                            style="font-size:1.5rem;">正文<code>*</code></span></div>
+                                    <div class="col-sm-12 no-padding">
+                                        <button class="btn btn-default btn-xs" onclick="completeCompare()">关闭原文</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                    <div class="col-sm-6 no-padding">
+                                        <script id="editor4" type="text/plain"></script>
+                                    </div>
+                                    <div class="col-sm-6 no-padding">
+                                        <div class="col-sm-12"
+                                             style="height: 30px;border-top: 1px solid #b2acac;border-right: 1px solid #b2acac">
+                                            <div class="col-sm-11" id="sourceUrl"
+                                                 style="line-height: 28px;overflow: hidden;white-space: nowrap">
+                                            </div>
+                                            <div class="col-sm-1" style="padding-top: 3px">
+                                                <a class="btn btn-default btn-xs" id="openUrl" href="" target="_blank">打开</a>
+                                            </div>
+                                        </div>
+                                        <iframe src="" id="sourceIframe"
+                                                style="height: 499px;width: 100%;border:1px solid #bdb9b9">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  <div class="col-sm-12  my-3"  id="compare">
+                                  <div class="col-sm-3 text-right" style="width:12%;">
+                                      <span style="font-size:1.5rem;">原文</span>
+                                  </div>
+                                  <div class="col-sm-9 " style="width:88%">
+
+                                  </div>
+                              </div>-->
+                        </div>
+                        <div class="col-sm-12 pt-5 info_update" style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    onclick="modifyInfo()"><i class='fa fa-check'></i> 确定修改
+                            </button>
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 150px;margin-right: 200px"
+                                    onclick="modifyInfoAndPass()"><i class='fa fa-check'></i> 保存并审核通过
+                            </button>
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="changeDiv(1)">
+                                <i class='fa fa-undo'></i> 取消
+                            </button>
+                        </div>
+                        <div class="col-sm-12 pt-5 info_check" style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    onclick="passInfo()"><i class='fa fa-check'></i> 审核通过
+                            </button>
+                            <button type="button" class="btn btn-danger ml-5" style="width: 120px"
+                                    onclick="rejectInfo()">
+                                <i class='fa fa-undo'></i> 审核不通过
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--舆情编辑-->
+                <div class="parts" id="updateNetword" style="margin-left: 40px" hidden>
+                    <p class="page_title">舆情编辑</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">标题<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="title12" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">网址</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="url" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3  text-right">
+                                    <span style="font-size:1.5rem;">抓取时间</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="date12"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">来源</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="source11" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3  text-right">
+                                    <span style="font-size:1.5rem;">经度</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="number" id="lon" class="form-control" step="0.0001" min="-180" max="180">
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;" >纬度</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="number" id="lat" class="form-control" step="0.0001" min="-90" max="90">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">分类</span>
+                                </div>
+                            <!--        <input type="text" id="type11" class="form-control">-->
+                                <div class="col-sm-9 " style="position: relative">
+                                    <div class="col-sm-12 no-padding" id="checkwords3">
+                                        <div class="col-sm-11 no-padding" id="keyword3"
+                                             style="border: 1px solid rgba(169, 163, 163, 0.55);border-radius: 3px;height: 34px;overflow: hidden;">
+
+                                        </div>
+                                        <div class="col-sm-1 no-padding" title="添加新分类" style="text-align: center;">
+                                            <span onclick="addKeyword3(2)">
+                                                <i class="fa fa-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 search_input spart3"
+                                         style="display: none;margin-left: 15px;width: 85.7%">
+                                        <div class="col-sm-12 pt-1">
+                                            <input class="form-control" placeholder="查询分类" id="searchkeyword3">
+                                        </div>
+                                        <div class="col-sm-12 keywordpart3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">省</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select id="region1" class="selectpicker3 show-tick  form-control" multiple data-live-search="true">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">市</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select id="region2" class="selectpicker3  show-tick form-control" multiple data-live-search="true">
+                                    </select>
+<!--
+                                    <input type="text" id="region2" class="form-control">-->
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">县</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <select id="region3" class="selectpicker3 show-tick  form-control" multiple data-live-search="true">
+                                    </select>
+                                   <!-- <input type="text" id="region3" class="form-control">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-12  my-3 zhaiyao">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <span style="font-size:1.5rem;">摘要</span>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                      <textarea class="form-control" style="min-height:100px;"
+                                                id="summary"></textarea>
+                                    <!-- <script id="editor2" type="text/plain"></script>-->
+                                </div>
+                            </div>
+                            <div class="col-sm-12  my-3">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <span style="font-size:1.5rem;">正文<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                    <script id="editor3" type="text/plain"></script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 network_update" style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    onclick="modifyNetwork()"><i class='fa fa-check'></i> 确定修改
+                            </button>
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="changeDiv(11)">
+                                <i class='fa fa-undo'></i> 取消
+                            </button>
+                        </div>
+                        <div class="col-sm-12 pt-5 network_check" style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    onclick="passNetwork()"><i class='fa fa-check'></i> 审核通过
+                            </button>
+                            <button type="button" class="btn btn-danger ml-5" style="width: 120px"
+                                    onclick="rejectNetwork()">
+                                <i class='fa fa-undo'></i> 审核不通过
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--类别管理-->
+                <div class="parts" id="typeManage" style="margin-left: 40px" hidden>
+                    <p class="page_title">类别管理</p>
+                    <div class="page_body" style="padding: 20px">
+                        <!--<div class="col-sm-3" style="text-align: left">
+                            <span style="font-size:1.5rem;">查询<code>*</code></span>
+                        </div>-->
+                        <div class="col-sm-3  ">
+                            <div class="col-sm-4" style="text-align: left">
+                                <span style="font-size:1.5rem;">名称</span>
+                            </div>
+                            <div class="col-sm-8 ">
+                                <input type="text" id="title7" class="form-control">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-w-m ml-5" style="width: 120px" id="search7"
+                                onclick="search()"> 查询
+                        </button>
+                        <div>
+                            <div class=" pt-3">
+                                <div class="">
+                                    <table class="table table-bordered table-condensed" id="table_template7">
+                                        <thead>
+                                        <tr>
+                                            <th data-field="XH">
+                                                <div class="id_th">序号</div>
+                                            </th>
+                                            <th data-field="CHINESEID">类别</th>
+                                            <th data-field="SCIENTIFICID">作者</th>
+                                            <th data-field="ENGLISHID">发布日期</th>
+                                            <th data-field="STARTADDRESS">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td data-field="XH">
+                                                <div class="id_th">1</div>
+                                            </td>
+                                            <td data-field="CHINESEID">类别1</td>
+                                            <td data-field="SCIENTIFICID">张亮</td>
+                                            <td data-field="ENGLISHID">2017-04-15</td>
+                                            <td data-field="STARTADDRESS"><a>编辑</a> &nbsp;&nbsp;&nbsp;&nbsp;<a>删除</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-field="XH">
+                                                <div class="id_th">2</div>
+                                            </td>
+                                            <td data-field="CHINESEID">类别2</td>
+                                            <td data-field="SCIENTIFICID">张亮</td>
+                                            <td data-field="ENGLISHID">2017-04-15</td>
+                                            <td data-field="STARTADDRESS"><a>编辑</a> &nbsp;&nbsp;&nbsp;&nbsp;<a>删除</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--日志管理-->
+                <div class="parts" id="logManage" style="margin-left: 40px" hidden>
+                    <p class="page_title">日志管理</p>
+                    <div class="page_body" style="padding: 20px">
+                        <div class="no-padding  clearfix" style="white-space: nowrap;">
+                            <div class="col-sm-3 no-padding"  style="width:22.5%">
+                                <div class="col-sm-5 " style="text-align: left">
+                                    <span style="font-size:1.5rem;line-height: 36px;">操作用户</span>
+                                </div>
+                                <div class="col-sm-7"  style="padding-left:0;">
+                                    <input type="text" id="name8" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-2 no-padding"  style="width:22.5%">
+                                <div class="col-sm-4  no-padding">
+                                    <span style="font-size:1.5rem;line-height: 36px;">开始时间</span>
+                                </div>
+                                <div class="col-sm-8 "  style="padding-left:0;">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="startDate"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 no-padding"  style="width:22.5%">
+                                <div class="col-sm-4  no-padding">
+                                    <span style="font-size:1.5rem;line-height: 36px;">结束时间</span>
+                                </div>
+                                <div class="col-sm-8 "  style="padding-left:0;">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="endDate"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding"  style="width:22.5%">
+                                <div class="col-sm-5 " style="text-align: left">
+                                    <span style="font-size:1.5rem;line-height: 36px;">操作内容</span>
+                                </div>
+                                <div class="col-sm-7"  style="padding-left:0;">
+                                    <input type="text" id="content8" class="form-control">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary  pull-right" style="width: 10%" id="search8"
+                                    onclick="initBootstrapTable3()"> 查询
+                            </button>
+                        </div>
+                        <div>
+                            <div class=" pt-3">
+                                <div class="">
+                                    <table class="table table-bordered table-condensed" id="table_template8">
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--角色修改-->
+                <div class="parts" id="updateManage" style="margin-left: 40px;" hidden>
+                    <p class="page_title">角色管理 > 角色添加</p>
+                    <div class="page_body" style="padding: 20px;  height: 100%;overflow-x:hidden;">
+                    	<img src="img/system/map_opt.png" />
+                    	<!--第一步：角色添加-->
+                    	<div class="roleAdd one" >
+                    		<div class="roleBg"></div>
+                    		<div class="row no-margin">
+                    			<h2 class="col-lg-12 col-md-12"><span></span></h2>
+                    		</div>
+                    		<div class="row no-margin">
+                    			<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-2 col-md-2 addLeft text-center"><span>角色添加</span></div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-7 col-md-7 addRight">                    			
+	                    			<form role="form">
+										<div class="form-group clearfix">
+										    <label for="roleName" class="pull-left">角色名称：</label>
+										    <input type="text" class="form-control pull-left" id="roleName" >
+										</div>
+									 	<div class="form-group clearfix">
+										    <label for="roleDesc"  class="pull-left">角色说明：</label>
+										    <textarea class="form-control pull-left" rows="5" id="roleDesc"></textarea>
+										 </div>
+									</form>
+	                    		</div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    	</div>
+	                    	<div class="row no-margin">
+                    			<div class="col-lg-3 col-md-3"></div>
+                    			<div class="col-lg-6 col-md-6 text-center addFir">
+                    				<button type="button" class="btn btn-primary" >下一步</button>
+                    			</div>
+                    			<div class="col-lg-3 col-md-3"></div>
+                    		</div>
+	                    	
+                    	</div>
+                    	<!--第二步：角色添加-->
+                    	<div class="roleAdd two" hidden>
+                    		<div class="roleBg"></div>
+                    		<div class="row no-margin">
+                    			<h2 class="col-lg-12 col-md-12 fun"><span></span></h2>
+                    		</div>
+                    		<div class="row no-margin">
+                    			<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-2 col-md-2 addLeft text-center"><span>功能权限</span></div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-7 col-md-7 addRight">                    			
+	                    			<form role="form">
+										<div class="form-group">
+										    <div style="height: 85%;">
+			                                    <ul class="ztree" id="rights" style="height: 100%;overflow: auto;"></ul>
+			                                </div>
+										</div>
+									</form>
+	                    		</div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    	</div>
+	                    	<div class="row no-margin">
+                    			<div class="col-lg-3 col-md-3"></div>
+                    			<div class="col-lg-6 col-md-6 text-center addSec">
+                    				<button type="button" class="btn btn-default p8_59">上一步</button>
+                    				<button type="button" class="btn btn-primary" >下一步</button>  
+                    				                             		
+                    			</div>
+                    			<div class="col-lg-3 col-md-3"></div>
+                    		</div>
+                    	</div>
+                    	<!--第三步：图层目录权限-->
+                    	<div class="roleAdd three" hidden>
+                    		<div class="roleBg"></div>
+                    		<div class="row no-margin">
+                    			<h2 class="col-lg-12 col-md-12 directory"><span></span></h2>
+                    		</div>
+                    		<div class="row no-margin">
+                    			<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-2 col-md-2 addLeft text-center"><span>图层目录权限</span></div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-7 col-md-7 addRight">                    			
+	                    			<form role="form">
+										<div class="form-group">
+										    <div style="height: 85%;">
+			                                    <!-- <ul class="ztree" id="dirRights" style="height: 100%;overflow: auto;"></ul> -->
+			                                	<ul class="ztree" id="yztRights" style="height: 100%;overflow: auto;"></ul>
+			                                </div>
+										</div>
+									</form>
+	                    		</div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    	</div>
+	                    	<div class="row no-margin">
+                    			<div class="col-lg-3 col-md-3"></div>
+                    			<div class="col-lg-6 col-md-6 text-center addThir">
+                    				<button type="button" class="btn btn-default p8_59">上一步</button>
+                    				<button type="button" class="btn btn-primary" >下一步</button>                               		
+                    				
+                    			</div>
+                    			<div class="col-lg-3 col-md-3"></div>
+                    		</div>
+                    	</div>
+                    	<!--第四步：数据集权限-->
+                    	<div class="roleAdd four" hidden>
+                    		<div class="row no-margin">
+                    			<h2 class="col-lg-12 col-md-12 dataRights"><span></span></h2>
+                    		</div>
+                    		<div class="row no-margin">
+	                    		<div class="col-lg-2 col-md-2 addLeft text-center"><span>数据集权限</span></div>
+	                    		<div class="col-lg-1 col-md-1"></div>
+	                    		<div class="col-lg-9 col-md-9 addRight no-padding">                    			
+	                    			<form role="form">
+										<div class="form-group clearfix">
+										    <div class="pull-left roleAdd_menu" >
+			                                    <!-- <ul class="ztree" id="dataRights" style="height: 100%;overflow: auto;"></ul> -->
+			                                    
+		                                    	<h3 class="active"><i class="iconfont icon-bottom"></i><b class="iconfont icon-list"></b><span>收起</span></h3>
+		                                    	<ul class="allMenu">
+		                                    		<li>
+		                                    			<a href="javascript:void(0);" onclick="initBootstrapTable_add('0')" class="active"><i class="iconfont icon-bottom"></i><b class="iconfont icon-folder"></b><span>全部</span></a>
+		                                    			<div class="menu">
+													        <ul id="yztRights">
+													        </ul>
+													    </div>
+		                                    		</li>
+		                                    	</ul>
+			                                	<label>
+      												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" onchange="quanxuanDataRight(this);">&nbsp;查看权限全选
+    											</label>
+    											<br/>
+    											<label>
+      												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" onchange="quanxuanDataSelectRight(this);">&nbsp;查询权限全选
+    											</label>
+    											<br/>
+    											<label>
+      												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" onchange="quanxuanDataDownRight(this);">&nbsp;下载权限全选
+    											</label>
+			                                </div>
+			                                <table id="table_addUser" class="pull-left table table-striped table-bordered"></table>	
+										</div>
+										
+									</form>
+	                    		</div>
+	                    		<div class="row no-margin">
+	                    			<div class="col-lg-2 col-md-2"></div>
+	                    			<div class="col-lg-8 col-md-8 text-center addLast">
+	                    				<button type="button" class="btn btn-default p8_59">上一步</button>
+	                    				<button type="button" class="btn btn-primary p8_41" onclick="addRole()" id="add_button" style="margin-right: 30px;">确定添加</button>
+                                		<button type="button" class="btn btn-default p8_59" onclick="updateManageBack()">取消</button>
+	                    			</div>
+	                    			<div class="col-lg-2 col-md-2"></div>
+	                    			
+	                    		</div>
+	                    	</div>
+                    	</div>
+                    	<!-- ! -->
+                    	<!-- <div style="display:none">                   	
+                        <div class="col-xs-5" style="width: 48%;">
+                            <h4>基本信息</h4>
+                            <div class="col-xs-12" style="margin-bottom: 20px">
+                                <div class="form-group">
+                                    <label class="col-xs-3 text-right control-label">角色名称</label>
+                                    <div class="col-xs-9">
+                                        <input class="form-control" id="roleName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="col-xs-3 text-right control-label">角色说明</label>
+                                    <div class="col-xs-9">
+                                        <textarea class="form-control" style="min-height:100px;"
+                                                  id="roleDesc"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float: left; height: 300px; width:1px; background-color: #cccccc; margin-top: 50px;"></div>
+                        <div class="col-xs-6 pull-right" style="height: 90%;padding-top: 3rem">
+                            <div class="col-sm-6">
+                                <h4>功能权限</h4>
+                                <!-- <div style="height: 85%;">
+                                    <ul class="ztree" id="rights" style="height: 100%;overflow: auto;"></ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>数据权限</h4>
+                                <div style="height: 85%;">
+                                    <ul class="ztree" id="dataRights" style="height: 100%;overflow: auto;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 " style="text-align:center;">
+                            <div class="col-sm-6" id="p1">
+                                <button type="button" class="btn btn-w-m btn-info ml-5"
+                                        style="width: 120px;margin-right: 200px" onclick="addRole()"
+                                        id="add_button"><i class='fa fa-check'></i> 确定添加
+                                </button>
+                            </div>
+                            <div class="col-sm-6" id="p2" hidden>
+                                <button type="button" class="btn btn-w-m btn-info ml-5"
+                                        style="width: 120px;margin-right: 200px" onclick="modifyRole()"
+                                        id="add_button11"><i class='fa fa-check'></i> 确定修改
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                        onclick="updateManageBack()"
+                                ><i class='fa fa-undo'></i> 取消
+                                </button>
+                            </div>
+                        </div>
+                    	</div> -->
+                    	<!-- ! -->
+                    	
+                    	
+                    </div>
+                </div>
+            
+            	<!--消息通知-->
+             	<div class="parts" id="messageAlert" style="margin-left: 40px;display:none" >
+             		<p class="page_title">消息通知</p>
+             		<div class="clearfix">
+             			<div class="pull-left form-group clearfix">
+						    <label for="" class="control-label pull-left">类型</label>
+						    <div class="pull-left">
+						      <select class="form-control" id="msgType">
+						      	<option value="">全部</option>
+						      	<option value="">已读</option>
+						      	<option value="">未读</option>
+						      </select>
+						    </div>
+						</div>
+						<div class="pull-left form-group clearfix w-43">
+						    <label for="" class="control-label pull-left">时间</label>
+						    <div class="pull-left clearfix cancel_time">
+						    	<div class="pull-left startTime">
+						    	  <input class="form_date form-control"  size="16" type="text" value="" id="msgStartTime">
+							     
+							      <i class="glyphicon glyphicon-calendar"></i>
+							    </div>
+							    <div class="pull-left m105">~</div>
+							    <div class="pull-left endTime">
+							      <input class="form_date form-control"  size="16" type="text" value="" id="msgEndTime">
+							      <i class="glyphicon glyphicon-calendar"></i>
+							    </div>
+						    </div>
+						</div>
+						<div class="pull-left form-group clearfix">
+						    <label for="" class="control-label pull-left">状态</label>
+						    <div class="pull-left">
+						      <select class="form-control" id="msgStatus">
+						      	<option value="">全部</option>
+						      	<option value="已读">已读</option>
+						      	<option value="未读">未读</option>
+						      </select>
+						    </div>
+						</div>
+						<div class="pull-right">
+							<button class="btn btn-primary pull-right" id="" onclick="searchMsg()" style="width:78px;">查询</button>
+						</div>
+             		</div>
+             		<ul id="msgList">
+						<li class="msg-li ">
+							<a href="javascript:void(0);" class="clearfix">
+								<i class="iconfont icon-right pull-left"></i>
+								<p class="pull-left" title="全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务">
+									全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务
+								</p>
+								<b class="pull-left">未读</b>
+								<span class="pull-right">2018-05-07</span>
+							</a>
+						</li>
+						<li class="msg-li ">
+							<a onclick="updateMsg()" class="clearfix">
+								<i class="iconfont icon-right pull-left"></i>
+								<p class="pull-left" title="全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务">
+									全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务
+								</p>
+								<b class="pull-left">未读</b>
+								<span class="pull-right">2018-05-07</span>
+							</a>
+						</li>
+						<li class="msg-li ">
+							<a href="javascript:void(0);" class="clearfix">
+								<i class="iconfont icon-right pull-left"></i>
+								<p class="pull-left" title="全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务">
+									全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务
+								</p>
+								<span class="pull-right">2018-05-07</span>
+							</a>
+						</li>
+						<li class="msg-li ">
+							<a href="javascript:void(0);" class="clearfix">
+								<i class="iconfont icon-right pull-left"></i>
+								<p class="pull-left" title="全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务">
+									全国农用地土壤污染状况详查进入关键期 三部门要求加快进度，确保年底完成详查任务
+								</p>
+								<span class="pull-right">2018-05-07</span>
+							</a>
+						</li>
+					</ul>
+			        <div class="col-xs-12 text-center" style="padding-bottom: 20px">
+			            <ul id="msgPag" class="pagination" style="padding-top: 2rem;"></ul>
+			        </div>
+             	</div>
+            
+            	<!--添加用户-->
+                <div class="parts" id="msgDetails" style="margin-left: 40px" hidden>
+                    <p class="page_title clearfix"><a onclick="updateMsgBack()">消息通知</a> > 通知详情<a class="pull-right" onclick="updateMsgBack()">返回</a></p>
+                    <div class="msgInfo">
+                    	 	中国环境报记者张春燕报道 全国农用地土壤污染状况详查工作进入关键期。开展土壤污染状况详查，就是要在已有调查的基础上进一步开展系统调查，查明农用地土壤污染的面积、分布及其对农产品的影响，查清重点行业企业用地中污染地块的分布及其环境风险情况，为农用地土壤环境分类管理和建设用地准入管理奠定基础。
+
+　　本次土壤污染状况详查共布设农用地详查点位55.3万个，超过2005年4月至2013年12月开展的土壤污染状况调查任务量10倍左右，并要求各省区市在2018年年底前完成调查任务，时间非常紧、任务非常重。广西农用地详查任务重，但工作组织有力，各环节工作进展在全国均名列前茅。这次培训班目的就是要在组织学习广西等地好经验、好做法的基础上，督促各地进一步统一思想认识，进一步加快工作进度，严格工作质量管理，确保年底前如期规范完成农用地土壤污染状况详查任务，为打好净土保卫战、强化土壤环境风险管控、推动解决土壤污染突出问题夯实基础。
+
+　　据了解，大部分省份已打通农用地详查采样、制样、流转、保存、检测工作全流程。
+                    	
+                    </div>
+                </div>
+            
+            	<!-- 申请审批列表 -->
+            	<div class="parts" id="askDataTablePart" style="margin-left: 40px" hidden>
+                    <p class="page_title">申请审批</p>
+                    <div class="page_body clearfix">
+                    	<div class="clearfix mt10">
+                    		<div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">申请数据</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <input type="text" id="sAdName" class="form-control">
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="pull-left row no-margin">
+	                            <div class="col-lg-6 col-md-6 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">审核状态</span>
+	                            </div>
+	                            <div class="col-lg-6 col-md-6 no-padding">
+	                                <select class="form-control" id="adVerifyStatus">
+	                                    <option value="">全部</option>
+	                                    <option value="0">未审核</option>
+	                                    <option value="1">审核通过</option>
+	                                    <option value="2">审核未通过</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="pull-right text-right no-padding">
+		                        <button type="button" class="btn btn-primary ml-4" style="width: 100px" id="search6" onclick="initBootstrapTable14()"> 查询</button> 
+	                        </div>
+                    	</div>
+						
+                        <div>
+                            <div class=" pt-3 mt10">
+                                <table class="table table-bordered table-striped table-hover" id="table_template14">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            	<!-- 申请审批 -->
+            	<div class="parts" id="verifyAskData" style="margin-left: 40px" hidden>
+                    <p class="page_title">审批申请</p>
+                    <input type="hidden" id="adID" class="form-control" >
+                    <div class="page_body" style="padding: 20px">
+	                    <div class="col-sm-12">
+	                            <div class="col-sm-6  my-3">
+	                                <div class="col-sm-3 text-right">
+	                                    <span style="font-size:1.5rem;">申请数据</span>
+	                                </div>
+	                                <div class="col-sm-9 ">
+	                                    <input type="text" id="askDataName" class="form-control" readonly>
+	                                </div>
+	                            </div>
+	                            <div class="col-sm-6  my-3">
+	                                <div class="col-sm-3  text-right">
+	                                    <span style="font-size:1.5rem;">申请时间</span>
+	                                </div>
+	                                <div class="col-sm-9 ">
+	                                    <input type="text" id="adAskTime" class="form-control" readonly>
+	                                </div>
+	                            </div>
+	                            
+	                    </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">申请部门</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="adAskDepartment" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">申请人</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="adAskName" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                        	
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3  text-right">
+                                    <span style="font-size:1.5rem;">电话</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input class=" form-control" size="16" type="text" value="" id="adAskTel"
+                                           readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">邮箱</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="adAskEmail" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-sm-6  my-3">
+                                <div class="col-sm-3 text-right">
+                                    <span style="font-size:1.5rem;">审批状态</span>
+                                </div>
+                                <div class="col-sm-9 ">
+                                    <input type="text" id="adVerifyStaus" class="form-control" readonly>
+                                </div>
+                            </div>
+						</div>
+                            
+                        <div class="col-sm-12">
+                            <div class="col-sm-12  my-3 zhaiyao">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <span style="font-size:1.5rem;">申请理由</span>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                      <textarea class="form-control" style="min-height:100px;"
+                                                id="adAskReason" readonly></textarea>
+                                    <!-- <script id="editor2" type="text/plain"></script>-->
+                                </div>
+                            </div>
+                            <div class="col-sm-12  my-3">
+                                <div class="col-sm-3 text-right" style="width:12%;">
+                                    <span style="font-size:1.5rem;">审批理由<code>*</code></span>
+                                </div>
+                                <div class="col-sm-9 " style="width:88%;">
+                                    <textarea class="form-control" style="min-height:100px;"
+                                                id="adVerifyReadson"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 pt-5 viewAskData" style="text-align:center;">
+                            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                    onclick="changeDiv(14)">
+                                <i class='fa fa-undo'></i> 返回
+                            </button>
+                        </div>
+                        <div class="col-sm-12 pt-5 verifyAskData" style="text-align:center;">
+                            <button type="button" class="btn btn-w-m btn-info ml-5"
+                                    style="width: 120px;margin-right: 200px"
+                                    onclick="passAskData()"><i class='fa fa-check'></i> 审核通过
+                            </button>
+                            <button type="button" class="btn btn-danger ml-5" style="width: 120px"
+                                    onclick="rejectAskData()">
+                                <i class='fa fa-undo'></i> 审核不通过
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            
+            
+            	<!-- 站内统计 -->
+            	<div class="parts" id="visitStatis" style="margin-left: 40px" hidden>
+                    <p class="page_title">站内统计</p>
+                    <div class="page_body clearfix">
+                    	<div class="clearfix mt10">
+                    		<div class="col-sm-3 no-padding">
+                                <div class="col-sm-4  no-padding text-right">
+                                    <span style="font-size:1.5rem;line-height: 36px;">开始时间</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="visitStartDate"
+                                           >
+                                </div>
+                            </div>
+                            <div class="col-sm-3 no-padding">
+                                <div class="col-sm-4  no-padding text-right" >
+                                    <span style="font-size:1.5rem;line-height: 36px;">结束时间</span>
+                                </div>
+                                <div class="col-sm-8 ">
+                                    <input class="form_date form-control" size="16" type="text" value="" id="visitEndDate"
+                                           >
+                                </div>
+                            </div>
+	                        
+	                        <div class="col-sm-3 no-padding">
+	                            <div class="col-md-5 text-right">
+	                                <span style="font-size:1.5rem; line-height: 36px;">统计方式</span>
+	                            </div>
+	                            <div class="col-md-7 no-padding">
+	                                <select class="form-control" id="visitStatisType">
+	                                    <option value="0">年</option>
+	                                    <option value="1" selected>月</option>
+	                                    <option value="2">日</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="pull-right text-right no-padding">
+		                        <button type="button" class="btn btn-primary ml-4" style="width: 100px" id="search6" onclick="initVisitStatis()"> 查询</button> 
+	                        </div>
+                    	</div>
+						
+                        <div >
+                            <div id="visitStatisPic" style="height:500px;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 260px;
+    margin-left: 300px;" aria-hidden="true">
+    <div class="modal-dialog" style="width: 18%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center">添加关键词</h4>
+            </div>
+            <div class="modal-body">
+                <input class="form-control" id="word">
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-primary" onclick="insertKeyword()">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<div class="modal fade" id="example3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 260px;
+    margin-left: 300px;" aria-hidden="true">
+    <div class="modal-dialog" style="width: 18%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel11" style="text-align: center">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <input class="form-control" id="word3">
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-primary" onclick="insertKeyword3()">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<div class="modal fade" id="exportPart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+    <div class="modal-dialog" style="width: 35%">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" style=" font-size: x-large;" >导出记录</h4>
+            </div>
+            <div class="modal-body" style="height: 300px">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3" style="text-align: right">
+                        <span style="font-size:1.5rem; line-height: 36px;">标题</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <input type="text" id="title4" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3" style="text-align: right">
+                        <span style="font-size:1.5rem; line-height: 36px;">来源</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <input type="text" id="source4" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3 " style="text-align: right">
+                        <span style="font-size:1.5rem; line-height: 36px;">审核状态</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <select class="form-control" id="checkType4">
+                            <option value="">全部</option>
+                            <option value="-1">未审核</option>
+                            <option value="1">未通过</option>
+                            <option value="0">通过</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3  ">
+                        <span style="font-size:1.5rem;line-height: 36px;float: right">开始时间</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <input class="form_date form-control" size="16" type="text" value="" id="startDate1"
+                               readonly>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3  ">
+                        <span style="font-size:1.5rem;line-height: 36px;float: right">结束时间</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <input class="form_date form-control" size="16" type="text" value="" id="endDate1"
+                               readonly>
+                    </div>
+                </div>
+               <!-- <div class="row" style="margin-top: 10px">
+                    <div class="col-sm-3" style="text-align: right">
+                        <span style="font-size:1.5rem; line-height: 36px;">导出记录条数</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <input type="text" id="num" class="form-control">
+                    </div>
+                </div>-->
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-primary" onclick="ensureExportFile()">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<!-- 正在等待 -->
+<div id="yc">
+</div>
+
+<script>
+function center(){            
+	//判断显示器分辨率           
+	var winWidth  = document.documentElement.clientWidth; 
+	console.log(winWidth)
+	if(winWidth<=1580){                
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/extra.css" }) .appendTo("head")        
+	}else if(winWidth>1600){
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/origin.css" }) .appendTo("head")        
+	}
+	console.log(winWidth)
+}
+center();
+
+//权限设置步骤显隐
+//1
+$(".addFir .btn-primary").click(function(){
+	$("#updateManage .one").hide();
+	$("#updateManage .two").show();
+})
+//2
+$(".addSec .btn-primary").click(function(){
+	$("#updateManage .two").hide();
+	$("#updateManage .three").show();
+})
+$(".addSec .btn-default").click(function(){
+	$("#updateManage .two").hide();
+	$("#updateManage .one").show();
+})
+//3
+$(".addThir .btn-primary").click(function(){
+	$("#updateManage .three").hide();
+	$("#updateManage .four").show();
+})
+$(".addThir .btn-default").click(function(){
+	$("#updateManage .three").hide();
+	$("#updateManage .two").show();
+})
+//4
+$(".addLast .btn-default").click(function(){
+	$("#updateManage .three").show();
+	$("#updateManage .four").hide();
+})
+</script>

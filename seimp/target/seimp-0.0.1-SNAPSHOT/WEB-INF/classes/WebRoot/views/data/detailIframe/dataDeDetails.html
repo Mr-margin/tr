@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>污染地块</title>
+	<link href="../../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../../alifonts/iconfont.css">
+	<link href="../../../css/public/public.css" rel="stylesheet">
+	<link href="../../../css/system.css" rel="stylesheet">
+	<link href="../../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../../css/data.css" rel="stylesheet">
+	<link href="../../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../../css/sweetalert.min.css" rel="stylesheet">
+	<link href="../../../js/plugins/scroll/section-scroll.css"  rel="stylesheet" />
+	<style>
+		.polluted label{
+			width:84px;
+			text-align:right;
+		}	
+		.poten1 .bootstrap-table{
+			width: 100%;
+    		margin: 0;
+		}
+		.poten1 .wrdkDe{
+			margin-bottom: 5px;
+		}
+		
+		.table td.th{
+			width:15%;
+		}
+		
+		.table td.td{
+			width:35%;
+		}
+	</style>
+</head>
+<body   style="overflow:auto;">
+<div   style="overflow:auto;">
+<div class="potential poten1"  style="width: 92%;margin: 20px 0 20px 5%;">
+	<div class="mb14">
+		<!-- <h2 class="pgfx_title">排污许可证注销/撤销证据</h2> -->
+		<div class="pgfx_box4" style="border: 1px solid #cfcfcf;border-radius:8px;">
+		
+			<div class="row" id="poTable">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+					<div class="row wrdkDe  "   >
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4  class="scrollable-section"  data-section-title="污染地块信息" ><span style="width: 135px;">污染地块信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									<tr>						
+										<td class="th">污染地块ID：</td>
+										<td class="td" id="pot_1" ></td>
+										<td class="th">用户编号：</td>
+										<td class="td" id="pot_2" ></td>
+									</tr>
+									<tr>						
+										<td class="th">污染地块编码：</td>
+										<td class="td" id="pot_3" ></td>
+										<td class="th">污染地块名称：</td>
+										<td class="td" id="pot_4" ></td>
+									</tr>
+									<tr>						
+										<td class="th">省名：</td>
+										<td class="td" id="pot_5" ></td>
+										<td class="th">市名：</td>
+										<td class="td" id="pot_6" ></td>
+									</tr>
+									<tr>						
+										<td class="th">县名：</td>
+										<td class="td" id="pot_7" ></td>
+										<td class="th">备注：</td>
+										<td class="td" id="pot_8" ></td>
+									</tr>
+									<tr>						
+										<td class="th">是否污染：</td>
+										<td class="td" id="pot_9" ></td>
+										<td class="th">所处阶段：</td>
+										<td class="td" id="pot_10" ></td>
+									</tr>
+									<tr>						
+										<td class="th">风险级别：</td>
+										<td class="td" id="pot_11" colspan="3"></td>
+									</tr>
+									
+									
+									
+									
+									
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<div class="row wrdkDe"   >
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4  class=" scrollable-section "  data-section-title="关闭企业地块信息" ><span style="width: 145px;">关闭企业地块信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									
+									
+									<tr>						
+										<td class="th">法人名称：</td>
+										<td class="td" id="pot_14" ></td>
+										<td class="th">法人代表：</td>
+										<td class="td" id="pot_15"></td>
+									</tr>
+									<tr>						
+										<td class="th">工商营业执照：</td>
+										<td class="td" id="pot_16" ></td>
+										<td class="th">污染地块地址：</td>
+										<td class="td" id="pot_17" ></td>
+									</tr>
+									<tr>						
+										<td class="th">邮政编码：</td>
+										<td class="td" id="pot_18" ></td>
+										<td class="th">地块四周范围：</td>
+										<td class="td" id="pot_19" ></td>
+									</tr>
+									<tr>						
+										<td class="th">占地面积（平方米）：</td>
+										<td class="td" id="pot_20" ></td>
+										<td class="th">坐标说明：</td>
+										<td class="td" id="pot_21" ></td>
+									</tr>
+									<tr>						
+										<td class="th">使用权单位联系人：</td>
+										<td class="td" id="pot_22" ></td>
+										<td class="th">使用权单位联系电话：</td>
+										<td class="td" id="pot_23" ></td>
+									</tr>
+									<tr>						
+										<td class="th">污染地块中心经度：</td>
+										<td class="td" id="pot_24" ></td>
+										<td class="th">污染地块中心纬度：</td>
+										<td class="td" id="pot_25" ></td>
+									</tr>
+									<tr>						
+										<td class="th">联系传真：</td>
+										<td class="td" id="pot_26" ></td>
+										<td class="th">电子邮箱：</td>
+										<td class="td" id="pot_27" ></td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<div class="row wrdkDe "  >
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4  class=" scrollable-section"   data-section-title="初步调查信息" ><span style="width: 140px;">初步调查信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									
+									<tr>						
+										<td class="th">初步调查ID：</td>
+										<td class="td" id="pot_28" ></td>
+										<td class="th">初步调查标题：</td>
+										<td class="td" id="pot_29" ></td>
+									</tr>
+									<tr>						
+										<td class="th">初步调查公示网址：</td>
+										<td class="td" id="pot_30" ></td>
+										<td class="th">初步调查报告编制单位：</td>
+										<td class="td" id="pot_31" ></td>
+									</tr>
+									<tr>						
+										<td class="th">初步调查报告编制时间：</td>
+										<td class="td" id="pot_32" ></td>
+									<!-- <tr>						
+										<td class="th">调查报告路径：</td>
+										<td class="td" id="pot_33" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">检测报告路径：</td>
+										<td class="td" id="pot_34" colspan="3"></td>
+									</tr> -->
+										<td class="th">填报阶段编码：</td>
+										<td class="td" id="pot_35" ></td>
+									</tr>
+									<tr>						
+										<td class="th">是否污染地块：</td>
+										<td class="td" id="pot_36" colspan="3"></td>
+									</tr>
+									
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			 </div>
+			 
+			 <div  id="scrolling"   style="position: fixed;right: 0;z-index: 1049;font-weight: normal;top: 50%;left: 0;width:250px;margin-top: -100px;">
+					<div class="side-bar"  style="height: 200px;"><em class="circle start"></em><em class="circle end"></em></div>
+					<div  class="sliderBox"  style="margin-top: 15%;"></div>
+			</div>
+			 		 
+		</div>
+		
+		
+	
+	</div>
+</div>
+
+</div>
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../../js/toastr.min.js"></script>
+	<script src="../../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../../views/data/detailIframe/dataDeDetails.js"></script>
+	
+	<!-- 锚点定位 -->
+	<script type="text/javascript" src="../../../js/plugins/scroll/prism.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/scroll/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/scroll/jquery.section-scroll.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/scroll/materialize.min.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+		
+		
+		//	锚点定位
+		$(function(){
+				$(".sliderBox").sectionScroll({
+						easing: 'easeInOutQuart',
+						scrollDuration: 1200
+				});
+				
+		})
+		
+	</script>
+</body>
+

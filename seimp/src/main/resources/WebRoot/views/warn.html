@@ -1,0 +1,167 @@
+<div class="warn clearfix">
+	<div id="warnMenuDiv">
+		<div class="warnItem">
+			<div>
+				<a href="#potential_wurandikuai" style="padding-bottom: 31px;">
+					<i class="icon-warn1" style="margin-top:0;"></i>
+				</a>
+				<p>疑似污染地块预警</p>
+			</div>
+		</div>
+		<div class="warnItem">
+			<div>
+				<a href="#pesticideLand" style="padding: 15px 0;">
+					<i class="icon-warn7"></i>
+				</a>
+				<p>农药厂地分析</p>
+			</div>
+		</div>
+		<div class="warnItem">
+			<div>
+				<a href="javascript:void(0);" style="padding: 15px 0;">
+					<i class="icon-warn2"></i>
+					<span>建设中...</span>
+				</a>
+				<p>污染地块预警</p>
+			</div>
+		</div>
+		<div class="warnItem warnItem2">
+			<div>
+				<a href="javascript:void(0);" style="padding: 15px 0;">
+					<i class="icon-warn3"></i>
+					<span>建设中...</span>
+				</a>
+				<p>农用地土壤环境质量预警</p>
+			</div>
+		</div>
+		<div class="warnItem">
+			<div>
+				<a href="javascript:void(0);" style="padding: 15px 0;">
+					<i class="icon-warn4"></i>
+					<span>建设中...</span>
+				</a>
+				<p>舆情预警分析</p>
+			</div>
+		</div>
+		<div class="warnItem">
+			<div>
+				<a href="javascript:void(0);" style="padding: 15px 0;">
+					<i class="icon-warn5"></i>
+					<span>建设中...</span>
+				</a>
+				<p>重点区域预警</p>
+			</div>
+		</div>
+		<div class="warnItem">
+			<div>
+				<a href="javascript:void(0);" style="padding: 15px 0;">
+					<i class="icon-warn6"></i>
+					<span>建设中...</span>
+				</a>
+				<p>污染地块风险</p>
+			</div>
+		</div>
+		<!-- <div class="warnItem">
+			<div>
+				<a href="#yujingDetails">
+					<i class="iconfont icon-ybp"></i>
+				</a>
+				<p>污染地块安全利用预警</p>
+			</div>
+		</div> -->
+		<div class="warnItem warnItem2"></div>
+		<div class="warnItem warnItem3"></div>
+		<div class="warnItem warnItem3"></div>
+		<div class="warnItem warnItem3"></div>
+		<div class="warnItem warnItem3 warnItem2"></div>
+		
+		<!-- <div class="clearfix">
+			<a href="#potential_wurandikuai" class="pull-left bg1">
+				<h2>潜在污染地块预警</h2>
+				<h5 class="warn_UPDATETIME"></h5>
+				<div class="warn_chart"><div id="myChart_1" style="width: 220px;height:155px;"></div></div>
+				
+			</a>
+			<a href="#yujingDetails" class="pull-left bg2">
+				<h2>污染地块安全利用预警</h2>
+				<h5 class="warn_UPDATETIME"></h5>
+				<div class="warn_chart"><div id="myCharts" style="width: 200px;height:180px;"></div></div>
+			</a>
+		</div>
+		<div>
+			<a href="#" class="bg3">
+				<img src="img/warn/warn3.png">
+				<span>正在建设中......</span>
+			</a>
+		</div> -->
+	</div>	
+	
+</div>
+<script>
+function center(){            
+	//判断显示器分辨率           
+	var winWidth  = document.documentElement.clientWidth; 
+	console.log(winWidth)
+	if(winWidth<=1580){                
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/extra.css" }) .appendTo("head")        
+	}else if(winWidth>1600){
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/origin.css" }) .appendTo("head")        
+	}
+	console.log(winWidth)
+}
+center()
+	console.log('getWarnMenu')
+	function getWarnMenu(){
+		ajaxPost("/seimp/authority/getMenus", {partID: 4}).done(function (data) {
+			if (data.status == 0) {
+				var html = "";
+				var array = data.data.right1;
+				if(contains(array,"40")){
+	    			html += '<div class="warnItem"><div>'
+							+ '<a href="#potential_wurandikuai" style="padding-bottom: 31px;"><i class="icon-warn1" style="margin-top:0;"></i></a>'
+							+ '<p>疑似污染地块预警</p>'
+							+ '</div></div>';       		
+	           	}
+	           	if(contains(array,"41")){
+	           		html += '<div class="warnItem"><div>'
+							+ '<a href="#pesticideLand" style="padding: 15px 0;"><i class="icon-warn7"></i></a>'
+							+ '<p>农药厂地分析</p>'
+							+ '</div></div>';
+	           	}
+	           	if(contains(array,"42")){
+	           		html += '<div class="warnItem"><div>'
+							+ '<a href="javascript:void(0);" style="padding: 15px 0;"><i class="icon-warn2"></i><span>建设中...</span></a>'
+							+ '<p>污染地块预警</p>'
+							+ '</div></div>';
+	           	}
+	           	if(contains(array,"43")){
+	           		html += '<div class="warnItem warnItem2"><div>'
+							+ '<a href="javascript:void(0);" style="padding: 15px 0;"><i class="icon-warn3"></i><span>建设中...</span></a>'
+							+ '<p>农用地土壤环境质量预警</p>'
+							+ '</div></div>';
+	           	}
+	           	if(contains(array,"44")){
+	           		html += '<div class="warnItem"><div>'
+							+ '<a href="javascript:void(0);" style="padding: 15px 0;"><i class="icon-warn4"></i><span>建设中...</span></a>'
+							+ '<p>舆情预警分析</p>'
+							+ '</div></div>';
+	           	}
+	           	if(contains(array,"45")){
+	           		html += '<div class="warnItem"><div>'
+							+ '<a href="javascript:void(0);" style="padding: 15px 0;"><i class="icon-warn5"></i><span>建设中...</span></a>'
+							+ '<p>重点区域预警</p>'
+							+ '</div></div>';
+	           	}
+	           	if(contains(array,"46")){
+	           		html += '<div class="warnItem"><div>'
+							+ '<a href="javascript:void(0);" style="padding: 15px 0;"><i class="icon-warn6"></i><span>建设中...</span></a>'
+							+ '<p>污染地块风险</p>'
+							+ '</div></div>';
+	           	}
+	           	
+	           	$("#warnMenuDiv").html(html);
+	       	}
+        })
+	}
+	getWarnMenu()
+</script>

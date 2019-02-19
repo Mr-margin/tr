@@ -1,0 +1,16 @@
+@charset "utf-8";
+.warn-host,.analyse-block,.warn-analyse{
+	height:auto !important;
+}
+.originData caption span{
+	width:130px !important;
+}
+ul.cards:hover li.card.card-1 {
+  right: 0;
+}
+ul.cards:hover li.card.card-2 {
+ right: 76px;
+}
+ul.cards:hover li.card.card-3 {
+ right: 153px;
+}

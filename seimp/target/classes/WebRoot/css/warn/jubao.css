@@ -1,0 +1,517 @@
+html, body, #map {
+ 	height: 100%;
+ 	margin: 0;
+ 	padding: 0;
+}
+table{
+    white-space:nowrap;
+}
+ul{
+    list-style-type: none;
+    padding:0;
+}
+.no-padding{
+    padding:0 !important;
+}
+.lt{
+    float: left;
+}
+.img-responsive{
+     height: 30px !important;
+     max-width: none;
+ }
+
+/*************图例************/
+#mylegend{
+	position: absolute;
+    z-index: 4;
+    background: white;
+    width: 350px;
+    padding: 10px;
+}
+
+#mylegend ul li{
+	height:30px;
+}
+#map{
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+li.left{
+	margin-left: -25px;
+}
+
+#mylegend div.lColor{
+	width: 40px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+    background: #2F4554;
+}
+
+#mylegend div.lCharacter{
+	margin-top: 3px;
+	font-size: 10px;
+}
+
+/**悬浮窗**/
+.fixed-table-toolbar {
+	display: none;
+}
+
+.floattool{
+	width: 38px;
+    height: 155px;
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    margin-top: -82px;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
+    z-index: 999;
+}
+
+.floattool .layer_nav .icon{
+	background:url(../../img/indexImg.png) -495px 0 no-repeat;
+	
+}
+
+.floattool .table_nav .icon{
+	background:url(../../img/indexImgGray.png) -517px 0 no-repeat
+}
+
+.floattool .graphic_nav .icon{
+	background:url(../../img/indexImgGray.png) -473px 0 no-repeat
+}
+
+.floattool .time_nav .icon{
+	background:url(../../img/indexImgGray.png) -451px 0 no-repeat
+}
+
+.floattool>div {
+	width: 38px;
+    font-size: 12px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.floattool .icon{
+	width: 22px;
+    height: 22px;
+    float: left;
+    margin: 8px;
+}
+
+/*地图选项显示*/
+.map-item{
+    background:url('../../img/warn/warn-section.png');
+    background-size:100% 100%;
+    height:52px;
+    max-width: 100%;
+    bottom: 0;
+    position: absolute;
+    margin:auto;
+    padding:15px 20px 0 20px ;
+}
+
+.map-item ul li{
+    padding:3px 16px;
+    height:20px;
+    border-right:1px solid #aaa;
+    text-align:center;
+    cursor:pointer;
+}
+
+.map-item ul li:last-child{
+    border-right:none;
+}
+
+.metal{
+    color:#2ca8d6;
+}
+
+/**切换底图**/
+.common-panel {
+    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+    background: #fff;
+    padding: 15px;
+    padding-bottom: 4px;
+    z-index: 999;
+    cursor: auto;
+}
+
+.layer-pop {
+    position: absolute;
+    z-index: 999;
+    right: 40px;
+    top: 0;
+    background: #fff;
+    border-radius: 3px;
+    width: 430px;
+    font-size: 13px;
+}
+
+.common-panel .close1 {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}
+
+.close1 {
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+.close{
+	width:14px !important;
+	height:14px !important;
+	opacity:1;
+	top:5px !important;
+	background: url(../../img/indexImg.png) -160px 0 no-repeat !important;
+}
+
+.common-panel .angle-to-right {
+    position: absolute;
+    top: 12px;
+    right: -5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.common-panel .common-panel-title, .common-panel-w .common-panel-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #333;
+    padding-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.layer-pop .layer-items {
+    padding-top: 13px;
+}
+
+.layer-pop .layer-items a {
+    width: 80px;
+    float: left;
+    text-align: center;
+    line-height: 20px;
+    color: #333;
+}
+
+.layer-pop .layer-items a img {
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+
+
+.layer-pop a.active img {
+    border: 2px solid #337fe5;
+}
+
+.layer-pop a.active {
+    color: #337fe5;
+}
+
+.layer-items img {
+    width: 74px;
+    height: 54px;
+}
+
+/**标题**/
+.float-tool-title {
+    background: #000;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    display: none;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 3px;
+    z-index: 1010;
+}
+
+.float-tool-title .title {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 25px;
+}
+
+.float-tool-title .right-arrow {
+    width: 0;
+    height: 0;
+    left: 50px;
+    top: 8px;
+    position: absolute;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+}
+
+/**统计表*/
+.main_table {
+    height: 380px;
+}
+
+.main_table {
+    width: 300px;
+    background: #fff;
+    opacity: .95;
+    position: absolute;
+    right: 151px;
+    top: 48px;
+    left: auto;
+    box-shadow: 0 0 15px #ccc;
+    overflow: hidden;
+    z-index: 1200;
+}
+
+.main_tabletop {
+    height: 30px;
+    background: #5193e8;
+    position: absolute;
+    top: 0;
+    cursor: move;
+}
+
+.tabtop_left {
+    float: left;
+    display: inline;
+    color: #fff;
+    line-height: 30px;
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tabtop_rt {
+    float: right;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+}
+
+
+.data1 {
+    margin: 12px 0;
+}
+
+.data1 .condition {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.data_mainle {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #333;
+    margin-top: 15px;
+}
+
+.data_mainrt {
+    float: left;
+    display: inline;
+    margin-top: 5px;
+}
+
+.select_datetime {
+    width: 91px;
+}
+
+.table-body {
+    height: 300px;
+    line-height: 30px;
+    text-align: center;
+    width: 290px;
+    position: absolute;
+    overflow: hidden;
+    top: 80px;
+    left: 9px;
+    font-size: 13px;
+}
+
+.maskTable {
+    width: 9px;
+    position: absolute;
+    height: 300px;
+    right: 0;
+    background: #fff;
+    top: 0;
+    border-left: 1px solid #ededed;
+}
+
+/***统计图**/
+.main_graphic {
+    position: absolute;
+    right: 151px;
+    top: 430px;
+    background: #fff;
+    box-shadow: 0 0 15px #ccc;
+    font-size: 11px;
+    width: 430px;
+    height: 270px;
+    z-index: 1200;
+}
+
+#static_chart {
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    margin-top: 55px;
+    overflow: hidden;
+}
+
+/**时间轴**/
+.time-axis {
+    width: 260px;
+    position: absolute;
+    z-index: 101;
+    /* overflow: hidden; */
+    top: 829px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    padding: 10px;
+}
+
+/***提示**/
+.dlbtips, .noDataTips {
+    position: absolute;
+    left: 50%;
+    top: 335px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: -105px;
+    opacity: .7;
+    background: #151516;
+    font-size: 15px;
+    z-index: 100;
+}
+
+.tabtop_left {
+    float: left;
+    display: inline;
+    color: #fff;
+    line-height: 30px;
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tabtop_rt {
+    float: right;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+}
+
+/***时间滑动条***/
+#ex1Slider .slider-selection {
+    background: #ad3;
+}
+
+#ex1Slider{
+	margin-left: 20px;
+    margin-right: 20px;
+}
+
+/***********图例***********/
+#mapInfo{
+	position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    background-color: #999;
+    font: 14px Segoe UI;
+    width: 200px;
+    text-align: center;
+    border-radius: 0 0 0 10px;
+}
+
+/*******************弹出框样式*******/
+.tdstyle{
+	width:20px;
+}
+
+.activebtn{
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border:1px solid #337ab7;
+    position: relative;
+    padding: 3px 6px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    text-decoration: none;
+}
+.simpleInfoWindow{
+    position: relative;
+}
+.simpleInfoWindow table{
+    height: 90%;
+    margin:0;
+}
+.simpleInfoWindow table tr td{
+    padding:5px 5px;
+    border-right:none;
+    border-left:none;
+}
+.simpleInfoWindow .boxButton{
+    position: absolute;
+    bottom:5px;
+    text-align: center;
+    width: 100%;
+}
+
+/*********右上角按钮*****/
+.none {
+    display: none;
+}
+
+/***********详情列表分页************/
+.boxButton{
+	position: absolute;
+    bottom: 20px;
+    left: 48%;
+}
+
+.table>tbody>tr>td{
+	padding:5px;
+}
+
+/******************横线**************/
+hr{
+	margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #aba5a5;
+}
+.large{
+	float: right;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../../img/max_big.png) no-repeat;
+    cursor: pointer;
+    background-size: 100%;
+    margin: 8px 8px 0 0;
+}

@@ -1,0 +1,83 @@
+<style>
+	#pwModal .modal-dialog {
+	    width: 80%;
+	    margin: auto;
+	    position:fixed;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    height: 95%;
+	}
+</style>
+<script>
+function isIE() { //ie?
+ if (!!window.ActiveXObject || "ActiveXObject" in window)
+  return true;
+  else{
+  	$("#pwModal .modal-dialog").css("position","absolute")
+  }
+ }
+isIE()
+</script>
+<div class="data clearfix">
+	<div class="data-left pull-left clearfix">
+		<h2 class="clearfix"><i class="iconfont icon-list pull-left"></i>资源目录</h2>
+	    <div class="menu">
+	        <ul>
+	            <li class="dataSort">
+	            	<a href="javascript:void(0);" class="active"><i class="iconfont icon-bottom"></i><span>按数据分类</span></a>
+		            <div class="sub_menu menu1"></div>
+		            <!-- 目录列表 -->
+					<div class="floatMenu"><div></div></div>
+	            </li>
+	             <li>
+	            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>按部委分类</span></a>
+	            	<div class="sub_menu menu2" ></div>
+	            </li> 
+	           <!--  <li>
+	            	<a href="javascript:void(0);" ><b class="iconfont icon-bottom"></b><span>按主题分类</span></a>
+	            </li> -->
+	        </ul>
+	    </div>
+		<div class="data-bottom" >
+			<div id="imgThree"></div>
+            <div id="imgOne"></div>
+            <div id="imgTwo"></div>
+        </div>	
+	
+		
+	</div>
+	<div class="data-right pull-right">
+		<div class="box_crumbs clearfix">
+		    <img class="pull-left" src="img/map_title.png" >
+		    <i class="pull-left">当前位置：</i>
+		    <p class="crumbs pull-left no-padding"></p>
+		</div>
+		<iframe id="myiframe" name="myiframe"  allowtransparency="true" src="views/data/dataIndex.html" width="100%"  frameborder="0" style="border:none" ></iframe>
+	</div>
+</div>
+
+<!-- 正在等待 -->
+<div id="yc">
+</div>
+
+ <!-- 数据详情弹出框 -->
+        <div class="modal fade" id="pwModal" tabindex="-1" role="dialog" aria-labelledby="pwModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                	<div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel1"></h4>
+		            </div>
+                    <div class="modal-body">
+                        <div id="detailsDiv">
+				        	<div class="detailsDivBocy" >
+				        		<!-- <iframe id="detailsIframe" src="views/data/detailIframe/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe> -->
+				        		<iframe id="detailsIframe" src="" style="width: 100%;height: 600px;" class="pwModal"></iframe>
+				        	</div>
+				        </div>
+                    </div>
+                   
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>

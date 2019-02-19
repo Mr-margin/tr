@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta content="yes" name="apple-touch-fullscreen"> 
+    <meta content="telephone=no,email=no" name="format-detection"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/QrStyle.min.css"/>
+    <script src="js/flex.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script> -->
+    <script type="text/javascript" src="../js/config.js"></script>
+    <script src="js/echarts.simple.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--ie8兼容bootstrap解决方案-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="wraper">
+		<div class="row">
+			<h1 class="col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2 "></h1>
+		</div>
+		<div class="body">
+			<div class="p35-20">
+				<h2></h2>
+				<hr class="hr1"/>
+				<hr class="hr2"/>
+			</div>
+			<div class="tab">
+				<ul class="row tab-list">
+					<li class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center active" href="#tabOne" >基本信息</li>
+					<li class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" href="#tabTwo">数据生产信息</li>
+					<li class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" href="#tabThree" >数据入库信息</li>
+				</ul>
+				<div class="tab-content">
+					<!--基本信息-->
+					<div class="tab-pane active" id="tabOne">
+						<ul>
+							<li data="数据名称"><p id="tab1"></p></li>
+							<li data="数据提供单位"><p id="tab2"></p></li>
+							<li data="数据量"><p id="tab3"></p></li>
+							<li data="访问量"><p id="tab4"></p></li>
+							<li data="数据分类"><p id="tab5"></p></li>
+							<li data="数据更新时间"><p id="tab6"></p></li>
+							<li data="联系人"><p id="tab7"></p></li>
+							<li data="联系人电话"><p id="tab8"></p></li>
+							<li data="联系人邮箱"><p id="tab9"></p></li>
+							<li data="单位地址"><p id="tab10"></p></li>
+							<li data="空间位置"><p id="tab11"></p></li>
+							<li data="主题词"><p id="tab12"></p></li>
+							<li data="数据摘要"><p id="tab13"></p></li>
+							<li data="使用声明"><p id="tab14"></p></li>
+						</ul>
+						<h3>
+							<span class="sbx"><i></i></span>
+							更新数量统计
+						</h3>
+						<div id="updata_chart" style="width: 100%;height:300px;padding: 0 20px;"></div>
+					</div>
+					<!--数据生产信息-->
+					<div class="tab-pane " id="tabTwo">
+						<ul>
+							<li data="单位名称"><p id="tab15"></p></li>
+							<li data="联系人"><p id="tab16"></p></li>
+							<li data="联系人电话"><p id="tab17"></p></li>
+							<li data="联系人邮箱"><p id="tab18"></p></li>
+							<li data="单位地址"><p id="tab19"></p></li>
+						</ul>
+					</div>
+					<!--数据入库信息-->
+					<div class="tab-pane " id="tabThree">
+						<ul>
+							<li data="单位名称"><p id="tab20"></p></li>
+							<li data="联系人"><p id="tab21"></p></li>
+							<li data="联系人电话"><p id="tab22"></p></li>
+							<li data="联系人邮箱"><p id="tab23"></p></li>
+							<li data="单位地址"><p id="tab24"></p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/QrScript.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

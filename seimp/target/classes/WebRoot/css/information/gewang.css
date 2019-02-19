@@ -1,0 +1,624 @@
+/*地图选项卡*/
+.map-table{
+    width:100%;
+    height:50px;
+    background:linear-gradient(rgb(255,255,255),rgb(236,232,233));
+}
+.no-padding{
+    padding:0 !important;
+}
+.map-table>div{
+    height:50px;
+    width:180px;
+    text-align:center;
+    line-height:50px;
+    font-size:20px;
+    cursor:pointer;
+}
+.map-contain{
+    height:93%
+}
+.table-contain{
+    height:100%
+}
+.table-contain .area-check{
+    height:100px;
+    width:100%;
+    padding: 25px 0 0 20px;
+}
+.table-contain .table-all{
+    /*height:100%;*/
+    width:100%;
+}
+.table-contain .table-all table{
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.table-contain .table-all table tr{
+    height:34px;
+}
+table th,table td{
+    text-align:center;
+    border-right: 1px solid #ddd;
+    color:#a0a0a0;
+    font-size:14px;
+}
+.table-contain .table-all table tr td:last-child{
+    border-right: none;
+}
+.table-contain .table-all table tr th:last-child{
+    border-right: none;
+}
+.table>thead>tr>th{
+    border-bottom:1px solid #ddd;
+    vertical-align:middle;
+}
+
+/*行政区划选项*/
+.table-contain  .area-check>div{
+    height:51px;
+    width:218px;
+    margin-left:30px;
+    position:relative;
+}
+.table-contain  .area-check>div .look-search{
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+}
+.table-contain  .area-check>div:first-child{
+    margin-left:0;
+}
+.table-contain  .area-check>div input{
+    display:block;
+    width:100%;
+    height:100%;
+    background:url('../../img/infor/country.png') no-repeat;
+    background-size:cover;
+    border:none;
+    padding-left:15px;
+}
+.table-contain  .area-check>div .slide-input{
+    display:block;
+    width:100%;
+    height:100%;
+    background:url('../../img/infor/country.png') no-repeat;
+    background-size:cover;
+    border:none;
+    position:relative;
+}
+/*省*/
+.slide-input .country-btn{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    line-height:50px;
+    font-size:14px;
+    font-weight:bold;
+    outline:0 !important;
+
+}
+/*市*/
+.slide-input .province-btn{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    line-height:50px;
+    font-size:14px;
+    font-weight:bold;
+    outline:0 !important;
+}
+
+/*区*/
+.slide-input .city-btn{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    line-height:50px;
+    font-size:14px;
+    font-weight:bold;
+    outline:0 !important;
+}
+
+.slide-input .slide-btn{
+    position:absolute;
+    top:11px;
+    right:10px;
+}
+.slide-input ul.dropdown-menu{
+    width:218px !important;
+}
+/*下拉框统一样式*/
+.btn-default.active.focus, .btn-default.active:focus,
+.btn-default.active:hover, .btn-default:active.focus,
+.btn-default:active:focus, .btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus, .open>
+.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover {
+    background-color: inherit;
+    border-color: inherit;
+}
+
+.slide-input ul.dropdown-menu li{
+    font-size:13px;
+}
+
+
+/*公用类*/
+.map-table-color{
+    background: linear-gradient(rgb(38,168,224),rgb(15,106,191));
+    color:#fff;
+}
+
+.borderColor{
+    border:3px solid rgba(15,106,191,0.8) !important;
+}
+
+.information-right {
+	z-index: 4;
+	position: absolute;
+	right: -51px;
+	top: 15px;
+	padding-top: 10px;
+	padding-left: 20px;
+	width: 150px;
+	
+}
+
+#map div.warn-right ul li{
+	margin-bottom: 10px;
+	width: 100px;
+}
+
+/**悬浮窗**/
+.fixed-table-toolbar {
+	display: none;
+}
+
+.floattool{
+	width: 38px;
+    height: 155px;
+    position: absolute;
+    left: 95.5%;
+    top: 57.5%;
+    margin-top: -82px;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
+    z-index: 999;
+}
+
+.floattool .layer_nav .icon{
+	background:url(../../img/indexImg.png) -495px 0 no-repeat;
+	
+}
+
+.floattool .table_nav .icon{
+	background:url(../../img/indexImgGray.png) -517px 0 no-repeat
+}
+
+.floattool .graphic_nav .icon{
+	background:url(../../img/indexImgGray.png) -473px 0 no-repeat
+}
+
+.floattool .time_nav .icon{
+	background:url(../../img/indexImgGray.png) -451px 0 no-repeat
+}
+
+.floattool>div {
+	width: 38px;
+    font-size: 12px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.floattool .icon{
+	width: 22px;
+    height: 22px;
+    float: left;
+    margin: 8px;
+}
+
+/**切换底图**/
+.common-panel {
+    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+    background: #fff;
+    padding: 15px;
+    padding-bottom: 4px;
+    z-index: 999;
+    cursor: auto;
+}
+
+.layer-pop {
+    position: absolute;
+    z-index: 999;
+    right: 40px;
+    top: 0;
+    background: #fff;
+    border-radius: 3px;
+    width: 430px;
+    font-size: 13px;
+}
+
+.common-panel .close1 {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}
+
+.close1 {
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+.close{
+	width:14px !important;
+	height:14px !important;
+	opacity:1;
+	left:250px !important;
+	top:3px !important;
+	background: url(../../img/indexImg.png) -160px 0 no-repeat !important;
+
+}
+
+.common-panel .angle-to-right {
+    position: absolute;
+    top: 12px;
+    right: -5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.common-panel .common-panel-title, .common-panel-w .common-panel-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #333;
+    padding-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.layer-pop .layer-items {
+    padding-top: 13px;
+}
+
+.layer-pop .layer-items a {
+    width: 80px;
+    float: left;
+    text-align: center;
+    line-height: 20px;
+    color: #333;
+}
+
+.layer-pop .layer-items a img {
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+
+
+.layer-pop a.active img {
+    border: 2px solid #337fe5;
+}
+
+.layer-pop a.active {
+    color: #337fe5;
+}
+
+.layer-items img {
+    width: 74px;
+    height: 54px;
+}
+
+/**标题**/
+.float-tool-title {
+    background: #000;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    display: none;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 3px;
+    z-index: 1010;
+}
+
+.float-tool-title .title {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 25px;
+}
+
+.float-tool-title .right-arrow {
+    width: 0;
+    height: 0;
+    left: 50px;
+    top: 8px;
+    position: absolute;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+}
+
+/**统计表*/
+.main_table {
+    height: 380px;
+}
+
+.main_table {
+    width: 300px;
+    background: #fff;
+    opacity: .95;
+    position: absolute;
+    right: 151px;
+    top: 48px;
+    left: auto;
+    box-shadow: 0 0 15px #ccc;
+    overflow: hidden;
+    z-index: 1200;
+}
+
+.main_tabletop {
+    height: 30px;
+    background: #5193e8;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+
+.tabtop_left {
+    float: left;
+    display: inline;
+    color: #fff;
+    line-height: 30px;
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tabtop_rt {
+    float: right;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+}
+
+
+.data1 {
+    margin: 12px 0;
+}
+
+.data1 .condition {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.data_mainle {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #333;
+    margin-top: 15px;
+}
+
+.data_mainrt {
+    float: left;
+    display: inline;
+    margin-top: 5px;
+}
+
+.select_datetime {
+    width: 91px;
+}
+
+.table-body {
+    height: 300px;
+    line-height: 30px;
+    text-align: center;
+    width: 290px;
+    position: absolute;
+    overflow: hidden;
+    top: 80px;
+    left: 9px;
+    /* border-left: 1px solid #ededed; */
+    font-size: 13px;
+}
+
+.maskTable {
+    width: 9px;
+    position: absolute;
+    height: 300px;
+    right: 0;
+    background: #fff;
+    top: 0;
+    border-left: 1px solid #ededed;
+}
+
+/***统计图**/
+.main_graphic {
+    position: absolute;
+    right: 151px;
+    top: 430px;
+    background: #fff;
+    box-shadow: 0 0 15px #ccc;
+    font-size: 11px;
+    width: 430px;
+    height: 270px;
+    z-index: 1200;
+}
+
+#static_chart {
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    margin-top: 55px;
+    overflow: hidden;
+}
+
+/**时间轴**/
+.time-axis {
+    width: 260px;
+    position: absolute;
+    z-index: 101;
+    /* overflow: hidden; */
+    top: 829px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    padding: 10px;
+}
+
+/***提示**/
+.dlbtips, .noDataTips {
+    position: absolute;
+    left: 50%;
+    top: 335px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: -105px;
+    opacity: .7;
+    background: #151516;
+    font-size: 15px;
+    z-index: 100;
+}
+
+.tabtop_left {
+    float: left;
+    display: inline;
+    color: #fff;
+    line-height: 30px;
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tabtop_rt {
+    float: right;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../../img/indexImg.png) -160px 0 no-repeat;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+}
+
+/*******格网弹出框***********/
+.geWangmain_table {
+    height: 30px;
+    background: #5193e8;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+
+.geWangDiv{
+	width: 300px;
+    background: #fff;
+    opacity: .95;
+    position: absolute;
+    right: 151px;
+    top: 48px;
+    left: auto;
+    box-shadow: 0 0 15px #ccc;
+    overflow: hidden;
+    z-index: 1200;
+}
+
+/*地图选项显示*/
+.map-item{
+    background:url('../../img/warn/warn-section.png');
+    background-size:100% 100%;
+    height:54px;
+    max-width: 100%;
+    bottom: 0;
+    position: absolute;
+    margin:auto;
+    z-index:99;
+    padding:17px 0px 0 0px ;
+}
+
+.map-item ul li{
+    padding:3px 16px;
+    height:20px;
+    border-right:1px solid #aaa;
+    text-align:center;
+    cursor:pointer;
+}
+
+.map-item ul li:last-child{
+    border-right:none;
+}
+
+.metal{
+    color:#2ca8d6;
+}
+
+.home_title {
+    font-size: 18px;
+    font-weight: 1000;
+}
+
+.simpleInfoWindow .content{
+    margin-top: 10px;
+}
+
+/*************图例************/
+#mylegend{
+	position: absolute;
+    z-index: 4;
+    background: white;
+    width: 350px;
+    padding: 10px;
+}
+
+#mylegend ul li{
+	height:30px;
+}
+#map{
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+li.left{
+	margin-left: -25px;
+}
+
+#mylegend div.lColor{
+	width: 40px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+    background: #2F4554;
+}
+
+#mylegend div.lCharacter{
+	margin-top: 3px;
+	font-size: 10px;
+}
+
+/******************横线**************/
+hr{
+	margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #aba5a5;
+}

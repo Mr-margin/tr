@@ -1,0 +1,1268 @@
+<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+<style>
+	#pwModal .modal-dialog{
+		width: 80%;
+	    margin: auto;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	}
+	
+</style>
+<div class="informations clearfix tundra"  style="position:relative">
+	
+    <div class="info_left pull-left">
+    	<ul class="info_menuTip">
+    		<li style="border-right: 0;" class="list_active">图层目录</li>
+    		<li style="border-right: 0;">图层控制</li>
+    		<li>图例</li>
+    	</ul>
+		<div class="info_menuList menuList1">
+			<div class="typeShow">
+				 <label style="margin-left: 33%;" class="typeShow_active">
+	                <input type="radio" name="typeShow"  data="专题图" checked/>
+	                <span>专题图</span>
+	                <p class="typeShowp1"></p>
+	                <i class="iconfont icon-bottom typeShow1"></i>
+	            </label>
+	            <label>
+	                <input type="radio" name="typeShow"  data="分布图" style="margin-right:0;"/>
+	                <span>分布图</span>
+	                <p class="typeShowp2" style="display:none;"></p>
+	                <i class="iconfont icon-bottom typeShow2" style="display:none;"></i>
+	            </label>
+	    	</div>
+    		<div class="list1">
+		        <ul id="leftMenu">
+		        	
+		            <li class="soilDl">
+		            	<a href="javascript:void(0);"><i class="iconfont icon-bottom"></i><span>土壤污染来源</span></a>
+			            <div class="sub_menu">
+			            	<div>
+			            		<div class="radio radio-info">
+								      <input type="radio" id="radio1" name="radio2" data="建设项目环评_5">
+								      <label for="radio1">建设项目环评</label>
+                                      <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(5,this)"></i>
+								</div>
+				        	</div>
+				            <div>
+				            	<div class="radio radio-info">
+								      <input type="radio" id="radio2" name="radio2" data="排污许可数据_6">
+								      <label for="radio2">排污许可数据</label>
+                                      <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(6,this)"></i>
+								</div>
+				        	</div>
+				        	<div>
+				        		<div class="radio radio-info">
+								      <input type="radio" id="radio3" name="radio2" data="尾矿库（绿网）_3">
+								      <label for="radio3">尾矿库（绿网）</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(3,this)"></i>
+								</div>
+				        	</div>
+				            <div>
+				            	<div class="radio radio-info">
+								      <input type="radio" id="radio4" name="radio2" data="重点监管企业遥感核查_2">
+								      <label for="radio4">重点监管企业遥感核查</label>
+                                      <i class="iconfont icon-filter" onclick="opernModal(2,this)" style="float:right;cursor: pointer;"></i>
+
+								</div>
+				            </div>
+				            <div>
+				            	<div class="radio radio-info">
+								      <input type="radio" id="radio5" name="radio2" data ="淘汰落后产能企业_4">
+								      <label for="radio5">淘汰落后产能企业</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(4,this)"></i>
+								</div>
+				            </div>
+				            <div>
+				            	<div class="radio radio-info">
+								      <input type="radio" id="radio6" name="radio2" data="工商企业登记信息_7">
+								      <label for="radio6">工商企业登记信息</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(7,this)"></i>
+								</div>
+				            </div>
+				            <div>
+				            	<div class="radio radio-info">
+								      <input type="radio" id="radio7" name="radio2" data="重点行业监管企业_8">
+								      <label for="radio7">重点行业监管企业</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(8,this)"></i>
+								</div>
+				            </div>
+			            </div>
+		            </li>
+		            <li class="wurandikuai">
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>污染地块</span></a>
+		            	<div class="sub_menu freeH" >
+		            		<div>
+			            		<div class="radio radio-info">
+								    <input type="radio" id="checkbox8" name="radio2" data="疑似污染地块_11">
+								    <label for="checkbox8">疑似污染地块</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(11,this)"></i>
+								 </div>
+				        	</div>
+				        	<div>
+			            		<div class="radio radio-info">
+								    <input type="radio" id="checkbox9" name="radio2" data="污染地块_1">
+								    <label for="checkbox9">污染地块</label>
+                                    <i class="iconfont icon-filter"  style="margin-right: 20px;float:right;cursor: pointer;" onclick="opernModal(1,this)"></i>
+								 </div>
+				        	</div>
+				        	
+		            	</div>
+		            </li> 
+		            <li>
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>农用地土壤环境质量</span></a>		            	
+		            </li> 
+		            <li>
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>土壤环境例行监测</span></a>		            	
+		            </li> 
+		            <li>
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>土壤环境调查</span></a>		            	
+		            </li> 
+		            <li class="kjwg">
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>空间网格</span></a>
+                        <div class="sub_menu freeH" >
+                            <div class="kjwg">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="wg" data="公里网格">
+                                    <label for="wg">公里网格</label>
+                                </div>
+                            </div>
+                        </div>
+		            </li> 
+		            <li>
+		            	<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>舆情数据</span></a>
+
+		            </li>
+					<li class="basicDl">
+						<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>基础地理</span></a>
+						<div class="sub_menu freeH" >
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox1" data="省级行政界线">
+									<label for="checkbox1">省级行政界线</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox2" data="市级行政界线">
+									<label for="checkbox2">市级行政界线</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox3" data="县级行政界线">
+									<label for="checkbox3">县级行政界线</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox4" data="河流">
+									<label for="checkbox4">河流</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox5" data="道路">
+									<label for="checkbox5">道路</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox6" data="土地利用">
+									<label for="checkbox6">土地利用</label>
+								</div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox7" data="土壤类型">
+									<label for="checkbox7">土壤类型</label>
+								</div>
+							</div>
+							<!--<div class="others">-->
+								<!--<ul>-->
+									<!--<li>-->
+										<!--<a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>其他</span></a>-->
+										<!--<div class="sub_menu" >-->
+											<!--<div>-->
+												<!--<div class="checkbox">-->
+													<!--<input type="checkbox" id="checkbox12" data="灌区">-->
+													<!--<label for="checkbox12">灌区</label>-->
+												<!--</div>-->
+											<!--</div>-->
+                                            <!--<div>-->
+                                                <!--<div class="checkbox">-->
+                                                    <!--<input type="checkbox" id="checkbox13" data="人口">-->
+                                                    <!--<label for="checkbox13">人口</label>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+										<!--</div>-->
+									<!--</li>-->
+								<!--</ul>-->
+								<!---->
+							<!--</div>-->
+						</div>
+					</li>
+                    <li class="qita">
+                        <a href="javascript:void(0);" ><i class="iconfont icon-bottom"></i><span>其他</span></a>
+                        <div class="sub_menu" >
+                            <div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox12" data="大型灌区分布">
+                                    <label for="checkbox12">大型灌区分布</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox13" data="人口分布">
+                                    <label for="checkbox13">人口分布</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                     
+                </ul>
+		    </div>
+    	</div>
+    	<!--图层控制工具-->
+    	<div class="info_menuList" style="overflow: auto !important;">
+    		<div class="tool_hover sortable-list connectList agile-list">
+                <div class="warning-element clearfix"  data="layer0" style="display:none;">
+                	<i class="fa fa-eye fa-lg eye pull-left" checked="true" data="layer0"></i>
+                	<div class="row pull-left">
+                		<div class="col-sm-12">
+	                        <span style="cursor: move;">谷歌影像</span>
+	                    </div>
+	                    <div class="col-sm-12">
+	                        <div class="layer0" style="width:100%;height: 2px;margin-right: 20px;"></div>
+	                    </div>
+                	</div>
+                </div>
+                <div class="warning-element clearfix" data="annoLayerImg" style="display:none;">
+                	<i  class="fa fa-eye fa-lg eye pull-left" checked="true" data="annoLayerImg"></i>
+                	<div class="row pull-left">
+                		<div class="col-sm-12">
+	                        <span style="cursor: move;">中文注记</span>
+	                    </div>
+	                    <div class="col-sm-12">
+	                        <div class="annoLayerImg" style="width:100%;height: 2px;margin-right: 20px;"></div>
+	                    </div>
+                	</div>
+                </div>
+                <div class="warning-element clearfix"  data="baseLayer" style="display:none;">
+                	<i class="fa fa-eye fa-lg eye pull-left" checked="true" data="baseLayer"></i>
+                	<div class="row pull-left">
+                		<div class="col-sm-12">
+	                        <span style="cursor: move;">影像</span>
+	                    </div>
+	                    <div class="col-sm-12">
+	                        <div class="baseLayer" style="width:100%;height: 2px;margin-right: 20px;"></div>
+	                    </div>
+                	</div>
+                </div>
+                <div class="warning-element clearfix"  data="vectorNoteLayer">
+                	<i class="fa fa-eye fa-lg eye pull-left" checked="true" data="vectorNoteLayer"></i>
+                	<div class="row pull-left">
+                		<div class="col-sm-12">
+	                        <span style="cursor: move;">中文注记</span>
+	                    </div>
+	                    <div class="col-sm-12">
+	                        <div class="vectorNoteLayer" style="width:100%;height: 2px;margin-right: 20px;"></div>
+	                    </div>
+                	</div>
+                </div>
+                <div class="warning-element clearfix"  data="vectorLayer">
+                	<i class="fa fa-eye fa-lg eye pull-left" checked="true" data="vectorLayer"></i>
+                	<div class="row pull-left">
+                		<div class="col-sm-12">
+	                        <span style="cursor: move;">矢量图</span>
+	                    </div>
+	                    <div class="col-sm-12">
+	                        <div class="vectorLayer" style="width:100%;height: 2px;margin-right: 20px;"></div>
+	                    </div>
+                	</div>
+                </div>
+            </div>
+    	</div>
+    	<div class="info_menuList tuli" style="overflow: auto !important;">
+
+    	</div>
+    </div>
+    <div  id="toggle-sidebar"  title="收起菜单"   onclick="toggleBar()"  ><img src="img/information/toggle2.png"   style="transform:rotate(-180deg)"/></div>
+   <div  class="infor-maps  pull-right">
+   			
+   			<div class="infor-map ">
+    			
+        <!-- 地图-start -->
+        <div id="map" style="height: 100%;"></div>
+        <!-- 地图-end -->
+		<!-- 工具栏 -->
+		
+		<ul  class="map_representation">
+				<li title="返回全国"><i class="map_res1"></i></li>
+	       		<li  title="量距"><i class="map_res2 tool-jl"></i></li>
+	       		<li  title="量面"><i class="map_res3 tool-mj"></i></li>
+	       		<li onclick="qingHua()" title="清空"><i class="map_res4"></i></li>
+	       		<li class="tab" title="表格"><i class="map_res5"></i></li>
+	       		<li id="attributesSearchLi" onclick="startAttributeSearch()" title="属性查询"><i class="map_res6"></i></li>				
+			</ul>
+		<!-- 影像图控制显示 -->
+		<div class="map_type">
+			<ul class="cards">
+				<li class="card card-1 type1"></li>
+			  	<li class="card card-2 type2"></li>
+			  	<li class="card card-3 type3 type_active" style="z-index:11;"></li>
+			  	<span></span>
+			</ul>
+		</div>
+        
+        <div class="map_blc">
+            <div id="scalebar"></div>
+            <span>当前经纬度：<strong class="jwd">109.803818,36.940145</strong></span>
+        </div>
+        
+        <div id="tongjituDiv" class="mobile_table" style="display: none">
+            <div class="table-title" id="main_tabletitle">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <div><span id="title">数据</span></div>
+                    <p>
+                        <i data="1" class="large" ></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+                <table id="tongjibiao" class="table table-striped" style="height:initial">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="tongjituDiv_2" class="mobile_table" style="display:none;right:0px;left:400px; z-index: 1300;">
+            <div class="table-title" id="main_tabletitle2">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <div><span id="title1">数据</span></div>
+                    <p>
+                        <i data="1" class="large" style="background:none;"></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+
+            </div>
+
+        </div>
+
+        <div id="wanggeMessage" class="mobile_table" style="display: none;    width: 240px;">
+            <div class="table-title" style="width: 240px;">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <div><span id="">网格信息</span></div>
+                    <p>
+                        <i data="1" class="large" style="background:none;"></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix wanggeMessage" style="text-align:left;line-height:13px">
+
+            </div>
+
+        </div>
+        <div id="info_table1" class="mobile_table" style="display:none;">
+            <div class="table-title" >
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <div><span id="title">数据1</span></div>
+                    <p>
+                       <i data="1" class="large" style="background:none;"></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+
+            </div>
+
+        </div>
+        <div id="info_table2" class="mobile_table" style="right:0px;left:400px;display:none;">
+            <div class="table-title">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <div><span id="title">数据2</span></div>
+                    <p>
+                       <a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+
+            </div>
+
+        </div>
+        <!-- 省/市/县显示弹窗 --> 
+		<div class="menuTip modal-header" style="display:none;" >
+			<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+            <h4 class="modal-title" ></h4> --> 
+            <div>
+            	<a href="javascript:void(0);" onclick="fanhuiAll()" id="fanhuiAll" value="all" >
+            		<i class="iconfont icon-return"></i>全国
+            	</a>
+                <a href="javascript:void(0);" onclick="fanhuiSheng()" id="fanhuiSheng" value="" style="display:none;"></a>
+                <a href="javascript:void(0);" onclick="fanhuiShi()" id="fanhuiShi" value="" style="display:none;"></a>
+            </div>
+		</div>
+
+        <!-- 模态框（Modal） -->
+        <div class="info_modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">污染地块条件查询</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                        	<div class="clearfix info_wrdk" style="display:none">
+                        		<!--<div class="form-group col-lg-3 col-md-3 clearfix" style="width:25%">-->
+	                                <!--<label for="provice" class="pull-left control-label">省：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<select class="form-control" id="provice"  onchange="getCity()" >-->
+	                                        <!--<option value="">请选择省、自治区</option>-->
+	                                    <!--</select>-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+	                            <!--<div class="form-group modal-shi col-lg-3 col-md-3 clearfix" style="width:25%">-->
+	                                <!--<label for="city" class="pull-left control-label">市：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<select class="form-control" id="city" onchange="getCounty()" disabled="disabled">-->
+	                                        <!--<option value="">请选择市、自治州</option>-->
+	                                    <!--</select>-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+	                            <!--<div class="form-group modal-xian col-lg-3 col-md-3 clearfix" style="width:22%">-->
+	                                <!--<label for="county" class="pull-left control-label">县：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<select class="form-control" id="county" onchange="getXian()" disabled="disabled">-->
+	                                        <!--<option value="">请选择区、县</option>-->
+	                                    <!--</select>-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+	                            <!--<div class="form-group scjd col-lg-3 col-md-3 clearfix" style="width:28%">-->
+	                                <!--<label for="pos" class="pull-left control-label">所处阶段：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<select class="form-control" id="scjd">-->
+	                                        <!--<option value="">请选择地块所属阶段</option>-->
+	                                        <!--<option value="S0">疑似地块</option>-->
+	                                        <!--<option value="S1">初步调查</option>-->
+	                                        <!--<option value="S2">详细调查</option>-->
+	                                        <!--<option value="S3">风险评估</option>-->
+	                                        <!--<option value="S4">风险管控</option>-->
+	                                        <!--<option value="S5">土壤修复与治理</option>-->
+	                                        <!--<option value="S6">土壤修复与治理评估</option>-->
+	                                    <!--</select>-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+	                            <!--<div class="form-group scjd col-lg-3 col-md-3 clearfix" style="width:25%">-->
+	                                <!--<label for="pos" class="pull-left control-label">风险级别：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<select class="form-control" id="fxjb">-->
+	                                        <!--<option value="">请选择风险级别</option>-->
+	                                        <!--<option value="无风险">无风险</option>-->
+	                                        <!--<option value="低风险">低风险</option>-->
+	                                        <!--<option value="中风险">中风险</option>-->
+	                                        <!--<option value="高风险">高风险</option>-->
+	                                        <!--<option value="暂未确定">暂未确定</option>-->
+	                                    <!--</select>-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+	                            <!--<div class="form-group dkbm col-lg-3 col-md-3 clearfix" style="width:32%">-->
+	                                <!--<label for="code" class="pull-left control-label">地块编码：</label>-->
+	                                <!--<div class="pull-left">-->
+	                                    <!--<input type="text" id="dkbm" class="form-control">-->
+	                                <!--</div>-->
+	                            <!--</div>-->
+                        	</div>
+                            <div class="form-group info_wrdks">
+                                <label for="provice" class="col-sm-4 control-label">省：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="provice"  onchange="getCity()" >
+                                        <option value="">请选择省、自治区</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group modal-shi info_wrdks">
+                                <label for="city" class="col-sm-4 control-label">市：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="city" onchange="getCounty()" >
+                                        <option value="">请选择市、自治州</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group modal-xian info_wrdks">
+                                <label for="county" class="col-sm-4 control-label">县：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="county" onchange="setXianCode()" >
+                                        <option value="">请选择区、县</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group scjd info_wrdks">
+                                <label for="pos" class="col-sm-4 control-label">所处阶段：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="scjd">
+                                        <option value="">请选择地块所属阶段</option>
+                                        <option value="S0">疑似地块</option>
+                                        <option value="S1">初步调查</option>
+                                        <option value="S2">详细调查</option>
+                                        <option value="S3">风险评估</option>
+                                        <option value="S4">风险管控</option>
+                                        <option value="S5">土壤修复与治理</option>
+                                        <option value="S6">土壤修复与治理评估</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group scjd info_wrdks">
+                                <label for="pos" class="col-sm-4 control-label">风险级别：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="fxjb">
+                                        <option value="">请选择风险级别</option>
+                                        <option value="无风险">无风险</option>
+                                        <option value="低风险">低风险</option>
+                                        <option value="中风险">中风险</option>
+                                        <option value="高风险">高风险</option>
+                                        <option value="暂未确定">暂未确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group dkbm info_wrdks" >
+                                <label for="code" class="col-sm-4 control-label">地块编码：</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="dkbm" class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="form-group dkbm info_wrdks" >
+                                <label for="code" class="col-sm-4 control-label">污染地块名称：</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="dkmc" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="jianshe">
+                            	<div class="form-group">
+	                                <label for="pos" class="col-sm-4 control-label">数量来源：</label>
+	                                <div class="col-sm-8">
+	                                    <select class="form-control" id="js_sjly">
+	                                        <option value="">全部</option>
+	                                        <option value="数据交换平台">数据交换平台</option>
+	                                        <option value="数据直报系统">数据直报系统</option>
+	                                        <option value="手工报送">手工报送</option>
+	                                    </select>
+	                                </div>
+                                </div>
+                                <div class="form-group">
+	                                <label for="pos" class="col-sm-4 control-label">环评行业名称：</label>
+	                                <div class="col-sm-8">
+	                                    <select class="form-control" id="js_hphymc">
+	                                        
+	                                    </select>
+	                                </div>
+                                </div>
+                                <div class="form-group">
+	                                <label for="pos" class="col-sm-4 control-label">国民经济名称：</label>
+	                                <div class="col-sm-8">
+	                                    <select class="form-control" id="js_gmjjmc">
+	                                        
+	                                    </select>
+	                                </div>
+                                </div>
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">受理日期起：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="js_slrqq" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">受理日期止：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="js_slrqz" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pwxksj" style="display:none;">
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">许可证书编号：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="xkznum" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">工业园区：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="ispapk">
+                                            <option value="">全部</option>
+                                            <option value="1">是</option>
+                                            <option value="0">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">主要污染物类别：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="zywrwlbid">
+                                            <option value="">全部</option>
+                                            <option value="fq">废气</option>
+                                            <option value="fs">废水</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="weikuangku" style="display:none;">
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">尾矿库名称：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="tailingsname" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">污染类型：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="pollutetype">
+                                            <option value="">全部</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="taotailuohou" style="display:none;">
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">企业名称：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="enterprise" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">行业类型：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="luohouindustry">
+                                            <option value="">全部</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zhongdianyangye" style="display:none;">
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">企业名称：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="enterpriseName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">行业：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="industry">
+                                            <option value="">全部</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zuzhijigou" style="display:none;">
+                                <div class="form-group" >
+                                    <label for="code" class="col-sm-4 control-label">机构名称：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="jigouName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pos" class="col-sm-4 control-label">经营状态：</label>
+                                    <div class="col-sm-8">
+                                        <select  class="selectpicker show-tick form-control" multiple id="jigouType">
+                                            <option value="">全部</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="wrdkChaxun()">查询</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+
+
+        <div class="info_modal modal fade" id="myModalZd" tabindex="-1" role="dialog" aria-labelledby="myModalLabelZd" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;'">&times;</button>
+                        <h4 class="modal-title" id="myModalLabelZd">重点行业遥感核查条件查询</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="provice" class="col-sm-3 control-label">省：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="provice1"  onchange="getCity1()">
+                                        <option value="">请选择省、自治区</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="city" class="col-sm-3 control-label">市：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="city1" onchange="getCounty1()">
+                                        <option value="">请选择市、自治州</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="county" class="col-sm-3 control-label">县：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="county1" onchange="setXianCode();">
+                                        <option value="">请选择区、县</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pos" class="col-sm-3 control-label">行业类别：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="dalei">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="code" class="col-sm-3 control-label">是否生产：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="production">
+                                        <option value="">全部</option>
+                                        <option value="0">否</option>
+                                        <option value="1">是</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="yaoganChaxun()">查询</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        
+
+        <!-- 排污许可 -->
+        <div class="modal fade" id="pwModal" tabindex="-1" role="dialog" aria-labelledby="pwModal" aria-hidden="true">
+            <div class="modal-dialog"  style="height:95%">
+                <div class="modal-content">
+                	<div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel1">模态框（Modal）标题</h4>
+		            </div>
+                    <div class="modal-body">
+                        <div id="detailsDiv">
+				        	<div class="detailsDivBocy" >
+				        		<!-- <iframe id="detailsIframe" src="views/details/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe> -->
+				        		<iframe id="detailsIframe" src="" style="width: 100%;height: 600px;" class="pwModal"></iframe>
+				        	</div>
+				        </div>
+                    </div>
+                   
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        
+        
+    </div>
+		    <!-- 可显示隐藏详细信息div -->
+    			<div id="toggle-sidebar2" title="收起菜单" onclick="toggleBar2()"  hidden><img src="img/information/toggle2.png" /></div>    	   		
+		    <!-- 可显示隐藏详细信息div -->
+		   	<div  class="toggleInfo"   hidden>
+		   		<div class="toggleInfo-box">
+		   				<div  class="box1">
+		   					<div   id = "wrdk_detail" ></div>
+		   				</div>
+		   				<!-- <div  class="box2"  >
+		   						<div  id = "wrdk_pie"  style="height: 250px; width:100%" ></div>
+		   						
+		   				</div> -->
+		   				<hr  style="margin-left: 15px;margin-right: 15px;border-top: 1px solid #a8a8a8;margin-top: 5px;margin-bottom: 10px;" />
+		   				<div  class="box3" >
+		   						<div  class="wrdk_barTip"></div>
+		   						
+		   						<div  id ="wrdk_bar"   style="height: 360px; width:250px;" ></div>
+		   						<div id="countryDetail" class="table" >
+							        <div class="" style="width:250px">
+							            <table id="countryDetailTable">
+							                <thead>
+							                </thead>
+							                <tbody style = "cursor:pointer;">
+							                </tbody>
+							            </table>
+							        </div>
+						    	</div>
+		   				</div>
+		   		</div>	
+		   	</div>
+   </div>
+    
+</div>
+<div id="yc"></div>
+
+
+<script type="text/javascript" src="js/arcgisPublic.js"></script>
+<script type="text/javascript" src="js/app/information/huadongDiv.js"></script>
+<script type="text/javascript" src="js/app/information/yizhangtu.js"></script>
+<script type="text/javascript" src="js/app/information/zhuanti.js"></script>
+<script type="text/javascript" src="js/app/information/fenbu.js"></script>
+<script type="text/javascript" src="js/app/information/fujin.js"></script>
+<script type="text/javascript" src="js/app/information/yztHtml.js"></script>
+<script type="text/javascript" src="js/app/information/wrdk.js"></script>
+<script type="text/javascript" src="js/app/information/weikuangku.js"></script>
+<script type="text/javascript" src="js/app/information/zhongdianyaoganhecha.js"></script>
+<script type="text/javascript" src="js/app/information/taotailuohou.js"></script>
+<script type="text/javascript" src="js/app/information/jianshehuanping.js"></script>
+<script type="text/javascript" src="js/app/information/paiwuxuke.js"></script>
+<script type="text/javascript" src="js/app/information/zhongdianhangye.js"></script>
+<script type="text/javascript" src="js/app/information/zuzhijigou.js"></script>
+
+<script> $(document).ready(function(){$(".sortable-list").sortable({connectWith:".connectList"}).disableSelection()});</script>
+<script>
+//--IE兼容
+//分布图/专题图切换
+/* $(".typeShow input").click(function() {
+	$(".typeShow1").toggle();
+	$(".typeShowp1").toggle();
+	$(".typeShow2").toggle();
+	$(".typeShowp2").toggle();
+}) */
+//地图类型切换
+ var Zindex=20;
+ $('.map_type li').click(function(){    	
+ 	console.log($(this).index()); 
+ 	$(this).addClass("type_active").siblings(".map_type li").removeClass("type_active");
+ 	if ($(this).index() == 2 ){//天地图矢量   		
+         tianShi();
+     } else if ($(this).index() == 1){//天地图影像
+         tianYing();
+     } else if ($(this).index() ==0 ){//谷歌影像
+         googleYing();
+     }
+ 	$(this).css("zIndex",Zindex)
+ 	Zindex++;
+ })
+ 
+ //拖拽效果
+
+//#tongjituDiv	
+//	*****拖拽--start*****
+	var $div = $("#tongjituDiv .table-title");
+    /* 绑定鼠标左键按住事件 */
+    $div.bind("mousedown", function (event) {
+    	if($('#tongjituDiv .large').attr('data') == 1){
+	        /* 获取需要拖动节点的坐标 */
+	        var offset_x = $(this)[0].offsetLeft;//x坐标
+	        var offset_y = $(this)[0].offsetTop;//y坐标
+	        /* 获取当前鼠标的坐标 */
+	        var mouse_x = event.pageX;
+	        var mouse_y = event.pageY;
+	        /* 绑定拖动事件 */
+	        /* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+	        $(document).bind("mousemove", function (ev) {
+	            /* 计算鼠标移动了的位置 */
+	            var _x = ev.pageX - mouse_x;
+	            var _y = ev.pageY - mouse_y;
+	            /* 设置移动后的元素坐标 */
+	            var now_x = (offset_x + _x ) + "px";
+	            var now_y = (offset_y + _y ) + "px";
+	            /* 改变目标元素的位置 */
+	            if(now_y < 0){
+	            	now_y = 0
+	            }
+	            $div.css({
+	                top: now_y,
+	                left: now_x
+	            });
+	            $('#tongjituDiv').css({
+	                top: now_y,
+	                left: now_x
+	            });
+	        });
+    	 }else{
+ 			return;
+ 		}
+    });
+    /* 当鼠标左键松开，接触事件绑定 */
+    $(document).bind("mouseup", function () {
+    	var top = $div.css('top').split('px')
+    	var left = $div.css('left').split('px')
+    	if(top[0] < 0){
+    		$div.css('top','5%')
+    		$('#tongjituDiv').css('top','5%')
+    	}
+    	if(left[0] < 0){
+    		$div.css('left','10px')
+    		$('#tongjituDiv').css('left','10px')
+    	}
+        $(this).unbind("mousemove");
+    });
+    $(document).bind("mouseup", function () {
+        $(this).unbind("mousemove");
+    });
+//	*****拖拽--end*****
+//放大/缩小
+$('#tongjituDiv  .large').click(function(){
+    if($(this).attr('data') == 1){
+	    $('#tongjituDiv ').css({
+		    top:0,
+		    right:0,
+		    left:0,
+		    width:'100%',
+		    height:'97%',
+	    })
+	    $("#tongjituDiv  .table-title").css({
+		    top:'0px',
+		    right:0,
+		    left:0,
+		    width:'100%'
+	    })
+	    $(this).css('background-image','url("img/min_big.png")')
+	    $('#tongjituDiv  .table-body').css('width','98%')
+	    $('#tongjituDiv  .table-body').css('height','88%')
+	    $('#tongjituDiv  .table-body table').css('width','100%')
+	    $('#tongjituDiv  .table-body table').css('height','auto')
+	    $(this).attr('data','2')
+    }else{
+	    $(this).attr('data','1')
+	    $('#tongjituDiv').css({
+		    top:'116px',
+		    right:'79px',
+		    left:'auto',
+		    width:'550px',
+		    height:'550px',
+	    })
+	    $("#tongjituDiv  #main_tabletitle").css({
+		    top:'116px',
+		    right:'79px',
+		    left:'auto',
+		    width:'550px',
+	    })
+	    $(this).css('background-image','url("img/max_big.png")')
+	    $('#tongjituDiv  #main_tabletitle').addClass('main_tabletitle1')
+	    $('#tongjituDiv  .table-body').css('width','98%')
+	    $('#tongjituDiv  .table-body').css('height','88%')
+	    $('#tongjituDiv  .table-body table').css('width','100%')
+	    $('#tongjituDiv  .table-body table').css('height','auto')
+    }
+
+})
+//关闭统计表
+$("#tongjituDiv  .switch").click(function(){
+    $("#tongjituDiv").hide();
+    if ($($('.map_representation>li')[4]).hasClass("repres_active")){
+        $($('.map_representation>li')[4]).removeClass("repres_active");
+    }
+})
+
+
+//	*****拖拽--start*****
+    var $div4 = $("#tongjituDiv_2 .table-title");
+    /* 绑定鼠标左键按住事件 */
+    $div4.bind("mousedown", function (event) {
+        if($('#tongjituDiv_2 .large').attr('data') == 1){
+            /* 获取需要拖动节点的坐标 */
+            var offset_x = $(this)[0].offsetLeft;//x坐标
+            var offset_y = $(this)[0].offsetTop;//y坐标
+            /* 获取当前鼠标的坐标 */
+            var mouse_x = event.pageX;
+            var mouse_y = event.pageY;
+            /* 绑定拖动事件 */
+            /* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+            $(document).bind("mousemove", function (ev) {
+                /* 计算鼠标移动了的位置 */
+                var _x = ev.pageX - mouse_x;
+                var _y = ev.pageY - mouse_y;
+                /* 设置移动后的元素坐标 */
+                var now_x = (offset_x + _x ) + "px";
+                var now_y = (offset_y + _y ) + "px";
+                /* 改变目标元素的位置 */
+                if(now_y < 0){
+                    now_y = 0
+                }
+                $div4.css({
+                    top: now_y,
+                    left: now_x
+                });
+                $('#tongjituDiv_2').css({
+                    top: now_y,
+                    left: now_x
+                });
+            });
+        }else{
+            return;
+        }
+    });
+    /* 当鼠标左键松开，接触事件绑定 */
+    $(document).bind("mouseup", function () {
+        var top = $div4.css('top').split('px')
+        var left = $div4.css('left').split('px')
+        if(top[0] < 0){
+            $div4.css('top','0')
+            $('#tongjituDiv_2').css('top','5%')
+        }
+        if(left[0] < 0){
+            $div4.css('left','0')
+            $('#tongjituDiv_2').css('left','10px')
+        }
+        $(this).unbind("mousemove");
+    });
+
+//关闭统计表
+$("#tongjituDiv_2  .switch").click(function(){
+    $("#tongjituDiv_2").hide();
+})
+
+    
+    
+//#wanggeMessage   
+//	*****拖拽--start*****
+    var $div1 = $("#wanggeMessage");
+    /* 绑定鼠标左键按住事件 */
+    $div1.bind("mousedown", function (event) {
+        if($('#wanggeMessage .large').attr('data') == 1){
+            /* 获取需要拖动节点的坐标 */
+            var offset_x = $(this)[0].offsetLeft;//x坐标
+            var offset_y = $(this)[0].offsetTop;//y坐标
+            /* 获取当前鼠标的坐标 */
+            var mouse_x = event.pageX;
+            var mouse_y = event.pageY;
+            /* 绑定拖动事件 */
+            /* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+            $(document).bind("mousemove", function (ev) {
+                /* 计算鼠标移动了的位置 */
+                var _x = ev.pageX - mouse_x;
+                var _y = ev.pageY - mouse_y;
+                /* 设置移动后的元素坐标 */
+                var now_x = (offset_x + _x ) + "px";
+                var now_y = (offset_y + _y ) + "px";
+                /* 改变目标元素的位置 */
+                if(now_y < 0){
+	            	now_y = 0
+	            }
+                $div1.css({
+                    top: now_y,
+                    left: now_x
+                });
+                $('#wanggeMessage').css({
+                    top: now_y,
+                    left: now_x
+                });
+            });
+        }else{
+            return;
+        }
+    });
+    /* 当鼠标左键松开，接触事件绑定 */
+    $(document).bind("mouseup", function () {
+        var top = $div1.css('top').split('px')
+        var left = $div1.css('left').split('px')
+        if(top[0] < 0){
+            $div1.css('top','0')
+            $('#wanggeMessage').css('top','5%')
+        }
+        if(left[0] < 0){
+            $div1.css('left','0')
+            $('#wanggeMessage').css('left','10px')
+        }
+        $(this).unbind("mousemove");
+    });
+
+//	*****拖拽--end*****
+//关闭统计表
+$("#wanggeMessage  .switch").click(function(){
+    $("#wanggeMessage").hide();
+})
+
+
+//info_table1
+//	*****拖拽--start*****
+	var $div2 = $("#info_table1");
+    /* 绑定鼠标左键按住事件 */
+    $div2.bind("mousedown", function (event) {
+    	if($('#info_table1 .large').attr('data') == 1){
+	        /* 获取需要拖动节点的坐标 */
+	        var offset_x = $(this)[0].offsetLeft;//x坐标
+	        var offset_y = $(this)[0].offsetTop;//y坐标
+	        /* 获取当前鼠标的坐标 */
+	        var mouse_x = event.pageX;
+	        var mouse_y = event.pageY;
+	        /* 绑定拖动事件 */
+	        /* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+	        $(document).bind("mousemove", function (ev) {
+	            /* 计算鼠标移动了的位置 */
+	            var _x = ev.pageX - mouse_x;
+	            var _y = ev.pageY - mouse_y;
+	            /* 设置移动后的元素坐标 */
+	            var now_x = (offset_x + _x ) + "px";
+	            var now_y = (offset_y + _y ) + "px";
+	            /* 改变目标元素的位置 */
+	            if(now_y < 0){
+	            	now_y = 0
+	            }
+	            $div2.css({
+	                top: now_y,
+	                left: now_x
+	            });
+	            $('#info_table1').css({
+	                top: now_y,
+	                left: now_x
+	            });
+	        });
+    	 }else{
+ 			return;
+ 		}
+    });
+    /* 当鼠标左键松开，接触事件绑定 */
+    $(document).bind("mouseup", function () {
+    	var top = $div2.css('top').split('px')
+    	var left = $div2.css('left').split('px')
+    	if(top[0] < 0){
+    		$div2.css('top','5%')
+    		$('#info_table1').css('top','5%')
+    	}
+    	if(left[0] < 0){
+    		$div2.css('left','10px')
+    		$('#info_table1').css('left','10px')
+    	}
+        $(this).unbind("mousemove");
+    });
+    
+//	*****拖拽--end*****
+
+
+
+
+//info_table2
+//*****拖拽--start*****
+//	*****拖拽--start*****
+
+	var $div3 = $("#info_table2");
+    /* 绑定鼠标左键按住事件 */
+    $div3.bind("mousedown", function (event) {
+    	if($('#info_table2 .large').attr('data') == 1){
+	        /* 获取需要拖动节点的坐标 */
+	        var offset_x = $(this)[0].offsetLeft;//x坐标
+	        var offset_y = $(this)[0].offsetTop;//y坐标
+	        /* 获取当前鼠标的坐标 */
+	        var mouse_x = event.pageX;
+	        var mouse_y = event.pageY;
+	        /* 绑定拖动事件 */
+	        /* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+	        $(document).bind("mousemove", function (ev) {
+	            /* 计算鼠标移动了的位置 */
+	            var _x = ev.pageX - mouse_x;
+	            var _y = ev.pageY - mouse_y;
+	            /* 设置移动后的元素坐标 */
+	            var now_x = (offset_x + _x ) + "px";
+	            var now_y = (offset_y + _y ) + "px";
+	            /* 改变目标元素的位置 */
+	            if(now_y < 0){
+	            	now_y = 0
+	            }
+	            $div3.css({
+	                top: now_y,
+	                left: now_x
+	            });
+	            $('#info_table2').css({
+	                top: now_y,
+	                left: now_x
+	            });
+	        });
+    	 }else{
+ 			return;
+ 		}
+    });
+    /* 当鼠标左键松开，接触事件绑定 */
+    $(document).bind("mouseup", function () {
+    	var top = $div3.css('top').split('px')
+    	var left = $div3.css('left').split('px')
+    	if(top[0] < 0){
+    		$div3.css('top','5%')
+    		$('#info_table2').css('top','5%')
+    	}
+    	if(left[0] < 0){
+    		$div3.css('left','10px')
+    		$('#info_table2').css('left','10px')
+    	}
+        $(this).unbind("mousemove");
+    });
+    
+//	*****拖拽--end*****
+//关闭统计表1
+$("#info_table2  .switch").click(function(){
+$("#info_table2").hide();
+})
+
+
+
+//滚动条
+//$(".basic_item").niceScroll({cursorcolor:"#9e9e9e",cursorwidth:"5px",cursorborder:"none"});
+
+ 
+</script>
+<script>
+    // Enable WebGL on FeatureLayer for faster renderer updates and
+    // display of more features in the map
+    // var dojoConfig = {
+    //     has: {
+    //         "esri-featurelayer-webgl": 1
+    //     }
+    // }
+
+    function toggleBar(){
+    	$(".info_left").toggle(100);	    
+    	if($("#toggle-sidebar").attr("title")=="展开菜单"){
+    		$("#toggle-sidebar").attr("title","收起菜单");
+    		$("#toggle-sidebar img").attr("src","img/information/toggle2.png");
+    		$("#toggle-sidebar img").css("transform","rotate(-180deg)");
+    		$("#toggle-sidebar").css("left","260px");   
+    		$(".infor-maps").hide();
+    		setTimeout(function(){
+    				$(".infor-maps").removeClass("toggles");
+    				$(".infor-maps").show();
+    		},100)
+	
+    	}else{
+    		$("#toggle-sidebar").attr("title","展开菜单");
+    		$("#toggle-sidebar img").attr("src","img/information/toggle2.png");
+    		$("#toggle-sidebar img").css("transform","rotate(0deg)");
+    		$(".infor-maps").addClass("toggles");
+    		$("#toggle-sidebar").css("left","0");  
+    	}    	
+    }
+    
+ function  toggleBar2(){
+ 		$(".toggleInfo").toggle();	  
+ 		if($("#toggle-sidebar2").attr("title")=="展开菜单"){
+ 				$("#toggle-sidebar2 img").attr("src","img/information/toggle2.png");
+ 				$("#toggle-sidebar2 img").css("transform","rotate(0deg)");
+ 				$("#toggle-sidebar2").attr("title","收起菜单");
+         		$("#toggle-sidebar2").css("right","244px");  		
+	    		$(".infor-map").removeClass("toggle2");   	
+ 		}else{
+ 				$("#toggle-sidebar2").attr("title","展开菜单");
+ 				$("#toggle-sidebar2 img").attr("src","img/information/toggle2.png");
+ 				$("#toggle-sidebar2 img").css("transform","rotate(-180deg)");
+         		$("#toggle-sidebar2").css("right","0");       		
+         		$(".infor-map").addClass("toggle2");
+         		
+ 		}
+ 				
+}
+</script>
+
+

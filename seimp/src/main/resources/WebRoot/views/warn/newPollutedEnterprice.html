@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新增污染企业</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../css/bootstrap/bootstrap-select.css"/>
+    <link href="../../css/plugins/toastr/toastr.css" rel="stylesheet">
+    <link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/warn/wuranqiye.css" rel="stylesheet">
+    <link href="../../css/sweetalert.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datepaginator.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="../../css/awesome-bootstrap-checkbox.css" rel="stylesheet" media="screen">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" style="position: relative; height: 100%;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 newPolluted" style="margin-top: 25px;">
+    	<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-top:10px">分析项目：</span>
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+
+            <div class="checkbox checkbox-circle">
+            	<input type="checkbox" value="1" id="inlineCheckbox1" name="type1" checked="checked" class="styled">
+            	<label class="checkbox-inline" for="inlineCheckbox1">建设项目</label>
+            </div>
+            <div class="checkbox checkbox-circle">
+            	<input type="checkbox" value="3" id="inlineCheckbox3" name="type1" class="styled">
+            	<label class="checkbox-inline" for="inlineCheckbox3">污染情况分析</label>
+            </div>
+            <div class="checkbox checkbox-circle">
+            	<input type="checkbox" value="2" id="inlineCheckbox2" name="type1" disabled="disabled" class="styled">
+            	<label class="checkbox-inline" for="inlineCheckbox2">企业关闭预警</label>
+            </div>
+        </div>
+    </div> 
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 newPolluted" style="padding-top: 15px">
+    	<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1t" style="margin-top: 13px;">统计方式：</span>
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 clearfix">
+           
+            <input type="radio" checked value="1" id="options1" name="optionsRadios" data="省份">
+        
+            <input type="radio" value="2" id="options2" name="optionsRadios" data="国民经济分类">
+      
+            <input type="radio" value="3" id="options3" name="optionsRadios" data="环评行业分类">
+       
+            <input type="radio" value="4" id="options4" name="optionsRadios" data="年份">
+       
+            <input type="radio" value="5" id="options5" name="optionsRadios" data="月份">
+    	</div>
+	</div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 newPolluted" style="margin-top: 25px;">
+    	<span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-top: 8px;">查询条件：</span>
+    	<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 clearfix" >
+   			<div class="newPolluted_div" >
+   				<span>起始时间</span>
+   				<input class="form_date form-control" onchange="RefreshData()" size="16" type="text" value=""
+                      id="startDate"
+                      readonly />
+   			</div>
+   			<div class="newPolluted_div" >
+   				<span>截止时间</span>
+   				<input class="form_date form-control" onchange="RefreshData()" size="16" type="text" value=""
+                      id="endDate"
+                      readonly>
+   			</div>
+   			<div class="newPolluted_div" style="white-space: nowrap">
+   				<span>国民经济分类</span>
+				<select id="nationaleconomyname" onchange="RefreshData()" class="selectpicker1  show-tick form-control" multiple data-live-search="true"></select>
+   			</div>
+   			<div class="newPolluted_div"  style="white-space: nowrap;padding-left: 95px">
+   				<span>环评行业分类</span>
+				<select id="eiamanagename" onchange="RefreshData()"  class="selectpicker1  show-tick form-control" multiple data-live-search="true"></select>
+   			</div>
+   			<div class="newPolluted_div"  style="white-space: nowrap;padding-left: 95px">
+   				<span>省份</span>
+				<select id="province" onchange="RefreshData()"  class="selectpicker1  show-tick form-control" multiple data-live-search="true"></select>
+   			</div>
+    	</div>
+    	</div>
+    <div class="col-xs-12" style="padding-top: 20px">
+        <div class="col-xs-12" id="mychart3" style="height: 550px;"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+<script src="../../js/moment.min.js"></script>
+
+<script src="../../js/bootstrap-paginator.min.js"></script>
+<script src="../../js/bootstrap-datepaginator.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-slider.js"></script>
+<script src="../../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../js/config.js"></script>
+<script src="../../js/system/bootstrap-select/bootstrap-select.js"></script>
+<script src="../../js/system/bootstrap-select/defaults-zh_CN.js"></script>
+<script src="../../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../../js/app/warn/newPollutedEnterprice.js"></script>
+</body>
+</html>

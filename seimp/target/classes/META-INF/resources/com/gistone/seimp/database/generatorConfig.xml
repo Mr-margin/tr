@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+<!-- mysql -->
+   
+    <!-- oracle -->
+    <!-- <classPathEntry location="D:\Maven\MavenRepository\maven_jar\com\oracle\ojdbc6\11.2.0.1.0\ojdbc6-11.2.0.1.0.jar" />  -->
+    <classPathEntry location="D:\Maven\MavenRepository\maven_jar\mysql\mysql-connector-java\mysql-connector-java-5.1.7-bin.jar" />
+    <context id="water_context" >
+      <!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+    <commentGenerator>
+      <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="true" />
+      <property name="suppressDate" value="true" />
+    </commentGenerator>
+    <!-- 注释控制完毕 -->
+	<!-- mysql -->
+  <!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.3.207:3306/edaps?useUnicode=true&amp;characterEncoding=utf-8" userId="root" password="root" />-->
+   <!--  oracle -->
+     <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.202:1521:orcl" userId="seimp" password="seimp" />
+    <javaModelGenerator targetPackage="com.gistone.database.model" targetProject="edat">  
+        <property name="trimStrings" value="true"/>  <!-- 是否对数据库查询结果进行trim操作 -->
+    </javaModelGenerator>
+        
+    <sqlMapGenerator targetPackage="com.gistone.database.inter" targetProject="edat" />
+    
+    <javaClientGenerator targetPackage="com.gistone.database.inter" targetProject="edat" type="XMLMAPPER" />
+    <table tableName="t_gauss_aermod" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    <table tableName="t_mesoscale_wrf" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>    
+  	<table tableName="t_spread_hysplit" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  	<table tableName="t_simulation_region" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+  </context>
+</generatorConfiguration> 

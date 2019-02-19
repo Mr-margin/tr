@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>污染地块</title>
+	<link href="../../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../../alifonts/iconfont.css">
+	<link href="../../../css/public/public.css" rel="stylesheet">
+	<link href="../../../css/system.css" rel="stylesheet">
+	<link href="../../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../../css/data.css" rel="stylesheet">
+	<link href="../../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../../css/sweetalert.min.css" rel="stylesheet">
+	<style>
+		.polluted label{
+			width:84px;
+			text-align:right;
+		}	
+		.poten1 .bootstrap-table{
+			width: 100%;
+    		margin: 0;
+		}
+		.poten1 .wrdkDe{
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body style="overflow:auto;">
+
+<div class="potential poten1">
+	<div class="mb14">
+		<!-- <h2 class="pgfx_title">排污许可证注销/撤销证据</h2> -->
+		<div class="pgfx_box4" style="border: 1px solid #cfcfcf;border-radius:8px;">
+		
+			<div class="row" id="poTable">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+					<div class="row wrdkDe">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4><span style="width: 135px;">尾矿库信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									<tr>      
+							          <td class="th">序号：</td>
+							          <td class="td" id="pot_1" ></td>
+							          <td class="th">行政区划：</td>
+							          <td class="td" id="pot_2" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">行政区划名：</td>
+							          <td class="td" id="pot_3" ></td>
+							          <td class="th">是否为无主库：</td>
+							          <td class="td" id="pot_4" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库企业名称：</td>
+							          <td class="td" id="pot_5" ></td>
+							          <td class="th">尾矿库企业是否有曾用名：</td>
+							          <td class="td" id="pot_6" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库企业曾用名：</td>
+							          <td class="td" id="pot_7" ></td>
+							          <td class="th">企业代码：</td>
+							          <td class="td" id="pot_8" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">法定代表人：</td>
+							          <td class="td" id="pot_9" ></td>
+							          <td class="th">联系电话：</td>
+							          <td class="td" id="pot_10" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">所涉主要矿种：</td>
+							          <td class="td" id="pot_11" ></td>
+							          <td class="th">所涉主要矿种其他说明：</td>
+							          <td class="td" id="pot_12" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">所涉附属矿种：</td>
+							          <td class="td" id="pot_13" ></td>
+							          <td class="th">所涉附属矿种其他说明：</td>
+							          <td class="td" id="pot_14" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">采选矿工艺：</td>
+							          <td class="td" id="pot_15" ></td>
+							          <td class="th">安全许可证编号：</td>
+							          <td class="td" id="pot_16" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">安全许可证发放单位：</td>
+							          <td class="td" id="pot_17" ></td>
+							          <td class="th">安全许可证颁（换）发时间：</td>
+							          <td class="td" id="pot_18" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">排污许可证编号：</td>
+							          <td class="td" id="pot_19" ></td>
+							          <td class="th">排污许可证发放单位：</td>
+							          <td class="td" id="pot_20" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">排污许可证颁（换）发时间：</td>
+							          <td class="td" id="pot_21" ></td>
+							          <td class="th">尾矿库名称：</td>
+							          <td class="td" id="pot_22" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库是否有曾用名：</td>
+							          <td class="td" id="pot_23" ></td>
+							          <td class="th">尾矿库曾用名：</td>
+							          <td class="td" id="pot_24" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">中心经度：</td>
+							          <td class="td" id="pot_25" ></td>
+							          <td class="th">中心纬度：</td>
+							          <td class="td" id="pot_26" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">高程：</td>
+							          <td class="td" id="pot_27" ></td>
+							          <td class="th">所在乡镇名称：</td>
+							          <td class="td" id="pot_28" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">所在村名称：</td>
+							          <td class="td" id="pot_29" ></td>
+							          <td class="th">相对方位：</td>
+							          <td class="td" id="pot_30" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">距村中心距离：</td>
+							          <td class="td" id="pot_31" ></td>
+							          <td class="th">尾矿库型式：</td>
+							          <td class="td" id="pot_32" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库其它型式：</td>
+							          <td class="td" id="pot_33" ></td>
+							          <td class="th">尾矿入库形式：</td>
+							          <td class="td" id="pot_34" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">坝体类型：</td>
+							          <td class="td" id="pot_35" ></td>
+							          <td class="th">尾矿库等别：</td>
+							          <td class="td" id="pot_36" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">安全度等级：</td>
+							          <td class="td" id="pot_37" ></td>
+							          <td class="th">尚未核定原因：</td>
+							          <td class="td" id="pot_38" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">生产状况：</td>
+							          <td class="td" id="pot_39" ></td>
+							          <td class="th">尾矿库开工建设日期：</td>
+							          <td class="td" id="pot_40" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库投入使用日期：</td>
+							          <td class="td" id="pot_41" ></td>
+							          <td class="th">设计地震烈度：</td>
+							          <td class="td" id="pot_42" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">防洪标准：</td>
+							          <td class="td" id="pot_43" ></td>
+							          <td class="th">设计总库容：</td>
+							          <td class="td" id="pot_44" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">实际库容：</td>
+							          <td class="td" id="pot_45" ></td>
+							          <td class="th">设计总坝高：</td>
+							          <td class="td" id="pot_46" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">现状总坝高：</td>
+							          <td class="td" id="pot_47" ></td>
+							          <td class="th">设计年排尾量：</td>
+							          <td class="td" id="pot_48" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">设计使用年限：</td>
+							          <td class="td" id="pot_49" ></td>
+							          <td class="th">已使用年限：</td>
+							          <td class="td" id="pot_50" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿主要成分：</td>
+							          <td class="td" id="pot_51" ></td>
+							          <td class="th">尾矿附属成分：</td>
+							          <td class="td" id="pot_52" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿水主要成分：</td>
+							          <td class="td" id="pot_53" ></td>
+							          <td class="th">尾矿水附属成分：</td>
+							          <td class="td" id="pot_54" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">实际年尾矿入库量：</td>
+							          <td class="td" id="pot_55" ></td>
+							          <td class="th">尾矿水产生量：</td>
+							          <td class="td" id="pot_56" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿水和渗滤液排放量：</td>
+							          <td class="td" id="pot_57" ></td>
+							          <td class="th">尾矿水回用率：</td>
+							          <td class="td" id="pot_58" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿输送方式：</td>
+							          <td class="td" id="pot_59" ></td>
+							          <td class="th">输送距离：</td>
+							          <td class="td" id="pot_60" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否进行了环评：</td>
+							          <td class="td" id="pot_61" ></td>
+							          <td class="th">未进行环评原因：</td>
+							          <td class="td" id="pot_62" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">环境影响评价文件是否按《建设项目环境风险评价技术导则（HJ/T169号）》要求编制环境风险评价专篇：</td>
+							          <td class="td" id="pot_63" ></td>
+							          <td class="th">是否通过环保“三同时”验收：</td>
+							          <td class="td" id="pot_64" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">未通过原因：</td>
+							          <td class="td" id="pot_65" ></td>
+							          <td class="th">是否进行排污申报登记：</td>
+							          <td class="td" id="pot_66" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否采取防渗漏处理措施：</td>
+							          <td class="td" id="pot_67" ></td>
+							          <td class="th">是否采取防扬散处理措施：</td>
+							          <td class="td" id="pot_68" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否采取防流失处理措施：</td>
+							          <td class="td" id="pot_69" ></td>
+							          <td class="th">是否建设防洪设施：</td>
+							          <td class="td" id="pot_70" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">排洪方式：</td>
+							          <td class="td" id="pot_71" ></td>
+							          <td class="th">防洪设施是否正常：</td>
+							          <td class="td" id="pot_72" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">存在问题：</td>
+							          <td class="td" id="pot_73" ></td>
+							          <td class="th">是否建有尾矿水和渗滤液处理设施：</td>
+							          <td class="td" id="pot_74" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">排放是否达标：</td>
+							          <td class="td" id="pot_75" ></td>
+							          <td class="th">尾矿库是否建在饮用水源地保护区、自然保护区、重要生态功能区：</td>
+							          <td class="td" id="pot_76" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">尾矿库周边是否有环境敏感点：</td>
+							          <td class="td" id="pot_77" ></td>
+							          <td class="th">具体情况1：</td>
+							          <td class="td" id="pot_78" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否存在影响公路、铁路饮用水源安全的情况：</td>
+							          <td class="td" id="pot_79" ></td>
+							          <td class="th">尾矿库下游是否有居民或重要设施：</td>
+							          <td class="td" id="pot_80" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">具体情况2：</td>
+							          <td class="td" id="pot_81" ></td>
+							          <td class="th">尾矿库下游是否建有流域防控设施：</td>
+							          <td class="td" id="pot_82" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">具体情况3：</td>
+							          <td class="td" id="pot_83" ></td>
+							          <td class="th">是否配备环境应急人员：</td>
+							          <td class="td" id="pot_84" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">人数：</td>
+							          <td class="td" id="pot_85" ></td>
+							          <td class="th">是否储备环境应急物资：</td>
+							          <td class="td" id="pot_86" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">应急物资情况：</td>
+							          <td class="td" id="pot_87" ></td>
+							          <td class="th">是否建设环境应急设施：</td>
+							          <td class="td" id="pot_88" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">应急设施情况：</td>
+							          <td class="td" id="pot_89" ></td>
+							          <td class="th">是否编制环境应急预案：</td>
+							          <td class="td" id="pot_90" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">环境应急预案是否向环保部门备案：</td>
+							          <td class="td" id="pot_91" ></td>
+							          <td class="th">是否定期开展环境应急演练：</td>
+							          <td class="td" id="pot_92" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否配备环境监测设备：</td>
+							          <td class="td" id="pot_93" ></td>
+							          <td class="th">是否进行环境日常监测：</td>
+							          <td class="td" id="pot_94" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">监测指标项：</td>
+							          <td class="td" id="pot_95" ></td>
+							          <td class="th">指标项年平均监测值：</td>
+							          <td class="td" id="pot_96" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">监测频率：</td>
+							          <td class="td" id="pot_97" ></td>
+							          <td class="th">周边是否有环境应急物资外部供应单位：</td>
+							          <td class="td" id="pot_98" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">是否发生突发环境事件（截至2012年5月31日）：</td>
+							          <td class="td" id="pot_99" ></td>
+							          <td class="th">突发环境事件次数：</td>
+							          <td class="td" id="pot_100" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">以往发现问题整改落实情况：</td>
+							          <td class="td" id="pot_101" ></td>
+							          <td class="th">检查组发现的主要问题及整改要求：</td>
+							          <td class="td" id="pot_102" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">被检查单位负责人意见：</td>
+							          <td class="td" id="pot_103" ></td>
+							          <td class="th">备注：</td>
+							          <td class="td" id="pot_104" ></td>
+							         <tr>
+									<tr>      
+							          <td class="th">检查人员：</td>
+							          <td class="td" id="pot_105" ></td>
+							          <td class="th">检查时间：</td>
+							          <td class="td" id="pot_106" ></td>
+							         <tr>
+
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			 </div>
+			 
+			 
+			 		 
+		</div>
+		
+		
+	
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../../js/toastr.min.js"></script>
+	<script src="../../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../../views/data/detailIframe/tailings2Details.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>
+

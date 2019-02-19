@@ -1,0 +1,38 @@
+@charset "utf-8";
+.data-input .info-tip{
+	padding-left:0;
+}
+.data-input .info-tip p{
+	margin-right:0;
+}
+.data-input .info-tip p span {
+    margin-right: 10px;
+}
+.dataShow2,.dataShow3,.dataShow4,.dataShow5{
+	margin-top: 13px;
+}
+.pgfx_form1>div{
+	padding:0;
+}
+.potential label{
+	margin-right: 15px;
+}
+.sjxq-item div p span {
+    margin: 0 18px 0 5px;
+}
+.sjDetails .row>div {
+    padding: 0;
+}
+.dataWrap .pgfx_title, .dataWrap .pgfx_title1 {
+    line-height: 40px;
+    height: 45px;
+}
+.po_btnGroup{
+	margin-top:10px;
+}
+#messageAlert .form-group{
+	width:22%;
+}
+#messageAlert .w-43{
+	width:43%;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ArcGIS MAP</title>
+<!-- 	<link rel="stylesheet" type="text/css" href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/dijit/themes/claro/claro.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/esri/css/esri.css" /> -->
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<style>
+      	html, body, #map {
+        	height: 100%;
+        	margin: 0;
+        	padding: 0;
+      	}
+      	#myBtn{
+      		position:absolute;
+      		top:2%;
+      		right:2%;
+      	}
+      	
+    </style> 
+</head>
+<body>
+	<div id="map">
+		
+	</div>
+	<div id="myBtn">
+		<button id="addPopup" type="button" class="btn btn-info">弹出框</button>
+		<button id="vectorMap" type="button" class="btn btn-info">矢量地图</button>
+		<button id="imageMap" type="button" class="btn btn-info">影像地图</button>
+		<button id="addPoint" type="button" class="btn btn-info">添加点</button>
+		<button id="addChart" type="button" class="btn btn-info">添加统计图</button>
+		<button id="addHeatMap" type="button" class="btn btn-info">添加热力图</button>
+		<button id="addCluster" type="button" class="btn btn-info">添加聚合</button>
+		<button id="addTextSymbol" type="button" class="btn btn-info">添加TextSymbol</button>
+	</div>
+	
+	<script type="text/javascript">
+		var dojoConfig = { 
+        	paths: {
+          		extras: location.pathname.replace(/\/[^/]+$/, "") + "/extras"
+        	}
+      	};
+	</script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/plugins/echarts/echarts-all.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+<!-- 	<script type="text/javascript" src="http://192.168.1.24:8081/arcgis_js_v317_api/arcgis_js_api/library/3.17/3.17/init.js"></script> -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/tianditu.js"></script>
+	<script type="text/javascript" src="js/arcgismap.js"></script>
+</body>
+</html>

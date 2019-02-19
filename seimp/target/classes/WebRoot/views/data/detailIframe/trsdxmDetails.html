@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>污染地块</title>
+	<link href="../../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../../alifonts/iconfont.css">
+	<link href="../../../css/public/public.css" rel="stylesheet">
+	<link href="../../../css/system.css" rel="stylesheet">
+	<link href="../../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../../css/data.css" rel="stylesheet">
+	<link href="../../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../../css/sweetalert.min.css" rel="stylesheet">
+	<style>
+		.polluted label{
+			width:84px;
+			text-align:right;
+		}	
+		.poten1 .bootstrap-table{
+			width: 100%;
+    		margin: 0;
+		}
+		.poten1 .wrdkDe{
+			margin-bottom: 5px;
+		}
+		.th{
+			width:15%;
+		}
+		
+		.td{
+			width:35%;
+		}
+	</style>
+</head>
+<body style="overflow:auto;">
+
+<div class="potential poten1">
+	<div class="mb14">
+		<!-- <h2 class="pgfx_title">排污许可证注销/撤销证据</h2> -->
+		<div class="pgfx_box4" style="border: 1px solid #cfcfcf;border-radius:8px;">
+		
+			<div class="row" id="poTable">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+					<div class="row wrdkDe">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4><span style="width: 165px;">土壤试点项目信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									<tr>      
+					                  <td class="th">项目名称：</td>
+					                  <td class="td" id="pot_1" ></td>
+					                  <td class="th">项目类型：</td>
+					                  <td class="td" id="pot_2" ></td>
+					                <tr>
+									
+									<tr>      
+					                  <td class="th">经度：</td>
+					                  <td class="td" id="pot_3" ></td>
+					                  <td class="th">纬度：</td>
+					                  <td class="td" id="pot_4" ></td>
+					                <tr>
+									
+					                <tr>      
+					                  <td class="th">省：</td>
+					                  <td class="td" id="pot_7" ></td>
+					                  <td class="th">市：</td>
+					                  <td class="td" id="pot_8" ></td>
+					                <tr>
+									<tr>      
+					                  <td class="th">县：</td>
+					                  <td class="td" id="pot_9" ></td>
+					                  <td class="th">镇：</td>
+					                  <td class="td" id="pot_10" ></td>
+					                <tr>
+									<tr>      
+					                  <td class="th">村：</td>
+					                  <td class="td" id="pot_11" colspan="3"></td>
+					                <tr>
+									<tr>      
+					                  <td class="th">备注：</td>
+					                  <td class="td" id="pot_5"  colspan="3"></td>
+					                <tr>
+									<tr>  
+					                  <td class="th">地址：</td>
+					                  <td class="td" id="pot_6"  colspan="3"></td>
+					                <tr>
+
+
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			 </div>
+			 
+			 
+			 		 
+		</div>
+		
+		
+	
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../../js/toastr.min.js"></script>
+	<script src="../../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../../views/data/detailIframe/trsdxmDetails.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>
+

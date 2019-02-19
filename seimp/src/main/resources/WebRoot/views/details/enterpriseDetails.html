@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>污染地块</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/system.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../css/sweetalert.min.css" rel="stylesheet">
+	<style>
+		.polluted label{
+			width:84px;
+			text-align:right;
+		}	
+		.poten1 .bootstrap-table{
+			width: 100%;
+    		margin: 0;
+		}
+		.poten1 .wrdkDe{
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body style="overflow:auto;">
+
+<div class="potential poten1">
+	<div class="mb14">
+		<!-- <h2 class="pgfx_title">排污许可证注销/撤销证据</h2> -->
+		<div class="pgfx_box4" style="border: 1px solid #cfcfcf;border-radius:8px;">
+		
+			<div class="row" id="poTable">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+					
+					<div class="row wrdkDe">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<h4><span style="width: 135px;">企业基本信息</span></h4>
+							<table class="table table-bordered">
+								<tbody>
+									<tr>						
+										<td class="th">许可证编码：</td>
+										<td class="td" id="pot_6" ></td>
+										<td class="th">所属行政区划：</td>
+										<td class="td" id="pot_7" ></td>
+									</tr>
+									<tr>						
+										<td class="th">注册地址：</td>
+										<td class="td" id="pot_8" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">行业类别：</td>
+										<td class="td" id="pot_9" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">组织机构代码：</td>
+										<td class="td" id="pot_10" ></td>
+										<td class="th">统一社会信用代码：</td>
+										<td class="td" id="pot_11" ></td>
+									</tr>
+									<tr>						
+										<td class="th">生产经营场所地址：</td>
+										<td class="td" id="pot_12" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">主要污染物类别：</td>
+										<td class="td" id="pot_14" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">废气主要污染物种类：</td>
+										<td class="td" id="pot_15" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">废水主要污染物种类：</td>
+										<td class="td" id="pot_16" colspan="3"></td>
+									</tr>
+									<tr>						
+										<td class="th">废水污染物排放规律：</td>
+										<td class="td" id="pot_17" colspan="3"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			 </div>
+			 
+			 <div class="wrdkPanel1">
+				<div class="row wrdkDe">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 170px;">主要产品及产能信息</span></h4>
+						<table id="productInfoTable" class="table table-bordered">
+							
+						</table>
+					</div>
+				</div>
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 250px;">废水直接排放口基本情况信息</span></h4>
+						<table id="drectlyTable" class="table table-bordered">
+							
+						</table>
+						
+					</div>
+				</div>
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 170px;">自行监测及记录信息</span></h4>
+						<table id="monitorInfoTable" class="table table-bordered">
+							
+						</table>
+						
+					</div>
+				</div>
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 200px;">主要原辅材料信息</span></h4>
+						<table id="materialTable" class="table table-bordered">
+							
+						</table>
+					</div>
+				</div>
+				
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 255px;">废水间接排放口基本情况信息</span></h4>
+						<table id="indirectTable" class="table table-bordered">
+							
+						</table>
+						
+					</div>	
+				</div>
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 160px;">固体废物排放信息</span></h4>
+						<table id="solidwasteTable" class="table table-bordered">
+							
+						</table>
+					</div>	
+				</div>
+			 	<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 215px;">燃料信息</span></h4>
+						<table id="fuelTable" class="table table-bordered">
+							
+						</table>
+					</div>	
+					
+				</div>
+				<div class="row wrdkDe" style="margin-top:20px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+						<h4><span style="width: 215px;">许可证变更、延续记录信息</span></h4>
+						<table id="applyrecordTable" class="table table-bordered">
+							
+						</table>
+					</div>
+					
+				</div>
+					
+					
+					
+			 
+			 </div>
+			 		 
+		</div>
+		
+		
+	
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../views/details/enterpriseDetails.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>
+

@@ -1,0 +1,311 @@
+<style type="text/css">
+    .keywords {
+        overflow: hidden;
+        text-align: center;
+        background: #999;
+    }
+
+    .keywords span {
+        float: left;
+        font-size: 16px;
+        line-height: 2em;
+    }
+
+    .keywords span.bold {
+        font-weight: bold;
+    }
+
+    .keywords span:nth-child(1) {
+        width: 35%;
+        text-align: center;
+    }
+
+    .keywords span:nth-child(2) {
+        width: 30%;
+        text-align: left;
+    }
+
+    .keywords span:nth-child(3) {
+        width: 35%;
+        text-align: left;
+    }
+
+    .keywords span:nth-child(4) {
+        width: 35%;
+        text-align: right;
+    }
+
+    .keywords span:nth-child(5) {
+        width: 25%;
+        text-align: right;
+    }
+
+    .keywords span:nth-child(6) {
+        width: 25%;
+        text-align: right;
+    }
+
+    .keywords span:nth-child(7) {
+        width: 50%;
+        text-align: center;
+    }
+
+    .keywords span:nth-child(8) {
+        width: 30%;
+        text-align: center;
+    }
+
+    .keywords span:nth-child(9) {
+        width: 50%;
+        text-align: right;
+    }
+
+    .keywords span:nth-child(10) {
+        width: 40%;
+        text-align: right;
+    }
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    	background-color: #7bbdff;
+    	color:white;
+    }
+</style>
+
+<div class="new_list clearfix">
+    <p class="crumbs">信息管理</p>
+    <div class="col-xs-9 no-padding p1 newsTable">
+        <!--<div class="col-xs-12 title">
+             <h3 id="title"></h3>
+        </div>-->
+        <ul class="col-xs-12 box-body" id="newsList">
+
+        </ul>
+        <div class="col-xs-12 text-center" style="padding-bottom: 20px">
+            <ul id="example" class="pagination" style="padding-top: 2rem;"></ul>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <div class="col-xs-12  right_hot p1">
+            <h4>最新资讯</h4>
+            <div class="col-xs-12 no-padding">
+                <ul id="latestNews">
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12  right_hot p1">
+            <h4>访问量top5</h4>
+            <div class="col-xs-12 no-padding">
+                <ul id="topHitsNews">
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12  right_hot type2 p1">
+            <h4>地方资讯排名</h4>
+            <div class="col-xs-12 no-padding">
+                <ul id="proRankNews">
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12  right_hot keywords p1" hidden>
+            <h4 style="text-align:left">热门关键词</h4>
+            <canvas width="200" height="200" id="myCanvas"></canvas>
+            <div id="tags">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 pic" hidden>
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li class="active" ><a data-toggle="tab" aria-expanded="false" onclick="showAnaPart(3)">总体情况</a>
+                </li>
+                <li class="" ><a data-toggle="tab" aria-expanded="false" onclick="showAnaPart(1)">部委资讯统计</a>
+                </li>
+                <li class="" ><a data-toggle="tab" aria-expanded="true" onclick="showAnaPart(2)">地方资讯统计</a>
+                </li>
+            </ul>
+        </div>
+        <!--资讯数量统计-->
+        <div class="col-xs-12" style="border: solid 1px #ccc;border-top: none; padding-bottom:20px;" id="newsnumPart">
+            <!-- <h2 style="text-align: center;padding-bottom: 30px">资讯数量统计</h2> -->
+            <div class="col-xs-12 my-3" style="white-space: nowrap">
+                <div class="col-sm-6  ">
+                    <div class="col-sm-2 no-padding" style="white-space: nowrap">
+                        <span style="font-size:1.5rem; line-height: 36px;">发布时间</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" placeholder="起始时间" value=""
+                               id="date1"
+                               readonly>
+                    </div>
+                    <div class="col-sm-1 no-padding" style="text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">至</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" placeholder="截止时间" value=""
+                               id="date2"
+                               readonly>
+                    </div>
+                </div>
+                <div class="col-sm-3  no-padding">
+                    <div class="col-sm-4 no-padding" style="text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">关键词</span>
+                    </div>
+                    <div class="col-sm-8 no-padding">
+                        <input type="text" id="keyword" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-3 no-padding">
+                    <button type="button" class="btn btn-w-m btn-info ml-5"
+                            style="width: 120px;margin-right: 200px"
+                            onclick="getNewsNum()"><i class='fa fa-check'></i> 查询
+                    </button>
+                </div>
+            </div>
+            <div id="chart4" style="height: 400px;margin-top: 50px">
+            </div>
+        </div>
+    	<!--部委资讯统计-->
+        <div class="col-xs-12" style="display: none;border: solid 1px #ccc;border-top: none; padding-bottom:20px;" id="buweiPart">
+            <!-- <h2 style="text-align: center;padding-bottom: 30px">部委资讯统计</h2> -->
+            <div class="col-xs-12 my-3" style="white-space: nowrap">
+                <div class="col-sm-6  ">
+                    <div class="col-sm-2 no-padding" style="white-space: nowrap">
+                        <span style="font-size:1.5rem; line-height: 36px;">发布时间</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" placeholder="起始时间" value=""
+                               id="dateBuwei1"
+                               readonly>
+                    </div>
+                    <div class="col-sm-1 no-padding" style="text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">至</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" placeholder="截止时间" value=""
+                               id="dateBuwei2"
+                               readonly>
+                    </div>
+                </div>
+                <div class="col-sm-3  no-padding">
+                    <div class="col-sm-4 no-padding" style="text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">关键词</span>
+                    </div>
+                    <div class="col-sm-8 no-padding">
+                        <input type="text" id="keywordBuwei" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-3 no-padding">
+                    <button type="button" class="btn btn-w-m btn-info ml-5"
+                            style="width: 120px;margin-right: 200px"
+                            onclick="getMinistryRank()"><i class='fa fa-check'></i> 查询
+                    </button>
+                </div>
+            </div>
+            <div id="chart1" style="height: 400px;margin-top: 50px">
+            </div>
+        </div>
+        <!--地方资讯统计-->
+        <div class="col-xs-12" style="padding-top: 10px;display: none;border: solid 1px #ccc;border-top: none; padding-bottom:20px;" id="cityPart">
+            <!-- <h2 style="text-align: center;padding-bottom: 30px">地方资讯统计</h2> -->
+            <div class="col-xs-12" style="white-space: nowrap">
+                <div class="col-sm-2 no-padding">
+                    <div class="col-sm-3 text-right">
+                        <span style="font-size:1.5rem; line-height: 36px;">省</span>
+                    </div>
+                    <div class="col-sm-9 ">
+                        <select class="form-control" id="pro" onchange="changePro()">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2  no-padding">
+                    <div class="col-sm-3 text-right">
+                        <span style="font-size:1.5rem; line-height: 36px;">市</span>
+                    </div>
+                    <div class="col-sm-9 ">
+                        <select class="form-control" id="city" onchange="getCityRank()">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4 no-padding">
+                    <div class="col-sm-3 no-padding" style="text-align:center;white-space: nowrap">
+                        <span style="font-size:1.5rem; line-height: 36px;">发布时间</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" value="" placeholder="起始时间"
+                               id="date3"
+                               readonly>
+                    </div>
+                    <div class="col-sm-1 no-padding" style="text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">至</span>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <input class="form_date form-control" size="16" type="text" placeholder="截止时间" value=""
+                               id="date4"
+                               readonly>
+                    </div>
+                </div>
+                <div class="col-sm-2 no-padding ">
+                    <div class="col-sm-4 no-padding" style="white-space: nowrap;text-align: center">
+                        <span style="font-size:1.5rem; line-height: 36px;">关键词</span>
+                    </div>
+                    <div class="col-sm-8 no-padding">
+                        <input type="text" id="keyword1" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-w-m btn-info ml-5"
+                            style="width: 120px;margin-right: 200px"
+                            onclick="getCityRank()"><i class='fa fa-check'></i> 查询
+                    </button>
+                </div>
+            </div>
+            <div id="chart3" style="height: 400px;margin-top:50px"></div>
+        </div>
+        <!--关键词统计-->
+        <div class="col-xs-12 no-padding" style="margin-top: 50px;border: solid 1px #cccc;margin-bottom:10px;">
+            <h3 style="background-color: #7bbdff;color:white;font-size: 14px;padding: 10px 20px;font-weight: 600;height: 42px;line-height: 22px;">关键词统计</h3>
+            <div class="col-sm-6  my-3 no-padding">
+                <div class="col-sm-6  my-3 no-padding" style="white-space: nowrap">
+                    <div class="col-sm-4 text-right">
+                        <span style="font-size:1.5rem; line-height: 36px;">类型</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <select class="form-control" id="type" onchange="changeNewsType()">
+                            <option value="">全部</option>
+                            <option value="1">部委动态</option>
+                            <option value="2">地方动态</option>
+                            <option value="3">其他资讯</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6  my-3 " hidden id="buwei">
+                    <div class="col-sm-4 text-right">
+                        <span style="font-size:1.5rem; line-height: 36px;">部委</span>
+                    </div>
+                    <div class="col-sm-8 ">
+                        <select class="form-control" id="ministry" onchange="getKeywordPie()">
+                        </select>
+                    </div>
+                </div>
+                <div id="chart2" style="height: 400px;margin-top: 50px"></div>
+            </div>
+            <div class="col-sm-6  my-3 no-padding">
+                <div id="dataTable">
+                    <table class="table table-bordered table-striped table-hover" style="margin-top:50px;width:90%;">
+                        <thead>
+	                        <tr>
+	                            <th style="background-color: #ccc;">关键词</th>
+	                            <th style="background-color: #ccc;">频次</th>
+	                        </tr>
+                        </thead>
+                        <tbody id="wordsTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

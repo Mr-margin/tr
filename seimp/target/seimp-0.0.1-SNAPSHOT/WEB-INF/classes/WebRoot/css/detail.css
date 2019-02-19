@@ -1,0 +1,74 @@
+.detail{
+    padding:0 150px 0;
+    position:relative;
+}
+.detail-con{
+	overflow:hidden;
+    height:100%;
+    width:100%;
+    padding:10px 0 20px;
+}
+.detail-left{
+    width:17%;
+    height:100%;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+}
+.detail-left .detail-move{
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    padding-left:18%;
+    color: #fff;
+    font-size: 18px;
+}
+
+.move-detail{
+    background: rgb(82,143,194);
+    color:#fff;
+}
+.detail-left ul{
+    height:100%;
+    width:100%;
+    border-top:1px solid #ccc;
+}
+.detail-left ul li{
+    height:50px;
+    width:100%;
+    text-align:left;
+    font-size:16px;
+    line-height:50px;
+    border:1px solid #ccc;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    cursor:pointer;
+    padding-left:20%;
+}
+
+.detail-right{
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    float: right;
+    width: calc(100% - 230px);
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+.detail-right .detail-news{
+    height:100%;
+    width:100%;
+    padding: 10px 30px 20px;
+    overflow: auto;
+}
+.detail-right .detail-news .list li{
+    overflow: auto;
+    line-height:36px;
+    font-size:15px;
+    border-bottom:1px dashed #ccc;
+    padding:5px 20px 0;
+}
+.detail-right .detail-news ul li img{
+    margin:7px 0 0 0;
+}

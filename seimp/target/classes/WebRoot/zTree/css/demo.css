@@ -1,0 +1,33 @@
+
+
+.ztree a {;text-decoration: underline;}
+.ztree a:hover {color:#00698C; font-weight: bold;}
+input.radio {margin: 0 2px 0 8px;}
+input.radio.first {margin-left:0;}
+input.empty {color: lightgray;}
+code {color: #2f332a;}
+.highlight_red {color:#A60000;}
+.highlight_green {color:#A7F43D;}
+li {
+    /*list-style: circle;*/
+    font-size: 12px;
+}
+li.title {list-style: none;}
+ul.list {margin-left: 17px;}
+
+.info-title{ margin-bottom:10px;}
+div.content_wrap {width: 600px;height:380px;}
+div.content_wrap div.left{float: left;width: 250px;}
+div.content_wrap div.right{float: right;width: 340px;}
+div.zTreeDemoBackground {width:250px;text-align:left;}
+
+ul.ztree {margin-top: 10px;border: 1px solid #617775;
+    /*background: #f0f6e4;*/
+    background: #fff;
+    width:220px;height:160px !important;overflow-y:scroll;overflow-x:auto; Z-index:999;}
+ul.log {border: 1px solid #617775;background: #f0f6e4;width:300px;height:170px;overflow: hidden;}
+ul.log.small {height:45px;}
+ul.log li {color: #666666;list-style: none;padding-left: 10px;}
+ul.log li.dark {background-color: #E3E3E3;}
+
+/* ruler */

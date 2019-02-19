@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>google地图影像</title>
+	
+	<link href="../css/public/public.css" rel="stylesheet">
+	<style type="text/css">
+		#map{
+			width:100%;
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+		<div id="measurebtn" style="height: 50px;width: 100px">
+			<!--<button> 量距</button>-->
+			<!--<button> 量距</button>-->
+			<input id="Button1" type="button" value="距离测量" onclick="toolbar.activate(esri.toolbars.Draw.LINE);map.hideZoomSlider();" />
+			<input id="Button2" type="button" value="面积测量" onclick="toolbar.activate(esri.toolbars.Draw.POLYGON);map.hideZoomSlider();" />
+
+		</div>
+	<div class="map-contain" id="map" style="position: relative;">
+		<button onclick="showOrHide();">显示隐藏</button>
+	</div>
+
+	<script>
+		var dojoConfig = { 
+	        paths: {
+	          	extras: location.pathname.replace(/\/[^/]+$/, "") + "/../test/extras"
+	        }
+	    };
+	</script>
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="../js/arcgisUrl.js"></script>
+	
+	<script type="text/javascript" src="../js/config.js"></script>
+	<script type="text/javascript" src="../js/tianditu.js"></script>
+	<script type="text/javascript" src="mapTest.js"></script>
+</body>
+</html>

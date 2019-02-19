@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>建设项目</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/system.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	
+	<link href="../../css/style.css" rel="stylesheet">
+	
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+	<link rel="stylesheet" href="../../js/plugins/bootstrap-select/bootstrap-select.css"/>
+	<link href="../../css/sweetalert.min.css" rel="stylesheet">
+	<style>
+		.jianshe label{
+			width:112px;
+			margin-right: 8px;
+			text-align:right;
+		}
+		.bootstrap-select{
+			width:179px !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="data-details">
+		<div class="sjxq-item"></div>
+		<hr/>
+		<div class="sjgl"> 
+			<div class="clearfix">
+				<ul class="sjTabs clearfix pull-left">
+					<li style="" id="staLi1">数据概览</li><span></span>
+					<li id="selectLi" style="display:none;" style="margin-left:-4px;" id="staLi2">数据详情</li><span id="selectSpan" style="display:none;"></span>
+					<li>元数据</li><span></span>
+					<li>数据申请</li><span></span>
+					<li id="updateTimeSpan">更新历史</li>
+				</ul>
+				<div class="pull-right tab_line tab_line1"  style="width: calc(100% - 862px);">
+					<div>
+						<p><i class="iconfont icon-scan"></i><span></span></p>		
+						<div class="qrcodeDiv"><img class="img-responsive" src="../../Files/img/erweima/7.png" alt=""></div>			
+					</div>
+				</div>
+			</div>
+			<div class="sj_items">
+				<!--数据概览-->
+				<div class="sj-item">
+					<div class="panel panel-default mt10" style="display:none;">
+					    <div class="panel-heading">
+					    	<i></i>按行业统计建设项目环评审批
+					    </div>
+					    <div class="panel-body">
+					        <div id="hangye_chart1" style="width:100%;height:500px"></div>
+					    </div>
+					</div>
+					<div class="panel panel-default mt30">
+					    <div class="panel-heading" id="staDivName">
+					    	<i></i>按省份统计建设项目环评审批
+					    </div>
+					    <div class="panel-body">
+					        <div id="hangye_chart2" style="width:100%;height:1000px"></div>
+					    </div>
+					</div>
+					
+				</div>
+				<!--数据详情-->
+				<div class="clearfix sjDetails sj-item jianshe">
+					<div class="clearfix">
+						<h2>条件查询</h2>
+						<div class="clearfix row">
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">项目名称</label>
+							    <div class="pull-left">
+							      <input type="text" class="form-control" id="projectname">
+							    </div>
+							</div>
+							
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">环评管理类别名称</label>
+							    <div class="pull-left">
+							    	<!-- <input type="text" class="form-control"  id="eiamanagename"> -->
+							      	<select class="selectpicker show-tick form-control" multiple data-live-search="true" id="eiamanagename" style="width:179px;">
+							      		<option value="">全部</option>
+							      		<option value="城市交通设施">城市交通设施</option>
+										<option value="电气机械及器材制造">电气机械及器材制造</option>
+										<option value="城市道路">城市道路</option>
+										<option value="采选（含单独尾矿库）">采选（含单独尾矿库）</option>
+										<option value="黑色金属">黑色金属</option>
+										<option value="鞋业制造">鞋业制造</option>
+										<option value="玻璃及玻璃制品">玻璃及玻璃制品</option>
+										<option value="水泥制造">水泥制造</option>
+										<option value="耐火材料及其制品">耐火材料及其制品</option>
+										<option value="仓储（不含油库、气库、煤炭储存）">仓储（不含油库、气库、煤炭储存）</option>
+										<option value="炼钢">炼钢</option>
+										<option value="公交枢纽、大型停车场">公交枢纽、大型停车场</option>
+										<option value="轮胎制造、再生橡胶制造、橡胶加工、橡胶制品制造及翻新">轮胎制造、再生橡胶制造、橡胶加工、橡胶制品制造及翻新</option>
+										<option value="管网建设">管网建设</option>
+										<option value="其他食品制造">其他食品制造</option>
+										<option value="焦化、电石">焦化、电石</option>
+										<option value="社区医疗、卫生院（所、站）、血站、急救中心等其他卫生机构">社区医疗、卫生院（所、站）、血站、急救中心等其他卫生机构</option>
+										<option value="枢纽">枢纽</option>
+										<option value="橡胶和塑料制品业">橡胶和塑料制品业</option>
+										<option value="天然气、页岩气、砂岩气开采（含净化、液化）">天然气、页岩气、砂岩气开采（含净化、液化）</option>
+										<option value="环境治理业">环境治理业</option>
+										<option value="金属制品业">金属制品业</option>
+										<option value="煤化工（含煤炭液化、气化）">煤化工（含煤炭液化、气化）</option>
+										<option value="防水建筑材料制造、浙青搅拌站、干粉砂浆搅拌站">防水建筑材料制造、浙青搅拌站、干粉砂浆搅拌站</option>
+										<option value="自来水生产和供应工程">自来水生产和供应工程</option>
+										<option value="40_124">40_124</option>
+										<option value="海水淡化、其他水处理和利用">海水淡化、其他水处理和利用</option>
+										<option value="无线通讯">无线通讯</option>
+										<option value="殡仪馆、陵园、公墓">殡仪馆、陵园、公墓</option>
+										<option value="核技术利用建设项目（不含在已许可场所增加不超出已许可活动种类和不高于已许可范围等级的核素或射线装置）" title='核技术利用建设项目（不含在已许可场所增加不超出已许可活动种类和不高于已许可范围等级的核素或射线装置）'>核技术利用建设项目...</option>
+										<option value="调味品、发酵制品制造">调味品、发酵制品制造</option>
+										<option value="核与辐射">核与辐射</option>
+										<option value="铁路、船舶、航空航天和其他运输设备制造业">铁路、船舶、航空航天和其他运输设备制造业</option>
+										<option value="39_111">39_111</option>
+										<option value="展览馆、博物馆、美术馆、影剧院、音乐厅、文化馆、图书馆、档案馆、纪念馆、体育场、体育馆等" title="展览馆、博物馆、美术馆、影剧院、音乐厅、文化馆、图书馆、档案馆、纪念馆、体育场、体育馆等">展览馆、博物馆、美术馆、影剧院...</option>
+										<option value="15_036">15_036</option>
+										<option value="40_119">40_119</option>
+										<option value="17_044">17_044</option>
+										<option value="18-047">18-047</option>
+										<option value="40_118">40_118</option>
+										<option value="40_126">40_126</option>
+										<option value="V158">V158</option>
+										<option value="46_142">46_142</option>
+										<option value="生物、生化制品制造">生物、生化制品制造</option>
+										<option value="有色金属">有色金属</option>
+										<option value="中成药制造、中药饮片加工">中成药制造、中药饮片加工</option>
+										<option value="城镇基础设施及房地产">城镇基础设施及房地产</option>
+										<option value="卫生材料及医药用品制造">卫生材料及医药用品制造</option>
+										<option value="石油开采">石油开采</option>
+										<option value="防水建筑材料制造、沥青搅拌站">防水建筑材料制造、沥青搅拌站</option>
+										<option value="印刷电路板、电子元件及组件制造">印刷电路板、电子元件及组件制造</option>
+										<option value="日用化学品制造除单纯混合和分装外的">日用化学品制造除单纯混合和分装外的</option>
+										<option value="仪器仪表及文化、办公用机械制造">仪器仪表及文化、办公用机械制造</option>
+										<option value="土砂石开采">土砂石开采</option>
+										<option value="地下水开采工程">地下水开采工程</option>
+										<option value="基本化学原料制造">基本化学原料制造</option>
+										<option value="涂料、染料、颜料、油墨及其类似产品制造">涂料、染料、颜料、油墨及其类似产品制造</option>
+										<option value="合成材料制造">合成材料制造</option>
+										<option value="专用化学品制造">专用化学品制造</option>
+										<option value="水处理剂等制造">水处理剂等制造</option>
+										<option value="城市轨道交通">城市轨道交通</option>
+										<option value="其他能源发电">其他能源发电</option>
+										<option value="废旧资源（含生物质）加工、再生利用">废旧资源（含生物质）加工、再生利用</option>
+										<option value="M001">M001</option>
+										<option value="城镇生活垃圾（含餐厨废弃物）集中处置">城镇生活垃圾（含餐厨废弃物）集中处置</option>
+										<option value="城市天然气供应工程">城市天然气供应工程</option>
+										<option value="公园（含动物园、植物园、主题公园）">公园（含动物园、植物园、主题公园）</option>
+										<option value="肥料制造">肥料制造</option>
+										<option value="批发、零售市场">批发、零售市场</option>
+										<option value="煤炭开采">煤炭开采</option>
+										<option value="化学原料和化学制品制造业">化学原料和化学制品制造业</option>
+										<option value="改建铁路">改建铁路</option>
+										<option value="太阳能电池片">太阳能电池片</option>
+										<option value="汽车制造">汽车制造</option>
+										<option value="导航台站、供油工程、维修保障等配套工程">导航台站、供油工程、维修保障等配套工程</option>
+										<option value="机场">机场</option>
+										<option value="专用设备制造及维修">专用设备制造及维修</option>
+										<option value="黒色金属冶炼和压延加工业">黒色金属冶炼和压延加工业</option>
+										<option value="锯材、木片加工、木制品制造">锯材、木片加工、木制品制造</option>
+										<option value="房地产">房地产</option>
+										<option value="输变电工程">输变电工程</option>
+										<option value="农产品基地项目">农产品基地项目</option>
+										<option value="体育场、体育馆">体育场、体育馆</option>
+										<option value="专科防治院（所、站）">专科防治院（所、站）</option>
+										<option value="经济林基地项目">经济林基地项目</option>
+										<option value="农田改造项目">农田改造项目</option>
+										<option value="海上和海底物资储藏设施工程">海上和海底物资储藏设施工程</option>
+										<option value="专用设备制造业">专用设备制造业</option>
+										<option value="40_113">40_113</option>
+										<option value="22_068">22_068</option>
+										<option value="18_046">18_046</option>
+										<option value="49_178">49_178</option>
+										<option value="21_064">21_064</option>
+										<option value="08_023">08_023</option>
+										<option value="化学肥料制造">化学肥料制造</option>
+										<option value="压延加工">压延加工</option>
+										<option value="纺织品制造">纺织品制造</option>
+										<option value="砼结构构件制造、商品混凝土加工">砼结构构件制造、商品混凝土加工</option>
+										<option value="灌区工程">灌区工程</option>
+										<option value="汽车、摩托车制造">汽车、摩托车制造</option>
+										<option value="水泥粉磨站">水泥粉磨站</option>
+										<option value="单纯药品分装、复配">单纯药品分装、复配</option>
+										<option value="自行车制造">自行车制造</option>
+										<option value="电力">电力</option>
+										<option value="石灰和石膏制造">石灰和石膏制造</option>
+										<option value="炼铁、球团、烧结">炼铁、球团、烧结</option>
+										<option value="气库（不含加气站的气库）">气库（不含加气站的气库）</option>
+										<option value="黑色金属铸造">黑色金属铸造</option>
+										<option value="日用化学品制造">日用化学品制造</option>
+										<option value="造纸和纸制品业">造纸和纸制品业</option>
+										<option value="水运">水运</option>
+										<option value="采盐">采盐</option>
+										<option value="有色金属铸造">有色金属铸造</option>
+										<option value="纸制品">纸制品</option>
+										<option value="乳制品加工">乳制品加工</option>
+										<option value="粮食及饲料加工">粮食及饲料加工</option>
+										<option value="有色金属合金制造">有色金属合金制造</option>
+										<option value="半导体材料">半导体材料</option>
+										<option value="油库〔不含加油站的油库）">油库〔不含加油站的油库）</option>
+										<option value="纺织服装、服饰业">纺织服装、服饰业</option>
+										<option value="新建、增建铁路">新建、增建铁路</option>
+										<option value="纺织业">纺织业</option>
+										<option value="地下水开采">地下水开采</option>
+										<option value="工业废水处理">工业废水处理</option>
+										<option value="文教、体育、娱乐用品制造">文教、体育、娱乐用品制造</option>
+										<option value="屠宰">屠宰</option>
+										<option value="黑色金属矿采选业">黑色金属矿采选业</option>
+										<option value="水利、水电工程地质勘查">水利、水电工程地质勘查</option>
+										<option value="殡仪馆">殡仪馆</option>
+										<option value="围填海工程及海上堤坝工程">围填海工程及海上堤坝工程</option>
+										<option value="农业转基因项目、物种引进项目">农业转基因项目、物种引进项目</option>
+										<option value="餐饮、娱乐、洗浴场所">餐饮、娱乐、洗浴场所</option>
+										<option value="农产品基地项目（含药材基地）">农产品基地项目（含药材基地）</option>
+										<option value="家具制造业">家具制造业</option>
+										<option value="危险废物治理">危险废物治理</option>
+										<option value="22_067">22_067</option>
+										<option value="城市道路（不含维护，不含支路）">城市道路（不含维护，不含支路）</option>
+										<option value="城市桥梁、隧道（不含人行天桥、人行地道）">城市桥梁、隧道（不含人行天桥、人行地道）</option>
+										<option value="49_175">49_175</option>
+										<option value="驾驶员训练基地、公交枢纽、大型停车场、机动车检测场">驾驶员训练基地、公交枢纽、大型停车场、机动车检测场</option>
+										<option value="20_059">20_059</option>
+										<option value="49_157">49_157</option>
+										<option value="50_181">50_181</option>
+										<option value="02_005">02_005</option>
+										<option value="V182">V182</option>
+										<option value="41_130">41_130</option>
+										<option value="11_028">11_028</option>
+										<option value="34_100">34_100</option>
+										<option value="49_173">49_173</option>
+										<option value="炸药、火工及焰火产品制造">炸药、火工及焰火产品制造</option>
+										<option value="石化、化工">石化、化工</option>
+										<option value="金属铸件">金属铸件</option>
+										<option value="电子真空器件、集成电路、半导体分立器件制造、光电子器件及其他电子器件制造">电子真空器件、集成电路、半导体分立器件制造、光电子器件及其他电子器件制造</option>
+										<option value="铁路运输设备制造及修理">铁路运输设备制造及修理</option>
+										<option value="石材加工">石材加工</option>
+										<option value="化学纤维制造">化学纤维制造</option>
+										<option value="引水工程">引水工程</option>
+										<option value="化学药品制造">化学药品制造</option>
+										<option value="一般工业固体废物（含污泥）集中处置">一般工业固体废物（含污泥）集中处置</option>
+										<option value="危险废物（含医疗废物）集中处置及综合利用">危险废物（含医疗废物）集中处置及综合利用</option>
+										<option value="砖瓦制造">砖瓦制造</option>
+										<option value="房地产开发、宾馆、酒店、办公用房等">房地产开发、宾馆、酒店、办公用房等</option>
+										<option value="等级公路">等级公路</option>
+										<option value="化学品输送管线">化学品输送管线</option>
+										<option value="航道工程、水运辅助工程">航道工程、水运辅助工程</option>
+										<option value="制鞋业">制鞋业</option>
+										<option value="印刷">印刷</option>
+										<option value="污染场地治理修复">污染场地治理修复</option>
+										<option value="油气、液体化工码头">油气、液体化工码头</option>
+										<option value="气库（含LNG库，不含加气站的气库）">气库（含LNG库，不含加气站的气库）</option>
+										<option value="铁路轮渡码头">铁路轮渡码头</option>
+										<option value="化学纤维制造业">化学纤维制造业</option>
+										<option value="有色金属矿采选业">有色金属矿采选业</option>
+										<option value="石油和天然气开采业">石油和天然气开采业</option>
+										<option value="医院、专科防治院(所、站)、社区医疗、卫生院（所、站)、血站、急救中心、疗养院等其他卫生机构" title="医院、专科防治院(所、站)、社区医疗、卫生院（所、站)、血站、急救中心、疗养院等其他卫生机构">医院、专科防治院(所、站)、社区医疗...</option>
+										<option value="旅游开发">旅游开发</option>
+										<option value="动物医院">动物医院</option>
+										<option value="疗养院、福利院、养老院">疗养院、福利院、养老院</option>
+										<option value="雷达">雷达</option>
+										<option value="22">22</option>
+										<option value="家具制造">家具制造</option>
+										<option value="房地产开发、宾馆、酒店、办公用房、标准厂房等">房地产开发、宾馆、酒店、办公用房、标准厂房等</option>
+										<option value="49">49</option>
+										<option value="49_172">49_172</option>
+										<option value="46_145">46_145</option>
+										<option value="49_180">49_180</option>
+										<option value="46_144">46_144</option>
+										<option value="30_086">30_086</option>
+										<option value="16_043">16_043</option>
+										<option value="T138">T138</option>
+										<option value="宾馆饭店及医疗机构衣物集中洗涤、餐具集中清洗消毒">宾馆饭店及医疗机构衣物集中洗涤、餐具集中清洗消毒</option>
+										<option value="42_132">42_132</option>
+										<option value="11_029">11_029</option>
+										<option value="锰、铬冶炼">锰、铬冶炼</option>
+										<option value="猛、络冶炼">猛、络冶炼</option>
+										<option value="反应堆（研究堆、实验堆、临界装置等）">反应堆（研究堆、实验堆、临界装置等）</option>
+										<option value="纸浆、溶解浆、纤维浆等制造">纸浆、溶解浆、纤维浆等制造</option>
+										<option value="造纸（含废纸造纸）">造纸（含废纸造纸）</option>
+										<option value="饲料添加剂、食品添加剂及水处理剂等制造">饲料添加剂、食品添加剂及水处理剂等制造</option>
+										<option value="非金属矿采选及制品制造">非金属矿采选及制品制造</option>
+										<option value="水利">水利</option>
+										<option value="金属制品加工制造">金属制品加工制造</option>
+										<option value="原油加工、天然气加工、油母页岩提炼原油、煤制油、生物制油及其他石油制品">原油加工、天然气加工、油母页岩提炼原油、煤制油、生物制油及其他石油制品</option>
+										<option value="电子配件组装">电子配件组装</option>
+										<option value="半导体材料、电子陶瓷、有机薄膜、荧光粉、贵金属粉等电子专用材料">半导体材料、电子陶瓷、有机薄膜、荧光粉、贵金属粉等电子专用材料</option>
+										<option value="铁合金制造">铁合金制造</option>
+										<option value="石油、天然气、成品油管线（不含城市天然气管线）">石油、天然气、成品油管线（不含城市天然气管线）</option>
+										<option value="煤炭液化、气化">煤炭液化、气化</option>
+										<option value="石油、天然气、页岩气、成品油管线（不含城市天然气管线）">石油、天然气、页岩气、成品油管线（不含城市天然气管线）</option>
+										<option value="肉禽类加工">肉禽类加工</option>
+										<option value="危险废物（含医疗废物）利用及处置">危险废物（含医疗废物）利用及处置</option>
+										<option value="城镇粪便处置工程">城镇粪便处置工程</option>
+										<option value="矿产资源地质勘查（包括勘探活动）">矿产资源地质勘查（包括勘探活动）</option>
+										<option value="皮革、毛皮、羽毛（绒）制品">皮革、毛皮、羽毛（绒）制品</option>
+										<option value="干散货（含煤炭、矿石)、件杂、多用途、通用码头">干散货（含煤炭、矿石)、件杂、多用途、通用码头</option>
+										<option value="民航机场">民航机场</option>
+										<option value="工艺品制造">工艺品制造</option>
+										<option value="专业实验室">专业实验室</option>
+										<option value="有色金属矿采选（含单独尾矿库）">有色金属矿采选（含单独尾矿库）</option>
+										<option value="滚装、客运、工作船、游艇码头">滚装、客运、工作船、游艇码头</option>
+										<option value="炼焦、煤炭热解、电石">炼焦、煤炭热解、电石</option>
+										<option value="航电枢纽工程">航电枢纽工程</option>
+										<option value="公共设施管理业">公共设施管理业</option>
+										<option value="有色金属冶炼和压延加工业">有色金属冶炼和压延加工业</option>
+										<option value="石油加工、炼焦业">石油加工、炼焦业</option>
+										<option value="石灰和石膏制造、石材加工、人造石制造、砖瓦制造">石灰和石膏制造、石材加工、人造石制造、砖瓦制造</option>
+										<option value="驾驶员训练基地">驾驶员训练基地</option>
+										<option value="淡水养殖工程">淡水养殖工程</option>
+										<option value="餐饮场所">餐饮场所</option>
+										<option value="学校、幼儿园、托儿所">学校、幼儿园、托儿所</option>
+										<option value="广播电台、差转台">广播电台、差转台</option>
+										<option value="核技术利用项目退役">核技术利用项目退役</option>
+										<option value="20_060">20_060</option>
+										<option value="42_133">42_133</option>
+										<option value="40_120">40_120</option>
+										<option value="08_022">08_022</option>
+										<option value="34_101">34_101</option>
+										<option value="35_103">35_103</option>
+										<option value="40_114">40_114</option>
+										<option value="15_037">15_037</option>
+										<option value="16_042">16_042</option>
+										<option value="反应堆（研究堆、实验堆、临界装置等)">反应堆（研究堆、实验堆、临界装置等)</option>
+										<option value="核动力厂（核电厂、核热电厂、核供汽供热厂等）">核动力厂（核电厂、核热电厂、核供汽供热厂等）</option>
+										<option value="农药制造">农药制造</option>
+										<option value="印刷厂">印刷厂</option>
+										<option value="石油、天然气">石油、天然气</option>
+										<option value="医药">医药</option>
+										<option value="水库">水库</option>
+										<option value="轻工">轻工</option>
+										<option value="油库（不含加油站的油库）">油库（不含加油站的油库）</option>
+										<option value="合金制造">合金制造</option>
+										<option value="黑色金属矿采选（含单独尾矿库）">黑色金属矿采选（含单独尾矿库）</option>
+										<option value="生活污水集中处理">生活污水集中处理</option>
+										<option value="干散货（含煤炭、矿石）、件杂、多用途、通用码头">干散货（含煤炭、矿石）、件杂、多用途、通用码头</option>
+										<option value="生活垃圾（含餐厨废弃物）集中处置">生活垃圾（含餐厨废弃物）集中处置</option>
+										<option value="地质勘查">地质勘查</option>
+										<option value="热力生产和供应工程">热力生产和供应工程</option>
+										<option value="脱硫、脱硝、除尘等环保工程">脱硫、脱硝、除尘等环保工程</option>
+										<option value="加油、加气站">加油、加气站</option>
+										<option value="交通运输业、管道运输业和仓储业">交通运输业、管道运输业和仓储业</option>
+										<option value="皮革、毛皮、羽毛(绒)制品绒">皮革、毛皮、羽毛(绒)制品绒</option>
+										<option value="粪便处置工程">粪便处置工程</option>
+										<option value="疾病预防控制中心">疾病预防控制中心</option>
+										<option value="电气机械和器材制造业">电气机械和器材制造业</option>
+										<option value="长途客运站">长途客运站</option>
+										<option value="医药制造业">医药制造业</option>
+										<option value="电子真空器件、集成电路、半导体分立器件制造、光电子器件、其他电子器件制造等" title="电子真空器件、集成电路、半导体分立器件制造、光电子器件、其他电子器件制造等">电子真空器件、集成电路...</option>
+										<option value="畜禽养殖场、养殖小区">畜禽养殖场、养殖小区</option>
+										<option value="农、林、牧、渔、海洋">农、林、牧、渔、海洋</option>
+										<option value="医院">医院</option>
+										<option value="高尔夫球场、滑雪场、狩猎场、赛车场、跑马场、射击场、水上运动中心" title="高尔夫球场、滑雪场、狩猎场、赛车场、跑马场、射击场、水上运动中心">高尔夫球场、滑雪场、狩猎场...</option>
+										<option value="汽车制造业">汽车制造业</option>
+										<option value="土砂石、石材开采加工">土砂石、石材开采加工</option>
+										<option value="新建铁路">新建铁路</option>
+										<option value="防沙治沙工程">防沙治沙工程</option>
+										<option value="综合利用发电">综合利用发电</option>
+										<option value="上述项目的退役">上述项目的退役</option>
+										<option value="等级公路（不含维护，不含改扩建四级公路）">等级公路（不含维护，不含改扩建四级公路）</option>
+										<option value="J060">J060</option>
+										<option value="34_099">34_099</option>
+										<option value="49_164">49_164</option>
+										<option value="16_040">16_040</option>
+										<option value="07_021">07_021</option>
+										<option value="电子元件及电子专用材料制造">电子元件及电子专用材料制造</option>
+										<option value="核动力厂(核电厂、核热电厂、核供汽供热厂等)">核动力厂(核电厂、核热电厂、核供汽供热厂等)</option>
+										<option value="放射性废物贮存、处理或处置">放射性废物贮存、处理或处置</option>
+										<option value="上述项目的退役。放射性污染治理项目">上述项目的退役。放射性污染治理项目</option>
+										<option value="纺织化纤">纺织化纤</option>
+										<option value="表面处理及热处理加工">表面处理及热处理加工</option>
+										<option value="天然气、页岩气开采（含净化）">天然气、页岩气开采（含净化）</option>
+										<option value="有色金属冶炼（含再生有色金属冶炼）">有色金属冶炼（含再生有色金属冶炼）</option>
+										<option value="陶瓷制品">陶瓷制品</option>
+										<option value="社会事业与服务业">社会事业与服务业</option>
+										<option value="轨道交通">轨道交通</option>
+										<option value="煤气生产和供应工程">煤气生产和供应工程</option>
+										<option value="金属制品表面处理及热处理加工">金属制品表面处理及热处理加工</option>
+										<option value="一般工业固体废物(含污泥）处置及综合利用">一般工业固体废物(含污泥）处置及综合利用</option>
+										<option value="锯材、木片加工、家具制造">锯材、木片加工、家具制造</option>
+										<option value="工业废水集中处理">工业废水集中处理</option>
+										<option value="L002">L002</option>
+										<option value="污染场地治理修复工程">污染场地治理修复工程</option>
+										<option value="脱硫、脱硝、除尘等工程">脱硫、脱硝、除尘等工程</option>
+										<option value="一般社区服务项目">一般社区服务项目</option>
+										<option value="生物质纤维素乙醇生产">生物质纤维素乙醇生产</option>
+										<option value="汽车、摩托车维修场所">汽车、摩托车维修场所</option>
+										<option value="皮革、毛皮、羽毛及其制品和制鞋业">皮革、毛皮、羽毛及其制品和制鞋业</option>
+										<option value="煤层气开采（含净化、液化）">煤层气开采（含净化、液化）</option>
+										<option value="计算机、通信和其他电子设备制造业">计算机、通信和其他电子设备制造业</option>
+										<option value="公路">公路</option>
+										<option value="学校、幼儿园、托儿所、福利院、养老院">学校、幼儿园、托儿所、福利院、养老院</option>
+										<option value="卫生">卫生</option>
+										<option value="洗车场">洗车场</option>
+										<option value="金属表面处理及热处理加工">金属表面处理及热处理加工</option>
+										<option value="农业垦殖">农业垦殖</option>
+										<option value="蛋品加工">蛋品加工</option>
+										<option value="娱乐场所">娱乐场所</option>
+										<option value="植物油加工">植物油加工</option>
+										<option value="海底隧道、管道、电（光）缆工程">海底隧道、管道、电（光）缆工程</option>
+										<option value="陵园、公墓">陵园、公墓</option>
+										<option value="送（输）变电工程">送（输）变电工程</option>
+										<option value="海水养殖工程">海水养殖工程</option>
+										<option value="影视拍摄、大型实景演出">影视拍摄、大型实景演出</option>
+										<option value="人造板制造">人造板制造</option>
+										<option value="核技术利用建设项目（在已许可场所增加不超出已许可活动种类和不高于已许可范围等级的核素或射线装置除外)" title="核技术利用建设项目（在已许可场所增加不超出已许可活动种类和不高于已许可范围等级的核素或射线装置除外)">核技术利用建设项目...</option>
+										<option value="森林采伐工程">森林采伐工程</option>
+										<option value="畜牧业">畜牧业</option>
+										<option value="房地产开发经营">房地产开发经营</option>
+										<option value="矿产资源地质勘查（含勘探活动和油气资源勘探）">矿产资源地质勘查（含勘探活动和油气资源勘探）</option>
+										<option value="27_078">27_078</option>
+										<option value="电子陶瓷、有机薄膜、荧光粉、贵金属粉等电子专用材料">电子陶瓷、有机薄膜、荧光粉、贵金属粉等电子专用材料</option>
+										<option value="化学药品原料药制造">化学药品原料药制造</option>
+										<option value="房屋建筑业">房屋建筑业</option>
+										<option value="防水建筑材料制造、沥青搅拌站、干粉砂浆搅拌站">防水建筑材料制造、沥青搅拌站、干粉砂浆搅拌站</option>
+										<option value="21_066">21_066</option>
+										<option value="01_001">01_001</option>
+										<option value="J054">J054</option>
+										<option value="V185">V185</option>
+										<option value="06_020">06_020</option>
+										<option value="49_159">49_159</option>
+										<option value="35_104">35_104</option>
+										<option value="电子器件制造">电子器件制造</option>
+										<option value="磁材料制品">磁材料制品</option>
+										<option value="核燃料生产、加工、贮存、后处理">核燃料生产、加工、贮存、后处理</option>
+										<option value="机械、电子">机械、电子</option>
+										<option value="城市桥梁、隧道">城市桥梁、隧道</option>
+										<option value="通用、专用设备制造及维修">通用、专用设备制造及维修</option>
+										<option value="防洪治涝工程">防洪治涝工程</option>
+										<option value="煤炭储存、集运">煤炭储存、集运</option>
+										<option value="金属制品">金属制品</option>
+										<option value="化学矿采选">化学矿采选</option>
+										<option value="冶炼（含再生有色金属冶炼）">冶炼（含再生有色金属冶炼）</option>
+										<option value="玻璃纤维及玻璃纤维增强塑料制品">玻璃纤维及玻璃纤维增强塑料制品</option>
+										<option value="交通器材及其他交通运输设备制造">交通器材及其他交通运输设备制造</option>
+										<option value="河湖整治工程">河湖整治工程</option>
+										<option value="废旧资源(含生物质）加工、再生利用">废旧资源(含生物质）加工、再生利用</option>
+										<option value="石墨及其他非金属矿物制品">石墨及其他非金属矿物制品</option>
+										<option value="塑料制品制造">塑料制品制造</option>
+										<option value="石棉及其他非金属矿采选">石棉及其他非金属矿采选</option>
+										<option value="船舶及相关装置制造">船舶及相关装置制造</option>
+										<option value="服装制造">服装制造</option>
+										<option value="生活垃圾转运站">生活垃圾转运站</option>
+										<option value="航空航天器制造">航空航天器制造</option>
+										<option value="人造石制造">人造石制造</option>
+										<option value="石油、页岩油开采">石油、页岩油开采</option>
+										<option value="河湖整治">河湖整治</option>
+										<option value="城镇管网及管廊建设(不含1.6兆帕及以下的天然气管道）">城镇管网及管廊建设(不含1.6兆帕及以下的天然气管道）</option>
+										<option value="城镇生活垃圾转运站">城镇生活垃圾转运站</option>
+										<option value="洗选、配煤">洗选、配煤</option>
+										<option value="原油加工、天然气加工、油母页岩等提炼原油、煤制油、生物制油及其他石油制品" title="原油加工、天然气加工、油母页岩等提炼原油、煤制油、生物制油及其他石油制品">原油加工、天然气加工...</option>
+										<option value="纸制品制造">纸制品制造</option>
+										<option value="煤炭">煤炭</option>
+										<option value="中心渔港码头">中心渔港码头</option>
+										<option value="展览馆、博物馆、美术馆、影剧院、音乐厅、文化馆、图书馆、档案馆、纪念馆" title="展览馆、博物馆、美术馆、影剧院、音乐厅、文化馆、图书馆、档案馆、纪念馆">展览馆、博物馆、美术馆...</option>
+										<option value="铁路枢纽">铁路枢纽</option>
+										<option value="生物质发电">生物质发电</option>
+										<option value="通用设备制造及维修">通用设备制造及维修</option>
+										<option value="集装箱专用码头">集装箱专用码头</option>
+										<option value="研发基地">研发基地</option>
+										<option value="驾驶员训练基地、公交枢纽、大型停车场">驾驶员训练基地、公交枢纽、大型停车场</option>
+										<option value="环境卫生管理">环境卫生管理</option>
+										<option value="铁路">铁路</option>
+										<option value="跨海桥梁工程">跨海桥梁工程</option>
+										<option value="胶片洗印厂">胶片洗印厂</option>
+										<option value="洗浴场所">洗浴场所</option>
+										<option value="电视塔台">电视塔台</option>
+										<option value="影视基地建设">影视基地建设</option>
+										<option value="轮胎制造、再生橡胶制造、橡胶加工、橡胶制品翻新">轮胎制造、再生橡胶制造、橡胶加工、橡胶制品翻新</option>
+										<option value="18_047">18_047</option>
+										<option value="水力发电">水力发电</option>
+										<option value="仪器仪表制造">仪器仪表制造</option>
+										<option value="水的生产和供应业">水的生产和供应业</option>
+										<option value="盐加工">盐加工</option>
+										<option value="脱硫、脱硝、除尘、VOCS治理等工程">脱硫、脱硝、除尘、VOCS治理等工程</option>
+										<option value="36_106">36_106</option>
+										<option value="21_065">21_065</option>
+										<option value="38_110">38_110</option>
+										<option value="通信设备制造、广播电视设备制造、雷达及配套设备制造、非专业视听设备制造及其他电子设备制造" title="通信设备制造、广播电视设备制造、雷达及配套设备制造、非专业视听设备制造及其他电子设备制造">通信设备制造、广播电视设备制造...</option>
+										<option value="淀粉、淀粉糖">淀粉、淀粉糖</option>
+														      		
+							      	
+							      	</select>
+							    </div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">省份</label>
+							    <div class="pull-left">
+							    	<select class="form-control" id="provincename" style="width:179px;"></select>
+							    </div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">国民经济类别名称</label>
+							    <div class="pull-left">
+							      	<select class="selectpicker show-tick form-control" multiple data-live-search="true" id="nationalecomomyname"  style="width:179px;"></select>
+							    </div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left" >数据来源</label>
+							    <div class="pull-left">
+							      <select class="form-control " id="datasource" style="width:179px;"></select>
+							    </div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">受理日期开始</label>
+							    <div class="pull-left">
+							      <input  type="text" class="form-control" id="acceptancedateStart">
+							    </div>
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 form-group clearfix">
+							    <label for="" class="control-label pull-left">受理日期结束</label>
+							    <div class="pull-left">
+							      <input  type="text" class="form-control" id="acceptancedateEnd">
+							    </div>
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 pull-right clearfix">
+								<button id="downBtn" class="btn btn-success pull-right" style="margin-right:0;display:none;" onclick="kepGetExcelFile()"><i class="iconfont"  style="margin-right: 5px;">&#xe610;</i>下载</button>
+								<!-- <button class="btn btn-info pull-right">统计</button> -->
+								<button class="btn btn-primary pull-right" id="tableSearchBtn"><i class="iconfont"  style="margin-right: 5px;">&#xe62d;</i>查询</button>
+							</div>
+						</div>
+						
+					</div>
+					<table id="hangyeTable" class="table table-striped mt20 table-bordered"></table>
+				</div>
+				<!--元数据-->
+				<div class="sj-item originData">
+					<div>
+						<table id="jibenxinxiTalbe" class="table table-striped table-bordered">
+							<caption><span>基本信息</span></caption>
+							<tr>
+								<td class="origin_label">数据名称</td>
+								<td></td>
+								<td class="origin_label">数据提供单位</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">数据量</td>
+								<td></td>
+								<td class="origin_label">访问量</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">数据分类</td>
+								<td></td>
+								<td class="origin_label">数据更新时间</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人</td>
+								<td></td>
+								<td class="origin_label">联系人电话</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人邮箱</td>
+								<td></td>
+								<td class="origin_label">联系人地址</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">空间位置</td>
+								<td></td>
+								<td class="origin_label">主题词</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="origin_label">数据摘要</td>
+								<td align="center" colspan="3"></td>
+							</tr>
+							<tr>
+								<td class="origin_label" >使用声明</td>
+								<td colspan="3"></td>
+							</tr>
+						</table>
+					</div>
+					<div class="origin2">
+						<table id="produceInfoTable" class="table table-striped table-bordered">
+							<caption style="border-top: 1px solid #ddd"><span>数据生产信息</span></caption>
+							<tr>
+								<td class="origin_label">单位名称</td>
+								<td align="center" class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人电话</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人邮箱</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">单位地址</td>
+								<td class="bg_f"></td>
+							</tr>
+						</table>
+						<!-- <table id="handleInfoTable" class="table table-striped table-bordered">
+							<caption><span>数据制作信息</span></caption>
+							<tr>
+								<td class="origin_label">单位名称</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人电话</td>
+								<td class="bg_f"></td>
+							</tr>
+						</table> -->
+						<table id="todatabaseInfoTable" class="table table-striped table-bordered">
+							<caption><span>数据入库信息</span></caption>
+							<tr>
+								<td class="origin_label">单位名称</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人电话</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">联系人邮箱</td>
+								<td class="bg_f"></td>
+							</tr>
+							<tr>
+								<td class="origin_label">单位地址</td>
+								<td class="bg_f"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--数据申请-->
+				<div class="sj-item originData applyData">
+					<table id="catalogInfoTable" class="table table-striped table-bordered">
+						<caption><span>目录信息</span></caption>
+						<tr>
+							<td class="origin_label" width="30%">信息资源名称</td>
+							<td style="text-align:left;" class="bg_f"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%">数据资源分类</td>
+							<td style="text-align:left;" class="bg_f"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%">资源提供方</td>
+							<td  style="text-align:left;" class="bg_f"></td>
+						</tr>
+					</table>
+					<table id="dataColumnInfoTable" class="table  table-bordered apply2">
+						<caption><span>数据项</span></caption>
+						<tr>
+							<th class="origin_label" >信息项目名称</th>
+							<th class="origin_label" >数据项类型</th>
+							<th class="origin_label" >数据长度</th>
+						</tr>
+						<!-- 
+						<tr>
+							<td>污染地块</td>
+							<td>污染地块</td>
+							<td>污染地块</td>
+						</tr> -->
+					</table>
+					<table class="table table-bordered apply3">
+						<caption><span>申请信息填写</span></caption>
+						<tr>
+							<td class="origin_label" width="30%"><img src="../../img/data/require.png"/>申请部门</td>
+							<td style="text-align:left;"><input id="askDepartment" type="text" class="form-control" id="" placeholder="请输入申请部门"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%"><img src="../../img/data/require.png"/>联系人姓名</td>
+							<td style="text-align:left;"><input id="askName" type="text" class="form-control" id="" placeholder="请输入联系人姓名"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%"><img src="../../img/data/require.png"/>联系人电话</td>
+							<td style="text-align:left;"><input id="askTel" type="text" class="form-control" id="" placeholder="请输入联系人电话"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%"><img src="../../img/data/require.png"/>联系人邮箱</td>
+							<td style="text-align:left;"><input id="askEmail" type="text" class="form-control" id="" placeholder="请输入联系人邮箱"></td>
+						</tr>
+						<tr>
+							<td class="origin_label" width="30%" style="padding-bottom:50px;"><img src="../../img/data/require.png"/>申请理由<p>(不超过200字)</p></td>
+							<td style="text-align:left;"><input id="askReason" type="text" class="form-control" id="" placeholder="请输入申请理由"></td>
+						</tr>
+						<tr>
+							<td colspan="3" style="padding: 12px 0;"><button class="btn btn-primary" onclick="submitAskInfo();">提交申请</button></td>
+						</tr>
+					</table>
+				</div>
+				
+				<!--数据数据更新-->
+				<div class="sj-item newData">
+					<div class="panel panel-default mt10">
+					    <div class="panel-heading">
+					    	<i></i>更新数量统计
+					    </div>
+					    <div class="panel-body">
+					    	<div class="clearfix">
+					    		<div class="pull-right form-group clearfix" >
+								    <label for="" class="control-label pull-left">统计单位</label>
+								    <div class="pull-left">
+								    	<select id="statisType" class="form-control" id="" >
+								    		<option value="天">天</option>
+								    		<option value="月">月</option>
+								    		<option value="年">年</option>
+								    	</select>
+								    </div>
+								</div>
+								<div class="pull-right form-group clearfix">
+								    <label for="" class="control-label pull-left">结束时间</label>
+								    <div class="pull-left">
+								      <input id="endTime" type="text" class="form-control" id="">
+								    </div>
+								</div>
+					    		<div class="pull-right form-group clearfix">
+								    <label for="" class="control-label pull-left">开始时间</label>
+								    <div class="pull-left">
+								      <input id="startTime" type="text" class="form-control" id="">
+								    </div>
+								</div>
+					    	</div>
+						    <div>
+						    	<div id="updata_chart" style="width:100%;height:400px"></div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/plugins/bootstrap-select/bootstrap-select.js"></script>
+	<script src="../../js/plugins/bootstrap-select/defaults-zh_CN.js"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../js/app/data/yzCons.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>

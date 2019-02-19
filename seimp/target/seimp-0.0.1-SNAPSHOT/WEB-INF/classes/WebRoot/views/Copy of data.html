@@ -1,0 +1,2399 @@
+<div class="data">
+    <div class="data-list">
+        <div class="data-one list">
+            <div class="list-title">
+                <p class="list-tip" onclick="initPart1Content(0)">数据资源目录</p>
+                <img src="img/data/menu-line.png" alt="">
+            </div>
+            <div class="list-con mcd-menu">
+                <ul class="text-center" id="sourceMenu">
+
+                </ul>
+            </div>
+        </div>
+        <div class="data-three list">
+            <div class="list-title">
+                <p class="list-tip">按部委统计</p>
+                <img src="img/data/menu-line.png" alt="">
+            </div>
+            <div class="list-con">
+                <ul class="text-center" id="minitries">
+                    <!-- <li value="101">环境保护部</li>
+                     <li value="102">国土资源部</li>
+                     <li value="103">农业部</li>
+                     <li value="104">卫生计生委</li>
+                     <li value="105">住房和城乡建设部</li>
+                     <li value="106">中国科学院</li>
+                     <li value="107">国家林业局</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="no-padding" style="float: left; width: calc(100% - 246px)">
+        <div class="data-con">
+            <div class="box_crumbs"
+                 style="height: 36px; width:100%;margin-bottom: 20px; background-color: #f5f5f5; padding-left: 10px;">
+            <span>
+                <img class="pull-left" src="img/map_title.png" height="20px" width="20px"
+                     style="margin-top: 7px; margin-right: 7px;">
+            </span>
+                <i class="pull-left" style="line-height: 36px;">当前位置：</i>
+                <p class="crumbs pull-left">共享交换</p>
+                <a class="button_blue pull-right showUploadAdd" onclick="showUpLoad()"
+                   style="display: none; margin-right: 30px;margin-top: 7px;">接口注册</a>
+            </div>
+            <div class="data-input v1" id="searchPart1">
+                <div class="input-color">
+                    <img src="img/data/search.png" alt="" class="search">
+                    <input type="text" placeholder="请输入数据集名称进行数据资源检索" id="keyname">
+                    <button onclick="gloSearch()">搜&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+                </div>
+            </div>
+            <div class="data-every">
+                <div class="data-city ">
+
+                    <div class="data-level" style="margin-top: 25px;">
+                        <div class="data-add" style="border: 1px solid #ccc;">
+                            <div class="middle-top" style="margin-bottom: 15px">
+                                <div class="inner-way" style="width:231px;"><span class="home_title"><i
+                                        class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp&nbsp数据更新统计</span></div>
+                            </div>
+                            <div class="clear middle-con" style="height: 368px">
+                                <div>
+                                    <div class="col-sm-3 no-padding">
+                                        <div class="col-sm-3 text-right no-padding">
+                                            <span style="font-size:1.5rem;line-height: 36px;">开始时间</span>
+                                        </div>
+                                        <div class="col-sm-9 ">
+                                            <input class="form_date form-control" onchange="RefreshData()" size="16"
+                                                   type="text" value="" id="startDate"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 no-padding">
+                                        <div class="col-sm-3 text-right no-padding">
+                                            <span style="font-size:1.5rem;line-height: 36px;">结束时间</span>
+                                        </div>
+                                        <div class="col-sm-9 ">
+                                            <input class="form_date form-control" onchange="RefreshData()" size="16"
+                                                   type="text" value="" id="endDate"
+                                                   readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3  no-padding">
+                                        <div class="col-sm-3 text-right no-padding">
+                                            <span style="font-size:1.5rem;line-height: 36px;">统计单位</span>
+                                        </div>
+                                        <div class="col-sm-9 ">
+                                            <select id="unit" onchange="RefreshData()" class="   form-control">
+                                                <option value="1" selected>天</option>
+                                                <option value="2">周</option>
+                                                <option value="3">月</option>
+                                                <option value="4">年</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3  no-padding">
+                                        <div class="col-sm-3 text-right no-padding">
+                                            <span style="font-size:1.5rem;line-height: 36px;">数据集</span>
+                                        </div>
+                                        <div class="col-sm-9 ">
+                                            <select id="tables" onchange="RefreshData()"
+                                                    class="selectpicker show-tick  form-control" multiple>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-xs-12" id="mychart3" style="height: 315px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-top data-level">
+                        <div class="data-add">
+                            <div class="middle-top">
+                                <div class="inner-way" style="width:231px;"><span class="home_title"><i
+                                        class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp&nbsp最新数据统计</span></div>
+                            </div>
+                            <div class="clear middle-con">
+                                <div class="middle-one way lt">
+                                    <p>污染来源企业清单（36）条</p>
+                                    <p>来源于：环境保护部</p>
+                                    <p>发布于2017-07-27</p>
+                                </div>
+                                <div class="middle-two way lt">
+                                    <p>污染地块上报（3612）条</p>
+                                    <p>来源于：环境保护部</p>
+                                    <p>发布于2017-07-29</p>
+                                </div>
+                                <div class="middle-three way lt">
+                                    <p>耕地污染面积（3612）条</p>
+                                    <p>来源于：国土资源部</p>
+                                    <p>发布于2017-06-19</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-middle data-level">
+                        <div class="middle-top">
+                            <div class="inner-way"><span class="home_title"><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp&nbsp部委数据对接情况</span>
+                            </div>
+                        </div>
+                        <div class=" number">
+                            <div class="number-one num lt" style="cursor: pointer" onclick="selectDataSet(101)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">环境保护部</p>
+                                <p id="sta1">0条</p>
+                            </div>
+                            <div class="number-two num lt" style="cursor: pointer" onclick="selectDataSet(103)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">农业部</p>
+                                <p id="sta3">0条</p>
+                            </div>
+                            <div class="number-three num lt" style="cursor: pointer" onclick="selectDataSet(102)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">国土资源部</p>
+                                <p id="sta2">0条</p>
+                            </div>
+
+                            <div class="number-five num lt" style="cursor: pointer" onclick="selectDataSet(104)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">卫生计生委</p>
+                                <p id="sta4">0条</p>
+                            </div>
+                            <div class="number-four num lt" style="cursor: pointer" onclick="selectDataSet(105)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">住建部</p>
+                                <p id="sta5">0条</p>
+                            </div>
+                            <div class="number-six num lt" style="cursor: pointer" onclick="selectDataSet(106)">
+                                <div class="number-top"></div>
+                                <p style="font-size: 22px; margin-top: 20px;">中科院</p>
+                                <p id="sta6">0条</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--        <div class="data-middle data-level">
+                                <div class="middle-top">
+                                    <div class="inner-way"><span class="home_title"><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp&nbsp系统内部数据处理情况</span>
+                                    </div>
+                                </div>
+                                <div class="number xtnbclqk">
+                                    <div class="number-one num lt">
+                                        <div class="number-top"></div>
+                                        <p style="font-size: 22px; margin-top: 20px;">数据清洗情况</p>
+                                        <p>838,546条</p>
+                                    </div>
+                                    <div class="number-two num lt">
+                                        <div class="number-top"></div>
+                                        <p style="font-size: 22px; margin-top: 20px;">数据比对情况</p>
+                                        <p>93,987条</p>
+                                    </div>
+                                    <div class="number-three num lt">
+                                        <div class="number-top"></div>
+                                        <p style="font-size: 22px; margin-top: 20px;">数据核查情况</p>
+                                        <p>2,317条</p>
+                                    </div>
+                                    <div class="number-four num lt">
+                                        <div class="number-top"></div>
+                                        <p style="font-size: 22px; margin-top: 20px;">数据一致性检查</p>
+                                        <p>1,423条</p>
+                                    </div>
+                                    <div class="number-five num lt">
+                                        <div class="number-top"></div>
+                                        <p style="font-size: 22px; margin-top: 20px;">重复数据情况</p>
+                                        <p>82条</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                </div>
+                <div class="data_page col-xs-12" style="display: none;">
+                    <div class="col-xs-6" id="mychart" style="height: 600px;"></div>
+                    <div class="col-xs-6" id="mychart1" style="height: 600px;"></div>
+                </div>
+                <div class="data_bottom_table col-xs-12 no-padding" style="display: none;">
+                    <img src="img/data_zxjk.png" style="margin-bottom: 10px;">
+                    <table class="table table-bordered table-striped col-xs-12 no-padding">
+                        <thead>
+                        <tr>
+                            <td width="50px">序号</td>
+                            <td width="300px">接口名称</td>
+                            <td>接口地址</td>
+                            <td>接口提供单位</td>
+                            <td>服务状态</td>
+                        </tr>
+                        </thead>
+                        <tbody class="tr_backcolor">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="data_bottom_table col-xs-12 no-padding" style="display: none;margin-top:30px;">
+                    <img src="img/data_qzjh.png" style="margin-bottom: 10px;">
+                    <table class="table table-bordered table-striped col-xs-12 no-padding">
+                        <thead>
+                        <tr>
+                            <td width="50px">序号</td>
+                            <td width="300px">数据名称</td>
+                            <td width="290px">数据提供单位</td>
+                            <td width="290px">前置机地址</td>
+                            <td>前置机状态</td>
+                        </tr>
+                        </thead>
+                        <tbody class="tr_backcolor3">
+                        <tr>
+                            <td>1</td>
+                            <td>酸雨</td>
+                            <td>环保部</td>
+                            <td>10.100.244.19</td>
+                            <td>正在运行<span><img class='' src='img/button_play.png' height='20px' width='20px'
+                                               style="margin-left:10px;"></span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>土壤舆情</td>
+                            <td>环保部</td>
+                            <td>10.100.244.19</td>
+                            <td>正在运行<span><img class='' src='img/button_play.png' height='20px' width='20px'
+                                               style="margin-left:10px;"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data_bottom_table col-xs-12 no-padding" style="display: none;margin-top:30px;">
+                    <img src="img/data_lxgx.png" style="margin-bottom: 10px;">
+                    <table class="table table-bordered table-striped col-xs-12 no-padding">
+                        <thead>
+                        <tr>
+                            <td width="50px">序号</td>
+                            <td width="300px">数据名称</td>
+                            <td width="290px">数据提供单位</td>
+                            <td width="290px">联系人</td>
+                            <td>联系电话</td>
+                        </tr>
+                        </thead>
+                        <tbody class="tr_backcolor2">
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#data?type=1&dataID=27&dataName=土地利用类型" style="text-decoration: underline">土地利用数据</a>
+                            </td>
+                            <td>环保部</td>
+                            <td>信息中心</td>
+                            <td>010-86437722</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#data?type=1&dataID=26&dataName=土壤环境管理专家库" style="text-decoration: underline">土壤环境管理专家库</a>
+                            </td>
+                            <td>环保部</td>
+                            <td>信息中心</td>
+                            <td>010-86437722</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-xs-12 data_bottom_upload" style="display: none;">
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  no-padding text-right">
+                            <span style="font-size:1.5rem;">接口名称<code>*</code></span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  no-padding text-right">
+                            <span style="font-size:1.5rem;">接口类型<code>*</code></span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <select class="form-control province2">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  no-padding text-right">
+                            <span style="font-size:1.5rem;">提供单位<code>*</code></span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  no-padding text-right">
+                            <span style="font-size:1.5rem;">服务地址<code>*</code></span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  no-padding text-right">
+                            <span style="font-size:1.5rem;">参数</span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-sm-3  text-right">
+                            <span style="font-size:1.5rem;">说明文档</span>
+                        </div>
+                        <div class="col-sm-8 ">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-sm-2 text-right" style="width: 12%; padding-right: 0;">
+                            <span style="font-size:1.5rem;">示例数据</span>
+                        </div>
+                        <div class="col-sm-10 " style="width: 84%;">
+                            <textarea class="form-control" style="min-height:100px;" id="roleDesc"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 pt-5 " style="text-align:center;">
+                        <button type="button" class="btn btn-w-m btn-info ml-5" style="width: 120px;margin-right: 200px"
+                                onclick="addUser()"><i class="fa fa-check"></i> 确定添加
+                        </button>
+                        <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                                onclick="showBottomData()">
+                            <i class="fa fa-undo"></i> 取消
+                        </button>
+                    </div>
+                </div>
+                
+                
+                <div class="col-xs-12 showUploadDate" style="display: none;">
+                    <div class="col-xs-12">
+                        <span style="font-size:1.5rem;line-height: 36px;">
+                            根据要上传的数据类型下载模板，填写数据后上传进行校验并预览，如果校验失败，根据提示信息修改，重新上传，提示校验成功后方可保存。
+                        </span>
+                    </div>
+                    <div class="col-xs-12" style="white-space:nowrap">
+                        <div class="col-xs-2">
+                            <span style="font-size:1.5rem;line-height: 36px;">省级重点行业企业清单:</span>
+                        </div>
+                        <div class="col-xs-2 ">
+                            <button class="btn btn-primary "
+                                    onclick="window.location.href='/seimp/public/省级重点行业企业清单模板.xlsx'"
+                                    style="margin-bottom: 10px">下载数据模板
+                            </button>
+                        </div>
+                        <div class="col-xs-4">
+                            <!--<div class="col-sm-3  ">
+                                <span style="font-size:1.5rem;line-height: 36px;">文件上传:</span>
+                            </div>-->
+                            <div class="col-sm-9 ">
+                                <input type="file" id="uploadFile">
+                            </div>
+                            <div class="col-sm-2 ">
+                                <button class="btn btn-primary" onclick="uploadFile(1)">文件上传</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12" style="white-space:nowrap">
+                        <div class="col-xs-2">
+                            <span style="font-size:1.5rem;line-height: 36px;">重点行业企业土壤自行监测:</span>
+                        </div>
+                        <div class="col-xs-2 ">
+                            <button class="btn btn-primary " style="margin-bottom: 10px"
+                                    onclick="window.location.href='/seimp/public/重点行业企业土壤自行监测模板.xlsx'">下载数据模板
+                            </button>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-sm-9 ">
+                                <input type="file" id="uploadFile1">
+                            </div>
+                            <div class="col-sm-2 ">
+                                <button class="btn btn-primary" onclick="uploadFile(2)">文件上传</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-xs-12 no-padding" style="margin: 30px 0;">
+                        <h3 class="col-xs-12 text-center show_table_title" style="margin-bottom: 30px; ">
+                            数据预览</h3>
+                        <table id="getExile" class="table table-bordered table-striped"></table>
+                    </div>
+                    <div class="col-sm-12 saveandclear" style="text-align:center; display:none;">
+                        <button type="button" class="btn btn-w-m btn-info ml-5" style="width: 120px;margin-right: 200px"
+                                onclick="saveData()"><i class="fa fa-check"></i> 保存
+                        </button>
+                        <button type="button" class="btn btn-white ml-5" style="width: 120px">
+                            <i class="fa fa-undo"></i> 取消
+                        </button>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col-xs-12 businessSystem" style="display: none;">
+                    <table class="table table-bordered table-striped col-xs-12 no-padding">
+                        <thead>
+                        <tr>
+                            <td class="col-xs-1">编号</td>
+                            <td class="col-xs-5">系统名称</td>
+                            <td class="col-xs-3">开发单位</td>
+                            <td class="col-xs-3">操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="col-xs-1">1</td>
+                            <td class="col-xs-5">农用地土壤环境管理系统</td>
+                            <td class="col-xs-3"></td>
+                            <td class="col-xs-3"><a></a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-xs-1">2</td>
+                            <td class="col-xs-5">污染地块土壤环境管理系统</td>
+                            <td class="col-xs-3">中国环境科学研究院</td>
+                            <td class="col-xs-3"><a href="http://114.251.10.109/wrdkpfmis/admin/shareuserlogin.jsp"
+                                                    target="_blank">进入系统</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-xs-1">3</td>
+                            <td class="col-xs-5">工矿用地土壤环境管理系统</td>
+                            <td class="col-xs-3"></td>
+                            <td class="col-xs-3"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+                
+                <div class="data-basic data-tab" style="display: none">
+                    <div class="data-proto v1" id="part1">
+                        <div class="proto-list"></div>
+                        <div class="proto-page col-xs-12">
+                            <nav aria-label="Page navigation" class="navigation col-xs-12 text-center">
+                                <ul id="example3" class="pagination"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="v1 part2" id="" style="white-space: nowrap">
+                        <div class="row pl-4 pb-3 v1" style="font-size: 2.5rem" id="searchPart8">
+                            <div class="col-sm-3">
+                                <input type="text" id="key" class="form-control">
+                            </div>
+                            <button type="button" class="btn btn-primary ml-5" style="width: 120px"
+                                    onclick="search()"></i> 查询
+                            </button>
+                        </div>
+                        <!--  企业排放-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qypf">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">排放源类别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="排放源类别" id="qyp1" class="form-control qyp1">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">统计年度</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="排放源类别" id="qyp2" class="form-control qyp1">
+                                        <option value="">全部</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   实验室查询框 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="laboratory">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">实验室名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="l1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3  ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">土壤重金属</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="土壤重金属" id="l2" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">是</option>
+                                        <option value="1">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">土壤PAHs</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="土壤PAHs" id="l3" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">是</option>
+                                        <option value="1">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">农产品重金属</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="农产品重金属" id="l4" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">是</option>
+                                        <option value="1">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  sysxz"
+                                        style="width: 75px; margin-right: 5px;" disabled="true"
+                                        onclick="getLaboratoryex()"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   酸雨 -->
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="sy">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">硫酸根离子监测标志</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="s1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">钙离子监测标志</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="s2" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">钾离子监测标志</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="s3" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">钠离子监测标志</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="s4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   企业信息 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qyxx">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">法人单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="qy1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业分类</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="行业分类" id="qy2" class="form-control qy2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">登记注册类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业分类" id="qy3" class="form-control qy3">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位类别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="单位类别" id="qy4" class="form-control qy4">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">详细地址</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="qy5" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   产品清单 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="cpqd">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">产品名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="cp1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否属于危险化学品</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="行业分类" id="cp2" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   企业信息(危险化学品) -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qyxxh">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">企业名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="qyh1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="单位类别" id="qyh2" class="form-control qyh2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业分类</span>
+                                </div>
+
+                                <div class="col-sm-12 no-padding">
+                                    <select name="单位类别" id="qyh3" class="form-control qyh3">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">登记注册类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="单位类别" id="qyh4" class="form-control qyh4">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   企业信息(汞调查) -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qyxxg">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="qyg1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业分类</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="单位类别" id="qyg2" class="form-control qyg2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">企业注册类型</span>
+                                </div>
+
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="单位类别" id="qyg3" class="form-control qyg3">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="单位类别" id="qyg4" class="form-control qyg4">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   企业汞排放子表 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qygpfz">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">调查年度</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="单位类别" id="gpf1" class="form-control gpf1">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12">
+                                    <span style="font-size:1.5rem;">产品或原料名称/种类</span>
+                                </div>
+                                <div class="col-sm-12 ">
+                                    <select name="单位类别" id="gpf2" class="form-control gpf2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否达标</span>
+                                </div>
+
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="单位类别" id="gpf3" class="form-control gpf3">
+                                        <option value="">全部</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   企业汞排放子表 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="ysgsc">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">机构名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="ysg1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   含汞试剂生产_含汞固体废物去向 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="hgsj">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">机构名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="hg1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   危险废物经营单位基本情况信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="wxjy">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="wxj1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   危险废物经营单位基本情况信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="wxtm">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="wx1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所在省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="wx2" class="form-control wx2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   全国土壤污染状况详查质量控制实验室名录-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="zlkzsys">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">实验室名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="zl1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">工作范围</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="工作范围" id="zl2" class="form-control wx2">
+                                        <option value="">全部</option>
+                                        <option value="全国">全国</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  zlkzsysxz"
+                                        style="width: 75px; margin-right: 5px;" disabled="true"
+                                        onclick="getZLKZSYSex()"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   二噁英实验室-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="reysys">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">实验室名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="rey1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">工作范围</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="工作范围" id="rey2" class="form-control wx2">
+                                        <option value="">全部</option>
+                                        <option value="全国">全国</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  eeyxz"
+                                        style="width: 75px; margin-right: 5px;" disabled="true"
+                                        onclick="getREYSYSex()"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--  重点行业企业-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="zdhq">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="工作范围" id="zdhq1" class="form-control wx2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="工作范围" id="zdhq2" class="form-control wx2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--  网络舆情-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="wlyq">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所属分类</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="工作范围" id="wlyq2" class="form-control wx2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--   专家库-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="zjk">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">专家名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="zj1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所属部门</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="zj2" class="form-control">
+                                        <option value="">全部</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">擅长领域</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="zj3" class="form-control">
+                                        <option value="">全部</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  zjkxz"
+                                        style="width: 75px; margin-right: 5px;" disabled="true"
+                                        onclick="getZJKex()"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--   企业信息（固废）-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qyxxgf">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="qygf1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所在省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="qygf2" class="form-control qygf2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否启用</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="qygf3" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">否</option>
+                                        <option value="1">是</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否危废产生源企业</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="qygf4" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">否</option>
+                                        <option value="1">是</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="ysxm">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">项目名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="ys1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">项目地址</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="ys2" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="ys3" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="城镇基础设施及房地产">城镇基础设施及房地产</option>
+                                        <option value="有色金属">有色金属</option>
+                                        <option value="石化、化工">石化、化工</option>
+                                        <option value="非金属矿采选及制品制造">非金属矿采选及制品制造</option>
+                                        <option value="社会事业与服务业">社会事业与服务业</option>
+                                        <option value="公路">公路</option>
+                                        <option value="机械、电子">机械、电子</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 " style="display: none">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">对接省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="ys4" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   建设项目-->
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="jsxm">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">项目名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="js1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">环评管理类别名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="js2" class="form-control">
+                                </div>
+                            </div>
+                            <!--   <div class="col-sm-3 ">
+                                   <div class="col-sm-12 no-padding">
+                                       <span style="font-size:1.5rem;">国民经济类别</span>
+                                   </div>
+                                   <div class="col-sm-12 no-padding ">
+                                        <select name="行业类别" id="js3" class="form-control">
+                                           <option value="">全部</option>
+                                           <option value="城镇基础设施及房地产">城镇基础设施及房地产</option>
+                                           <option value="有色金属">有色金属</option>
+                                           <option value="石化、化工">石化、化工</option>
+                                           <option value="非金属矿采选及制品制造">非金属矿采选及制品制造</option>
+                                           <option value="社会事业与服务业">社会事业与服务业</option>
+                                           <option value="公路">公路</option>
+                                           <option value="机械、电子">机械、电子</option>
+                                       </select>
+                                   </div>
+                               </div>-->
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">对接省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="js4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--   工业园区-->
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="gyyq">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">开发区名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="gy1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业分类" id="gy2" class="form-control gy2">
+                                        <option value="">全部</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">开发区类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业分类" id="gy3" class="form-control gy3">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   遥感核查查询框 -->
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="yaogan">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">污染企业名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="y1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所属行政区</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="y3" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">核查状态</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="y4" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">待核查</option>
+                                        <option value="1">存疑</option>
+                                        <option value="2">完成</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否在产</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="y5" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">核查进度</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="y6" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">国家</option>
+                                        <option value="1">省</option>
+                                        <option value="2">市</option>
+                                        <option value="3">县</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   举报预警查询框 -->
+
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="jbyj">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">举报对象</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="j1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">详细地址</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="j2" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 " style="display: none">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">对接省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="j3" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 " style="display: none">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="j4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">举报方式</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="j5" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="0">微信</option>
+                                        <option value="1">电话</option>
+                                        <option value="2">网络</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   工业废水 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="gyfs">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">详细名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="g1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省级行政区</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="g2" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">市级行政区</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="g3" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">一级行业分类</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="g5" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--   污染地块 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="wrdk">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">污染地块编码</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="wr1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="wr2" class="form-control wr2">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">联系人姓名</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="wr3" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">法定代表人</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="wr4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 涉重有色金属采矿权项目 -->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="ckq">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">许可证号</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="ckq_xkzh" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">矿山名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <input type="text" id="ckq_ksmc" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">矿业权人</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="ckq_kyqr" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">矿种</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="矿种" id="ckq_kz" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">开采方式</span>
+                                </div>
+                                <div class="col-sm-12 no-padding">
+                                    <select name="开采方式" id="ckq_kcfs" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--淘汰落后产能企业-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="eli">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="eli1" class="form-control eli1" onchange="getCity()">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">市</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="eli2" class="form-control eli2" onchange="getCounty()">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">县</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="eli5" class="form-control eli">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="eli3" class="form-control eli3">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">企业名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="eli4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        data-toggle="modal" data-target="#wz_Modal"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--企业基本信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="qyjb">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">许可证书编号</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="qyjb1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="qyjb2" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="qyjb3" class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否需要整改</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="qyjb4" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">是否位于工业园区</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="qyjb5" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">项目类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="qyjb6" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="TYPEA">首次填报</option>
+                                        <option value="TYPEB">补充填报</option>
+                                        <option value="TYPEC">变更</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                        <!--排污许可证撤销、注销信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="paiwu">
+                            <div class="col-sm-3">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="paiwu3" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">许可证书编号</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="paiwu4" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">注销/撤销类型</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="paiwu1" class="form-control paiwu1" >
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">注销/撤销</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="paiwu2" class="form-control paiwu2">
+                                        <option value="">全部</option>
+                                        <option value="1">注销</option>
+                                        <option value="2">撤销</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+                        <!--排污许可证 企业基本信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="pwBaseinfo">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="pwname" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">行业类别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="pwtype" class="form-control eli3">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        data-toggle="modal" data-target="#wz_Modal" disabled></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!--排污许可证 企业基本信息-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="pwUndoinfo">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">单位名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="pwname1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        data-toggle="modal" data-target="#wz_Modal" disabled></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                <!--修复舆情分类汇总-->
+                <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="xfyq">
+                    <div class="col-sm-3 ">
+                        <div class="col-sm-12 no-padding">
+                            <span style="font-size:1.5rem;">省份</span>
+                        </div>
+                        <div class="col-sm-12 no-padding ">
+                            <select name="" id="xfyq1" class="form-control xfyq1" onchange="getCity()">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <div class="col-sm-12 no-padding">
+                            <span style="font-size:1.5rem;">市</span>
+                        </div>
+                        <div class="col-sm-12 no-padding ">
+                            <select name="" id="xfyq2" class="form-control xfyq2" onchange="getCounty()">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <div class="col-sm-12 no-padding">
+                            <span style="font-size:1.5rem;">县</span>
+                        </div>
+                        <div class="col-sm-12 no-padding ">
+                            <select name="" id="xfyq5" class="form-control xfyq5">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <div class="col-sm-12 no-padding">
+                            <span style="font-size:1.5rem;">无机重金属</span>
+                        </div>
+                        <div class="col-sm-12 no-padding ">
+                            <select name="" id="xfyq3" class="form-control xfyq3">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <div class="col-sm-12 no-padding">
+                            <span style="font-size:1.5rem;">污染程度</span>
+                        </div>
+                        <div class="col-sm-12 no-padding ">
+                            <select name="" id="xfyq4" class="form-control xfyq3">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                 	<div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                        <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;" onclick="search()"></i> 查询</button>
+                        <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;" data-toggle="modal" data-target="#wz_Modal" disabled="true"></i> 统计</button>
+                        <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;" disabled="true"></i> 下载</button>
+                    </div>
+                </div>
+                        <!--污染地块结构-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="pollutionLandStructure">
+                        	<div class="row">
+	                            <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">原用地企业名称</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                    <input type="text" id="OLDENTERPRISENAMEPar" class="form-control">
+	                                </div>
+	                            </div>
+	                            <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">地块名单来源</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                    <select id="DATASOURCEPar" class="selectpicker show-tick form-control" multiple  data-live-search="true">
+	                                    </select>
+	                                </div>
+	                            </div>
+	                            <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">开始运营时间</span>
+	                                </div>
+	                                <!-- <div class="col-sm-12 no-padding ">
+	                                	<div class='input-group date' id='STARTRUNYEARTIMEPar'>  
+							                <input  type='text' class="form-control" />  
+							                <span class="input-group-addon">  
+							                    <span class="glyphicon glyphicon-calendar"></span>  
+							                </span>  
+							            </div>  
+	                                </div> -->
+	                                <div class="col-sm-6 no-padding ">
+	                                	<input type="text" class="form-control form_datetime" id="STARTRUNYEARTIMEParStart" name="addtime" value="" placeholder="开始时间">
+	                                    <!-- <input type="text" id="STARTRUNYEARTIMEPar" class="form-control"> -->
+	                                </div>
+									<div class="col-sm-6 no-padding ">
+	                                	<input type="text" class="form-control form_datetime" id="STARTRUNYEARTIMEParEnd" name="addtime" value="" placeholder="结束时间">
+	                                    <!-- <input type="text" id="STARTRUNYEARTIMEPar" class="form-control"> -->
+	                                </div>	                                
+	                            </div>
+	                            <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">结束运营时间</span>
+	                                </div>
+	                                <!-- <div class="col-sm-12 no-padding ">
+	                                	<div class='input-group date' id='ENDRUNYEARTIMEPar'>  
+							                <input  type='text' class="form-control" />  
+							                <span class="input-group-addon">  
+							                    <span class="glyphicon glyphicon-calendar"></span>  
+							                </span>  
+							            </div>  
+	                                </div> -->
+	                                <div class="col-sm-6 no-padding ">
+	                                	<input type="text" class="form-control form_datetime" id="ENDRUNYEARTIMEParStart" name="addtime" value="" placeholder="开始时间">
+	                                    <!-- <input type="text" id="STARTRUNYEARTIMEPar" class="form-control"> -->
+	                                </div>
+	                                <div class="col-sm-6 no-padding ">
+	                                	<input type="text" class="form-control form_datetime" id="ENDRUNYEARTIMEParEnd" name="addtime" value="" placeholder="结束时间">
+	                                    <!-- <input type="text" id="STARTRUNYEARTIMEPar" class="form-control"> -->
+	                                </div>
+	                            </div>
+                            
+                            </div>
+                            
+                            <div class="row">
+	                             <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">主要产品</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                    <input type="text" id="MAINPRODUCTPar" class="form-control">
+	                                </div>
+	                            </div>
+	                             <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">行业分类</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding "> 
+	                                	<select id="INDUSTRYTYPEPar" class="selectpicker show-tick form-control" multiple data-live-search="true">
+	                                    </select>
+	                                </div>
+	                            </div>
+	                             <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">潜在污染物</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                	<select id="POTENTIALPOLLUTANTPar" class="selectpicker show-tick form-control" multiple data-live-search="true">
+	                                    </select>
+	                                </div>
+	                            </div>
+	                            <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">现用地单位名称</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                    <input type="text" id="NOWENTERPRISENAMEPar" class="form-control">
+	                                </div>
+	                            </div>
+                            </div>
+                            
+                            <div class="row">
+	                             <div class="col-sm-3 ">
+	                                <div class="col-sm-12 no-padding">
+	                                    <span style="font-size:1.5rem;">地块状态</span>
+	                                </div>
+	                                <div class="col-sm-12 no-padding ">
+	                                	<select id="LANDSTATUSPar" class="selectpicker show-tick form-control" multiple data-live-search="true">
+	                                    </select>
+	                                </div>
+	                            </div>
+	
+	                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+	                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+	                                        onclick="search()"></i> 查询
+	                                </button>
+	                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+	                                        data-toggle="modal" data-target="#wz_Modal" disabled></i> 统计
+	                                </button>
+	                                <!-- <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+	                                        disabled="true"></i> 下载
+	                                </button> -->
+	                                <button type="button" class="btn btn-primary  zjkxz"
+                                        style="width: 75px; margin-right: 5px;" 
+                                        onclick="getPollutionLandStructureFile()"></i> 下载
+                                </button>
+	                            </div>
+                            </div>
+                        </div>
+                        
+                        <!--尾矿库调查-->
+                        <div class=" pl-4 pb-3 v1 col-xs-12" style="font-size: 2.5rem" id="tailings">
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">尾矿库名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="TAILINGSNAMEPar" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">详细地址</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="DETAILEDADDRESSPar" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所属企业名称</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="ENTERPRISENAMEPar" class="form-control">
+                                </div>
+
+                            <!-- <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        data-toggle="modal" data-target="#wz_Modal" disabled></i> 统计
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        disabled="true"></i> 下载
+                                </button> -->
+
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">矿物种类</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="MINERALTYPEPar" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">所属流域</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <input type="text" id="BASINPar" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">等别</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="LEVELPar" class="form-control eli1" >
+                                        <option value="">全部</option>
+                                        <option value="0">未知</option>
+                                        <option value="1">一等</option>
+                                        <option value="2">二等</option>
+                                        <option value="3">三等</option>
+                                        <option value="4">四等</option>
+                                        <option value="5">五等</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">省份</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="行业类别" id="tailing1" class="form-control eli1" onchange="getCityPar('tailing')">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">市</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="tailing2" class="form-control eli2" onchange="getCountyPar('tailing')">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <div class="col-sm-12 no-padding">
+                                    <span style="font-size:1.5rem;">县</span>
+                                </div>
+                                <div class="col-sm-12 no-padding ">
+                                    <select name="" id="tailing3" class="form-control eli">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                            </div>
+ -->
+                            <div class="col-sm-3  text-center" style="margin-top: 24px; float: right;">
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        onclick="search()"></i> 查询
+                                </button>
+                                <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;"
+                                        data-toggle="modal" data-target="#wz_Modal" disabled></i> 统计
+                                </button>
+<!--                                 <button type="button" class="btn btn-primary  " style="width: 75px; margin-right: 5px;" -->
+<!--                                         disabled="true"></i> 下载 -->
+<!--                                 </button> -->
+                                 <button type="button" class="btn btn-primary  zjkxz"
+                                        style="width: 75px; margin-right: 5px;" 
+                                        onclick="getTailingsFile()"></i> 下载
+                                </button>
+                            </div>
+                        </div>
+                    
+                        
+                        <div class="table-responsive col-sm-12 py-3 part2">
+                            <table class="table table-bordered table-condensed" id="metTable1">
+                            </table>
+                        </div>
+                        <div class="table-responsive col-sm-12 py-3 part3">
+                            <iframe id="informationIframe" frameborder="0" style="width:100%;height:600px;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!--元数据信息-->
+                <div class="v1" id="part4" style="white-space: nowrap;display: none;">
+                    <div class="">
+                        <div class="row pl-4 pb-3">
+                            <!--<div class="col-sm-3">-->
+                            <!--<div class="cell-img" style="padding-top: 5rem"><img src="img/data/noimage.png" alt=""-->
+                            <!--style="width:100%;height:100%">-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div class="col-sm-12">
+                                <table class="table table-bordered table-condensed table-striped table_CK">
+                                    <tr>
+                                        <td class="col-xs-2"><strong>数据名称</strong></td>
+                                        <td id="name" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>数据提供单位</strong></td>
+                                        <td id="danwei" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>数据量</strong></td>
+                                        <td id="dataAccount" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>访问量</strong></td>
+                                        <td id="visitAccount" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>数据分类</strong></td>
+                                        <td id="dataType" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>数据更新时间</strong></td>
+                                        <td id="updateTime" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>联系人</strong></td>
+                                        <td id="contract" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>联系人电话</strong></td>
+                                        <td id="telNumber" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>联系人邮箱</strong></td>
+                                        <td id="email" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>联系人地址</strong></td>
+                                        <td id="address" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>数据摘要</strong></td>
+                                        <td id="abstract" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>使用声明</strong></td>
+                                        <td id="note" class="col-xs-3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2"><strong>空间位置</strong></td>
+                                        <td id="position" class="col-xs-3"></td>
+                                        <td class="col-xs-2"><strong>主题词</strong></td>
+                                        <td id="words" class="col-xs-3"></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <div class="col-sm-12" id="interfacePart" hidden>
+                                <table class="table table-bordered table-condensed table-striped table_CK">
+                                    <td class="col-xs-2"><strong>接口地址</strong></td>
+                                    <td id="url" class="col-xs-8"></td>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data-bottom data-level clear v1" id="pic1">
+            <div class="bottom-img lt col-xs-3 "><a><img class="img-responsive" src="img/data/imageOne.png" alt=""
+                                                         onclick="datePage()"></a></div>
+            <div class="bottom-img lt col-xs-3 "><a><img class="img-responsive" src="img/data/imageTwo.png" alt=""
+                                                         onclick="showBottomData()"></a></div>
+            <div class="bottom-img lt col-xs-3 "><a><img class="img-responsive" src="img/data/imageThree.png" alt=""
+                                                         onclick="showUploadDate()"></a></div>
+            <div class="bottom-img lt col-xs-3 "><a><img class="img-responsive" src="img/data/imageFour.png" alt=""
+                                                         onclick="showBusinessSystem()"></a></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal inmodal fade " style="margin-top: 100px" id="wz_Modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 80%;height:80%;">
+        <div class="modal-content">
+            <div class="modal-header" style="padding-top:15px;padding-bottom:15px;">
+                <button type="button" class="close" data-dismiss="modal">
+                </button>
+                <span style="font-size: 20px;color: rgb(79, 135, 209);padding: 0px 0px 0px 0px;text-align: center;padding-left: 50%;">统计图</span>
+            </div>
+            <div class="modal-body" style="overflow:auto;padding:5px;">
+                <div class="col-sm-12" style="height:100%;padding-top:20px;">
+                    <div class="panel-group" id="version">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div style="height:600px;width: 600px;" id="pie"></div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div style="height:600px;width: 500px;" id="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="files" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 260px;
+    margin-left: 30%;" aria-hidden="true">
+    <div class="modal-dialog" style="width: 40%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center;font-size: 24px;">文件列表</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table" style="width: 100%">
+                    <tr>
+                        <th>文件名称</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tbody id="fileTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="modal-footer" style="text-align: center">
+             </div>-->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+

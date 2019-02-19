@@ -1,0 +1,37 @@
+@charset "utf-8";
+.data-input .info-tip{
+	padding-left:15px;
+}
+.data-input .info-tip p{
+	margin-right:10px;
+}
+.data-input .info-tip p span {
+    margin-right: 30px;
+}
+.dataShow2, .dataShow3, .dataShow4, .dataShow5 {
+    margin-top: 16px;
+}
+.pgfx_form1>div{
+	padding-right: 15px;
+    padding-left: 15px;
+}
+.potential label{
+	margin-right: 20px;
+}
+.sjxq-item div p span {
+    margin: 0 30px 0 5px;
+}
+.sjDetails .form-control{
+	width:100%;
+}
+
+.dataWrap .pgfx_title, .dataWrap .pgfx_title1 {
+    line-height: 42px;
+    height: 50px;
+}
+#messageAlert .form-group{
+	width:18%;
+}
+#messageAlert .w-43{
+	width:33%;
+}

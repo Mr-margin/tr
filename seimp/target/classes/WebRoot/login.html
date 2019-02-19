@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit"/>
+	<meta name="force-rendering" content="webkit"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>全国土壤环境信息平台</title>
+    
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link href="css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="css/plugins/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-select.css">
+    <link rel="stylesheet" href="css/public/public.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="css/toastr.min.css" rel="stylesheet">
+<!--     <link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet"> -->
+    <style>
+    </style>
+</head>
+<body>
+<style type="text/css">
+    input::-webkit-input-placeholder { /* WebKit browsers */
+        font-size: 20px;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: 20px;
+    }
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: 20px;
+    }
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-size: 20px;
+    }
+</style>
+<!--楼层内容开始-->
+<div class="login">
+    <!--<div class="header">-->
+
+    <!--</div>-->
+    <div class="login-name">
+        <img src="img/login/login-entir.png" alt="">
+    </div>
+    <div class="login-input">
+        <!--<div class="yanzheng"><img src="imgs/loginNew/checkError.png" alt="" style="margin:-2px 5px 0 0;cursor:pointer;">请输入手机号/邮箱/用户名</div>-->
+        <div><input type="text" class="newName" id="name" placeholder="用户名" style="font-size: 26px"></div>
+        <div><input type="password" class="newPassword" id="pwd" placeholder="密码" style="font-size: 26px"></div>
+        <div class="yanzhengma" style="margin-top: 10px;margin-bottom: 25px">
+            <div class="col-sm-6 " style="padding-left: 0">
+                <img src="/seimp/user/getImage" id='image' onclick="getImage()">
+            </div>
+            <div class="col-sm-6 " style="height: 42px;padding:0">
+                <input type="text" id='rand' placeholder="输入验证码" style="font-size: 20px;text-align: center;">
+            </div>
+        </div>
+        <button class="sub-button" onclick="login()">登 录</button>
+        <!-- <div class="login-ability clear">
+            <div class="lt user-level" userlevel="0"><img src="img/login/login-check.png" alt=""><span>管理员</span></div>
+            <div class="lt user-level" userlevel="1"><img src="img/login/login-null.png" alt=""><span>国家级用户</span></div>
+            <div class="lt user-level" userlevel="2"><img src="img/login/login-null.png" alt=""><span>省级用户</span></div>
+        </div> -->
+    </div>
+    <div class="footer">
+        版权所有： 中华人民共和国生态环境部&nbsp;&nbsp; | &nbsp;&nbsp;建设单位：中华人民共和国生态环境部土壤生态环境司&nbsp;&nbsp; | &nbsp; &nbsp;技术支持：中华人民共和国生态环境部信息中心
+    </div>
+</div>
+
+<!--楼层内容结束-->
+<script src="js/jquery.min.js"></script>
+<script src="js/plugins/form/jquery.form.js"></script>
+<!-- <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script> -->
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/system/bootstrap-select/bootstrap-select.js"></script>
+<script src="js/plugins/echarts/echarts-all.js"></script>
+<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/toastr.min.js"></script>
+<script src="js/login.js"></script>
+<script>
+</script>
+</body>
+
+</html>

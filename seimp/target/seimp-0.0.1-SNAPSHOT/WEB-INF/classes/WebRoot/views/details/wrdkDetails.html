@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>污染地块</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/system.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../css/sweetalert.min.css" rel="stylesheet">
+	<style>
+		.polluted label{
+			width:84px;
+			text-align:right;
+		}	
+	</style>
+</head>
+<body style="overflow:auto;">
+
+<div class="potential">
+	<div class="mb14">
+		
+	</div>
+</div>
+
+<script>
+	$(function(){
+		$(".flip").click(function(){
+		    $(".wrdkPanel").slideToggle("slow");
+		    $(".xs1").toggle();
+		    $(".xs2").toggle();
+		  });
+		  //按名称分析点击
+		 $(".infoShow1").on("click",function(){  //点击label 
+		     var _in = $(this).children("input:radio[name='info']");         
+		     $(this).addClass("radioShow_active").siblings().removeClass("radioShow_active");
+		     
+		 });
+		//按距离析点击
+		$(".infoShow2").on("click",function(){  //点击label 
+		    var _in = $(this).children("input:radio[name='s']");         
+		    $(this).addClass("radioShow_active").siblings().removeClass("radioShow_active");
+		    
+		});
+		
+		 
+	});
+</script>
+	<script type="text/javascript">
+	    var dojoConfig = {
+	        paths: {
+	            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+	        }
+	    };
+	</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../views/details/wrdkDetails.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>
+

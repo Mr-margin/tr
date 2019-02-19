@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新增污染企业</title>
+    <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/plugins/toastr/toastr.css" rel="stylesheet">
+    <link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/warn/wuranqiye.css" rel="stylesheet">
+    <link href="../../css/sweetalert.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datepaginator.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<!-- 地图 -->
+<!-- 图例 -->
+<div class="col-xs-12 no-padding" style="position: relative; height: 100%;">
+    <div id="map"></div>
+    <div id="mylegend" style="bottom:55px;left:10px;border: solid 1px #ccc;display:none;">
+        <p class="text-center"><strong>图例</strong>
+            <small class="pull-right">
+                <img src="../../img/arrow_down.png" onclick="showHide()"
+                     style="height: 20px; width:20px;cursor:pointer;">
+            </small>
+        </p>
+        <div class="sldeDown">
+            <!-- <p>潜在污染地块污染类型</p>
+             <ul class="no-padding col-xs-12">
+                 <li class="col-md-12">
+                     <div class="lColor " style="background:#9400D3"></div>
+                     <div class="lCharacter">Ⅰ(可能已污染)</div>
+                 </li>
+                 <li class="col-md-12">
+                     <div class="lColor" style="background:#6495ED"></div>
+                     <div class="lCharacter">Ⅱ(可能已污染或正污染)</div>
+                 </li>
+                 &lt;!&ndash; <li class="col-md-12">
+                     <div class="lColor" style="background:#808080"></div>
+                     <div class="lCharacter">Ⅲ(将来可能污染)</div>
+                 </li> &ndash;&gt;
+             </ul>-->
+            <p>建设项目及验收项目数量(个)</p>
+            <ul id="ditu" class="col-xs-12 no-padding">
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#045E02"></div>
+                    <div class="lCharacter">0-100</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#5C9B00"></div>
+                    <div class="lCharacter">100-150</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#C5DA01"></div>
+                    <div class="lCharacter">150-200</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#FFD705"></div>
+                    <div class="lCharacter">200-250</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#FB8405"></div>
+                    <div class="lCharacter">250-300</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#FF2600"></div>
+                    <div class="lCharacter">>=300</div>
+                </li>
+                <li class="col-xs-6">
+                    <div class="lColor" style="background:#d9d9d9"></div>
+                    <div class="lCharacter">无数据</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="floattool">
+        <!-- 地图 -->
+        <div class="layer_nav">
+            <div class="icon"></div>
+            <div class="common-panel layer-pop" style="display: none;">
+                <a href="javascript:void(0);" class="close1"></a>
+                <span class="angle-to-right"></span>
+                <h3 class="common-panel-title">选择底图 </h3>
+                <div class="layer-items clearfix">
+                    <a class="img_type" href="javascript:void(0);" style="margin: 0 10px;" id="vec_grid"><img
+                            src="../../img/map_grid.png">公里格网</a>
+                    <a class="img_type active" href="javascript:void(0);" style="margin: 0 10px;" id="vec_grid"><img
+                            src="../../img/floattool/wenzi.png">中文注记</a>
+                    <a class="active" href="javascript:void(0);" style="margin: 0 10px;" id="vec_type"><img
+                            src="data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QN6aHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ZmQ3YzFkY2ItN2ZkNC1kZDQ1LTk2MGItN2QyODdhN2MxNTU2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgxMTFDMzE4NzY3QzExRTNCRUFDRkE5NjhFNjNGNEUzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgxMTFDMzE3NzY3QzExRTNCRUFDRkE5NjhFNjNGNEUzIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZGJmNjY2ZS0wMmZjLTI0NGItODIzMC04Y2RmZDg3ZDk1MWQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ZmQ3YzFkY2ItN2ZkNC1kZDQ1LTk2MGItN2QyODdhN2MxNTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3Jk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">地图</a>
+                    <a href="javascript:void(0);" style="margin: 0 10px;" id="img_type"><img
+                            src="data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QN6aHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ZmQ3YzFkY2ItN2ZkNC1kZDQ1LTk2MGItN2QyODdhN2MxNTU2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgxMTFDMzE0NzY3QzExRTNCRUFDRkE5NjhFNjNGNEUzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgxMTFDMzEzNzY3QzExRTNCRUFDRkE5NjhFNjNGNEUzIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZGJmNjY2ZS0wMmZjLTI0NGItODIzMC04Y2RmZDg3ZDk1MWQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ZmQ3YzFkY2ItN2ZkNC1kZDQ1LTk2MGItN2QyODdhN2MxNTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3Jk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">影像
+                    </a>
+                </div>
+
+                <div class="layer-items clearfix">
+                    <a class="img_type" href="javascript:void(0);" style="margin: 0 10px;" id="vec_grid"><img
+                            src="../../img/floattool/road.png">道路</a>
+                    <a class="" href="javascript:void(0);" style="margin: 0 10px;" id="vec_type"><img
+                            src="../../img/floattool/river.png">河流</a>
+                </div>
+                <div class="layer-items clearfix">
+                    <a class="img_type" href="javascript:void(0);" style="margin: 0 10px;" id="vec_grid"><img
+                            src="../../img/floattool/gasstation.png">加油站点</a>
+                </div>
+
+            </div>
+        </div>
+        <!-- 统计图 -->
+        <div class="v_separator"></div>
+        <div class="table_nav">
+            <div class="icon"></div>
+        </div>
+        <!-- 统计表 -->
+        <div class="v_separator"></div>
+        <div class="graphic_nav">
+            <div class="icon"></div>
+        </div>
+        <!-- 时间轴 -->
+        <div class="v_separator"></div>
+        <div class="time_nav">
+            <div class="icon"></div>
+        </div>
+    </div>
+    <!-- 鼠标悬浮提示 -->
+    <div class="float-tool-title" style="left: 1815px; top: 519px; display: none;">
+        <div class="title">地图</div>
+        <div class="right-arrow"></div>
+    </div>
+    <!-- 统计表 -->
+    <div id="tongjituDiv" class="main_table" style="display:none;right:70px;top:2px;width: 500px;height:427px;">
+        <div class="main_tabletop caonidaye" id="main_tabletitle" style="right: 70px;top: 2px;width: 500px;position: fixed;">
+            <div class="tabtop_left">数据</div>
+            <div class="tabtop_rt"></div>
+            <i class="large" data='1'></i>
+        </div>
+        <div class="data1">
+            <div class="condition" style="display:none;">
+                <div class="data_main">
+                    <div class="data_mainle">专题：</div>
+                    <div class="data_mainrt select_subject">
+                        <select id="tongjibiaoSelect" class="form-control" name="">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="table-body ps-container"
+                 style="top:37px;width: 495px;height:385px;overflow: auto;max-height: 693px;">
+                <table id="tongjibiao" class="table table-condensed" style="width:728px;table-layout: fixed;text-align: center;">
+                    <thead>
+                    <tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+                <div class="proto-page col-xs-12">
+                    <nav aria-label="Page navigation" class="navigation col-xs-12 text-center">
+                        <ul id="example3" class="pagination"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 统计图 -->
+    <div class="main_graphic" style="display:none">
+        <div class="main_tabletop">
+            <div class="tabtop_left">统计图</div>
+            <div class="tabtop_rt"></div>
+        </div>
+        <div class="static_nav"></div>
+        <div id="static_chart">
+            <div id="tongjitu" style="width:280px;height:200px;margin:auto;"></div>
+        </div>
+    </div>
+    <!-- 无数据提示 -->
+    <div class="noDataTips" style="display:none;left:57%;top:3%;">
+        <div class="tabtop_left">没有数据</div>
+        <div class="tabtop_rt"></div>
+    </div>
+    <!-- 时间轴 -->
+    <!--<div id="warTimeSlider"
+         style="position:absolute;top:3%;left:5%;z-index:4;border: 1px solid #aaa;border-radius: 4px;box-shadow: 0 6px 12px rgba(0,0,0,.175);padding: 10px 0px; background-color: white">
+        <div>
+            &lt;!&ndash;<span style="margin-left:6px;"><a  id="dateTime" onclick="clickYear('2001')">2014</a></span>&ndash;&gt;
+            &lt;!&ndash;<span style="margin-left:33px;"><a  id="dateTime" onclick="clickYear('2002')">2015</a></span>&ndash;&gt;
+            <span style="margin-left:33px;"><a id="dateTime" onclick="clickYear('2003')">2016</a></span>
+            <span style="margin-left:33px;"><a href="#" id="dateTime">2017</a></span>
+        </div>
+        <input id="qiYeHuaDongTiao" data-slider-id='ex1Slider' type="text" data-slider-min="2014" data-slider-max="2017"
+               data-slider-step="1" data-slider-value="2015"/>
+    </div>-->
+    <div style="position: absolute;top: 5%;left: 74%;background-color: white;padding: 5px; width:300px;border: solid 1px #ccc;" class="find_bogBox">
+        <div class="col-lg-12 no-padding">
+            <div class="col-sm-12 find_title " style="position: fixed;top: 5%;left: 74%; width: 300px;background-color: white;border-left: solid 1px #ccc;border-right: solid 1px #ccc;border-top: solid 1px #ccc;background: #5193e8;padding:0;" >
+                <h4 class="text-center" style="color:white;"><strong>筛选条件</strong></h4>
+                <img src="../../img/arrow_up.png" onclick="showHide1()" class="findBoxTitle"
+                     style="height: 20px; width:20px;cursor:pointer;position: absolute;right: 10px;top: 10px;">
+            </div>
+            <div class="col-sm-12 find_box" style="margin-top:40px;">
+                <div class="col-sm-12">
+                	<label>开始时间</label>
+                    <input size="16" type="text" id="datetimeStart" readonly placeholder="开始时间"
+                           class="form_date form-control">
+                </div>
+                <div class="col-sm-12">
+                <label>结束时间</label>
+                    <input size="16" type="text" id="datetimeEnd" readonly placeholder="结束时间"
+                           class="form_date form-control">
+                </div>
+                <div class="col-sm-12">
+                <label>最小投资总额</label>
+                    <div class="col-sm-9 no-padding">
+                        <input type="text" id="minTotal" onkeyup="value=value.replace(/[^\d]/g,'') " placeholder="最小投资总额" class="form-control">
+                    </div>
+                    <div class="col-sm-3 no-padding" style="line-height: 36px;">
+                        (万元)
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                <label>最大投资总额</label>
+                    <div class="col-sm-9 no-padding">
+                        <input type="text" id="maxTotal" onkeyup="value=value.replace(/[^\d]/g,'') " placeholder="最大投资总额" class="form-control">
+                    </div>
+                    <div class="col-sm-3 no-padding" style="line-height: 36px;">
+                        (万元)
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                <label>最小环保投资</label>
+                    <div class="col-sm-9 no-padding">
+                        <input type="text" id="minEp" onkeyup="value=value.replace(/[^\d]/g,'') " placeholder="最小环保投资" class="form-control">
+                    </div>
+                    <div class="col-sm-3 no-padding" style="line-height: 36px;">
+                        (万元)
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                <label>最大环保投资</label>
+                    <div class="col-sm-9 no-padding">
+                        <input type="text" id="maxEp" onkeyup="value=value.replace(/[^\d]/g,'') " placeholder="最大环保投资" class="form-control">
+                    </div>
+                    <div class="col-sm-3 no-padding" style="line-height: 36px;">
+                        (万元)
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center">
+	                <button type="button" class="btn btn-primary ml-4" id="search6" style="margin-top:20px;"
+	                        onclick="gotoDate()"> 查询
+	                </button>
+	            </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 项目类型过滤按钮 -->
+    <div id="xiangmuDiv" style="position:absolute;top:5%;left:8%;">
+        <!--        <button type="button" value="0" class="btn btn-primary active" id="country"
+                        style="border-top-left-radius:20px;border-bottom-left-radius:20px;">全部项目
+                </button>-->
+        <button type="button" value="1" class="btn btn-primary active"
+                style="border-top-left-radius:20px;border-bottom-left-radius:20px;" id="province">建设项目
+        </button>
+        <button type="button" value="2" class="btn btn-primary" id="city"
+                style="border-top-right-radius:20px;border-bottom-right-radius:20px;">验收项目
+        </button>
+    </div>
+    <!-- 新增污染企业行业类别过滤 -->
+
+    <div class="map-item" style="padding-left: 0;padding-right: 0;">
+        <img src="../../img/warn/warn-section-left.png"
+             style="position: absolute; left: -53px;bottom: 0px; height: 52px;">
+        <ul id="mapItem" class="clear">
+            <li class="lt metal" onclick="switchIndustry('')">全部</li>
+            <li class="lt" onclick="switchIndustry('有色金属矿采选')">有色金属矿采选</li>
+            <li class="lt" onclick="switchIndustry('有色金属冶炼')">有色金属冶炼</li>
+            <li class="lt" onclick="switchIndustry('石油开采')">石油开采</li>
+            <li class="lt" onclick="switchIndustry('石油加工')">石油加工</li>
+            <li class="lt" onclick="switchIndustry('化工')">化工</li>
+            <li class="lt" onclick="switchIndustry('焦化')">焦化</li>
+            <li class="lt" onclick="switchIndustry('电镀')">电镀</li>
+            <li class="lt" onclick="switchIndustry('制革')">制革</li>
+            <li class="lt" onclick="qiYeCheckBoxShow()"><img alt="" src="../../img/warn/plus.png"
+                                                             style='height:16px;margin:0;'></li>
+        </ul>
+        <img src="../../img/warn/warn-section-right.png"
+             style="position: absolute; right: -53px;bottom: 0px; height: 52px;">
+    </div>
+
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="top:50%;margin:-109px auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        快速查询配置
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="margin-bottom:10px;">
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="有色金属矿采选" id="inlineCheckbox1"
+                                       name="industry">有色金属矿采选</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="有色金属冶炼" id="inlineCheckbox2"
+                                       name="industry">有色金属冶炼</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="石油开采" id="inlineCheckbox3" name="industry">石油开采</label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:10px;">
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="石油加工" id="inlineCheckbox3" name="industry">石油加工</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="化工" id="inlineCheckbox3" name="industry">化工</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="焦化" id="inlineCheckbox3" name="industry">焦化</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="电镀" id="inlineCheckbox3" name="industry">电镀</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="制革" id="inlineCheckbox3" name="industry">制革</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="shouJiShuJu()">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+
+<!-- 格网弹出框 -->
+<div id="geWangTable" class="geWangDiv none"
+     style="height:400px;width:700px;left:50%;margin-left:-350px;top:50%;margin-top:-200px;">
+    <div class="geWangmain_table">
+        <div class="tabtop_left">企业信息列表</div>
+        <div class="tabtop_rt"></div>
+    </div>
+    <div class="data1">
+        <div class="condition" style="display:none;">
+        </div>
+        <div class="table-body ps-container"
+             style="top:37px;width:685px;height:358px;max-height: 442px;overflow: auto;">
+            <table class="table table-table-striped table-bordered" style="white-space: nowrap;">
+                <thead>
+
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "../../../extras"
+        }
+    };
+</script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+<script src="../../js/moment.min.js"></script>
+<script src="../../js/bootstrap-paginator.min.js"></script>
+<script src="../../js/bootstrap-datepaginator.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/plugins/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-slider.js"></script>
+<script src="../../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+<script type="text/javascript" src="../../js/config.js"></script>
+<script type="text/javascript" src="../../js/tianditu.js"></script>
+<script src="../../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../../js/app/warn/wuranqiye.js"></script>
+</body>
+</html>

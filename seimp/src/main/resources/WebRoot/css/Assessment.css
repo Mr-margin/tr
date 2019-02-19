@@ -1,0 +1,354 @@
+.data{
+    padding:30px 0 60px;
+    width:90%;
+    margin:0 auto;
+    height:1200px;
+    position:relative;
+}
+.data .more{
+	font-size: 16px;
+    color: #888;
+    height: 100%;
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.data .data-list{
+    height:100%;
+    width:224px;
+    margin-right:40px;
+}
+
+.data .data-con{
+    position:absolute;
+    left:274px;
+    top:30px;
+    right:0;
+    bottom:60px;
+}
+
+.data-list .list{
+    background:rgb(107,172,212);
+    border-radius:6px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+    margin-bottom:30px;
+}
+
+.data-list .list.data-one{
+    width:100%;
+    height:760px;
+}
+
+.data-list .list.data-two{
+    width:100%;
+    height:264px;
+}
+
+.data-list .list.data-three{
+    width:100%;
+    height:232px;
+}
+.data-list .list .list-title{
+    width:100%;
+    text-align:center;
+}
+.data-list .list .list-title .list-tip{
+    text-align:center;
+    font-size:22px;
+    color:#fff;
+    height:64px;
+    line-height:85px;
+}
+.data-list .list .list-title img{
+    margin:0 auto;
+}
+.data-list .list .list-con{
+    padding:0 20px;
+    text-align:right;
+    line-height:35px;
+    color:#f3f3f3;
+}
+.data-list .list .list-con ul li{
+    padding-right:7px;
+    cursor:pointer;
+}
+.data-list .list .list-con ul li:hover{
+    background:rgb(30,94,149);
+}
+/*右侧*/
+.data-con .data-top{
+    width:100%;
+    /* height:275px; */
+}
+
+.data-con .data-every{
+    height:569px;
+    width:100%;
+    margin-bottom:30px;
+}
+
+.data-con .data-city{
+    height:569px;
+    width:100%;
+}
+.data-con  .data-input{
+    height:133px;
+}
+.data-input .input-color{
+    height:70%;
+    background:rgb(246,246,246);
+    border-radius:6px;
+    padding:20px;
+    position:relative;
+
+}
+.data-input .input-color input{
+    height:55px;
+    width:100%;
+    border-radius:6px;
+    border:1px solid #ccc;
+    padding-left:80px;
+}
+.data-input .input-color button{
+    position:absolute;
+    height:55px;
+    width:140px;
+    border-radius:6px;
+    right:20px;
+    top:20px;
+    border:none;
+    font-size:20px;
+    color:#fff;
+    background:linear-gradient(rgb(210,231,142),rgb(168,208,96));
+    font-weight:500;
+}
+
+.data-input .input-color img.search{
+    position:absolute;
+    top:30px;
+    left:40px;
+}
+
+.data-con .data-top .data-add{
+    /* height:275px; */
+    border:1px solid #ccc;
+}
+.data-con .data-top .data-add .middle-con{
+    padding:15px 30px 0;
+    height:214px;
+}
+.data-con .data-top .data-add .way{
+    width:32%;
+    height:100%;
+    margin-left:2%;
+    padding:3.5% 0 0 5%;
+    color:#eee;
+    line-height:34px;
+    font-size:18px;
+}
+.data-middle .number{
+    padding:30px 30px 0;
+    height:200px;
+}
+.number .num{
+    width:18.4%;
+    height:86%;
+    color:#eee;
+    line-height:34px;
+    font-size:18px;
+    margin-left:2%;
+ }
+.number .num p{
+    margin:10% 0 0 30%;
+    color:#f0f0f0 !important;
+    font-size:18px;
+}
+.number .num p:nth-of-type(2){
+    margin-top:0;
+    font-size:24px;
+}
+
+.number .number-one{
+    background:rgb(122,169,183);
+}
+.number .number-one .number-top{
+    height:10%;
+    background:rgb(106,153,167);
+}
+
+.number .number-two{
+    background:rgb(189,153,206);
+}
+
+.number .number-two .number-top{
+    height:10%;
+    background:rgb(180,145,197);
+}
+
+.number .number-three{
+    background:rgb(202,176,125);
+}
+.number .number-three .number-top{
+    height:10%;
+    background:rgb(190,165,116);
+}
+
+
+.number .number-four{
+    background:rgb(114,188,210);
+}
+
+.number .number-four .number-top{
+    height:10%;
+    background:rgb(109,179,200);
+}
+
+.number .number-five{
+    background:rgb(160,115,212);
+}
+
+.number .number-five .number-top{
+    height:10%;
+    background:rgb(153,111,203);
+}
+
+
+.number .num:first-child{
+    margin-left:0;
+}
+.data-con .data-top .data-add .way p:first-of-type{
+    font-size:22px;
+}
+
+.data-con .data-top .data-add .way:first-of-type{
+    margin-left:0;
+}
+.data-con .data-top .data-add .middle-one{
+    background:rgb(122,169,183);
+}
+.data-con .data-top .data-add .middle-two{
+    background:rgb(202,176,125);
+}
+.data-con .data-top .data-add .middle-three{
+    background:rgb(114,188,210);
+}
+.data-con .data-middle{
+    width:100%;
+    height:264px;
+    border:1px solid #ccc;
+}
+
+.data-con .data-bottom{
+    width:100%;
+    height:232px;
+}
+.data-con .data-bottom .bottom-img{
+    width:23.5%;
+    margin-left:2%;
+    height:100%;
+    cursor:pointer;
+}
+
+.data-con .data-bottom .bottom-img:first-of-type{
+    margin-left:0;
+}
+.bottom-img img{
+    height:100%;
+    width:100%;
+}
+.data-con .data-level{
+    /* margin-bottom:30px; */
+}
+
+.data-con .data-level .middle-top{
+    height:52px;
+    background:linear-gradient(rgb(255,255,255),rgb(236,232,233));
+    text-align:center;
+    line-height:52px;
+}
+.middle-top .inner-way{
+    background:linear-gradient(rgb(38,168,224),rgb(15,106,191));
+    width:268px;
+    color:#fff;
+    font-size:22px;
+}
+
+/*右侧切换样式*/
+ .data-proto{
+    height:100%;
+    width:100%;
+}
+
+.data-proto .proto-list{
+    height:100%;
+    width:100%;
+    margin-bottom:-50px;
+}
+
+.data-proto .proto-list .proto-cell{
+    width:15.5%;
+    height:45%;
+    border:1px solid #aaa;
+    border-radius:2%;
+    margin-left:1.4%;
+    margin-top:15px;
+    padding:5px;
+}
+.proto-cell .cell-img{
+    height:61.8%;
+    width:100%;
+    border:1px solid #ccc;
+}
+.proto-cell .cell-word{
+    height:38.2%;
+    width:100%;
+    position:relative;
+}
+.proto-cell .cell-word p{
+    margin-top:10px;
+    font-size:12px;
+    color:#0952c9;
+}
+.proto-cell .cell-word p.cell-name{
+    color:#c92b06;
+    font-weight:bold;
+}
+.proto-cell .cell-word .data-look{
+    background:url('../img/Assessment/data-look.png') no-repeat;
+    width:70px;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    margin:0 auto;
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    margin-left:-35px;
+    cursor:pointer;
+    font-size:12px;
+    background-size:100% 100%;
+}
+.proto-cell .cell-word .data-look a{
+    height:100%;
+    width:100%;
+    display:block;
+}
+.data-proto .proto-list .proto-cell:first-child{
+    margin-left:0;
+}
+.data-proto .proto-list .proto-cell:nth-child(7){
+    margin-left:0;
+}
+.data-proto .proto-page{
+    height:50px;
+}
+.data-proto .proto-page nav.navigation{
+    margin:0 auto;
+}
+.data-proto .proto-page nav.navigation .pagination{
+    margin:34px auto;
+    width:340px;
+    display:block;
+}

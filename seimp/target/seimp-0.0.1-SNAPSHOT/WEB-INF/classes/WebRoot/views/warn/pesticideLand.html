@@ -1,0 +1,423 @@
+<div class="potential">
+	<!-- 概览 -->
+	<div class="mb14">
+		<h2 class="pgfx_title clearfix">
+		农药制造企业数据概览
+		<i  style="float: right;color: #fff;font-style: normal;font-size: 14px;line-height: 40px;margin-top: 12px; padding-right: 15px;">数据来源：生态环境部南京环境科学研究所《我国农药生产企业污染场地分布历史和现状调研报告》</i>
+		</h2>
+		<div class="pgfx_box1 pwhz">
+			<div onclick="runToTable();"    style="cursor: initial;">
+				<dl>
+					<dt>农药制造企业数量</dt>
+					<dd id="sumCount1"></dd>
+				</dl>
+				<span class="pesticideLand1"><i></i></span>
+			</div>
+			<div  data-toggle="modal" data-target="#myModal">
+				<dl>
+					<!-- <dt>农药制造注销/吊销企业数量</dt> -->
+					<dt>历史六六六企业</dt>
+					<dd id="sumCount2"></dd>
+				</dl>
+				<span class="pesticideLand2"><i></i></span>
+			</div>
+			<div  data-toggle="modal" data-target="#myModal4">
+				<dl>
+					<!-- <dt>即将到期企业数量（30天到期）</dt> -->
+					<dt>历史DDT企业</dt>
+					<dd id="sumCount3"></dd>
+				</dl>
+				<span class="pesticideLand3"><i></i></span>
+			</div>
+			<div>
+				<dl>
+					<dt>已上传至污染地块系统</dt>
+					<dd id="sumCount4">0家</dd>
+				</dl>
+				<span class="pesticideLand4"><i></i></span>
+			</div>
+			<div style="margin-right:0;">
+				<dl>
+					<dt>已确认非污染地块</dt>
+					<dd id="sumCount5">0家</dd>
+				</dl>
+				<span class="pesticideLand5"><i></i></span>
+			</div>
+		</div>
+	</div>
+	<!-- 分布图 -->
+	<div class="mb14">
+		<h2 class="pgfx_title clearfix">全国农药厂注销/吊销分布图</h2>
+		<div class="pgfx_box1">
+			<div class="row pgfx_form1" style="margin-bottom:0;padding: 0 1%;">
+				 <div class="row pgfx_form1 clearfix pesticideLand">
+					 <div class="pull-left form-group clearfix">
+					    <label for="jgmco" class="control-label pull-left">单位名称</label>
+					    <div class="pull-left">
+					    	<input type="text" class="form-control" id="jgmco">
+					    </div>
+					  </div>
+					  <!-- <div class="pull-left form-group clearfix">
+					    <label for="province" class="control-label pull-left">状态</label>
+					    <div class="pull-left">
+					    	<select id="status"  class="form-control"  style="min-width:150px">
+					    		<option value="">全部</option>
+					    		<option value="1">已注销 </option>
+					    		<option value="2">已吊销</option>
+					    		<option value="3">已注销或吊销</option>
+					    	</select>
+					    </div>
+					  </div> -->
+					  <div class="pull-left form-group clearfix">
+					    <label for="province" class="control-label pull-left" style="width:100px;">农药产品名称</label>
+					    <div class="pull-left">
+					    	<select id="status"  class="form-control"  style="min-width:150px">
+					    		<option value="">全部</option>
+					    		<option value="1">六六六 </option>
+					    		<option value="2">DDT</option>
+					    		<option value="3">高毒杀虫剂</option>
+					    		<option value="4">工信部</option>
+					    	</select>
+					    </div>
+					  </div>
+					  <div class="pull-left form-group clearfix">
+					    <label for="province" class="control-label pull-left">省份</label>
+					    <div class="pull-left">
+					    	<select id="province"  onchange="getCityByProvince()" class="form-control"  style="min-width:150px">
+					    		<option value="">请选择</option>
+					    	</select>
+					    </div>
+					  </div>
+					  <div class="pull-left form-group clearfix">
+					    <label for="city" class="control-label pull-left">市区</label>
+					    <div class="pull-left">
+					    	<select id="city" onchange="getCountyByCity()"  class="form-control"  style="min-width:150px">
+					    		<option value="">请选择</option>
+					    	</select>
+					    </div>
+					  </div>
+					  <div class="pull-left form-group clearfix">
+					    <label for="county" class="control-label pull-left">县区</label>
+					    <div class="pull-left">
+					    	<select id="county"  class="form-control"  style="min-width:150px">
+					    		<option value="">请选择</option>
+					    	</select>
+					    </div>
+					  </div>
+					  <div class="pull-right text-right">
+						<button class="btn btn-primary" onclick="pesticideSearch()" style="padding: 5px 30px;"><i class="iconfont"  style="margin-right: 5px;">&#xe62d;</i>查询</button>
+					  </div> 
+				</div>
+			</div>
+			<div class="clearfix pgfx_form2">
+				<div class="clearfix">
+					<div class="pull-left clearfix">
+						<label class="pull-left radioShow pesticideRadio1">
+							<span>环评建设项目快速分析：</span>
+			            </label>
+			            <div class="pull-left clearfix pesticideDiv pesticideDiv1" >
+			            	<label class="yzconsAnaBtn radioShow pesticideRadio pull-left">
+								<input type="radio" name="pesticideLand" data="10米"  value="L10"/>
+				                <span>10米</span>
+				            </label>
+				            <i class="pesticideI pull-left"></i>
+			            </div>
+			            <div class="pull-left clearfix pesticideDiv pesticideDiv2"> 
+			            	<label class="yzconsAnaBtn radioShow pesticideRadio pull-left">
+								<input type="radio" name="pesticideLand" data="100米" value="L100"/>
+				                <span>100米</span>
+				            </label>
+				            <i class="pesticideI pull-left"></i>
+			            </div>
+			            <div class="pull-left clearfix pesticideDiv pesticideDiv3">
+			            	<label class="yzconsAnaBtn radioShow pesticideRadio pull-left">
+								<input type="radio" name="pesticideLand" data="1000米" value="L1000" />
+				                <span>1000米</span>
+				            </label>
+				            <i class="pesticideI pull-left"></i>
+			            </div>
+			            
+			        </div>
+			        
+			        
+			       <!-- 地图模式/清单模式按钮切换 -->
+			       <ul class="btnSwitch pull-right clearfix">
+			       		<li class="pull-right"><button id="mapModelBtn"  class="btn btn-default btn-default1">清单模式</button></li>
+			       		<li class="pull-right"><button class="btn btn-default btn-default2 btnSwitchActive">地图模式</button></li>
+			       </ul>
+				</div>
+			</div>
+			
+			<!-- 地图 -->
+			<div class="yujing_map btnSwitchMap" >
+				<!-- 地图 -->
+				<div id="map" style="width:100%;height:100%;"></div>
+				
+				<!-- 弹出框 -->
+				<div id="tongjituDiv" class="mobile_table" style="display: none;z-index:1049">
+		            <div class="table-title" id="main_tabletitle">
+		                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+		                   	<div><span id="title" title="数据" style="height: 40px;line-height: 40px;margin-top: -5px;padding-left: 10px;">数据</span></div>
+		                    <p>
+		                        <i data="1" class="large"></i><a class="switch" href="javascript:void(0);"></a>
+		                    </p>
+		                </div>
+		            </div>
+		            <div class="table-body clearfix">
+		            </div>
+		        </div>
+		        
+		        <!-- 弹出框 -->
+		        <div id="tongjituDiv_2" class="mobile_table" style="display:none;">
+		            <div class="table-title" id="main_tabletitle2">
+		                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+		                    <span id="title1">数据</span>
+		                    <p style="margin-top: 8px;">
+		                        <i data="1" class="large" style="background:none;"></i><a class="switch" href="javascript:void(0);"></a>
+		                    </p>
+		                </div>
+		            </div>
+		            <div class="table-body clearfix">
+		
+		            </div>
+		
+		        </div>
+			
+			</div>
+			
+			<!-- 表格 -->
+			<div class="yujing_box btnSwitchTable">
+				<div class="yujing_table">
+					<table class="table table-striped table-bordered pgfx-table" id="pesticideTable">
+					</table>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 统计图 -->
+	<div class="row clearfix potential-show">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
+			<h2 class="pgfx_title1">农药产品分类统计</h2>
+			<div class="pgfx_box2">
+				<div id="echarts1" style="width: 100%;height:340px;"></div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+			<h2 class="pgfx_title1">农药制造企业分省统计</h2>
+			<div class="pgfx_box3">
+				<div id="echarts2" style="width:100%;height:340px;"></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 数据详情弹出框 -->
+        <div class="modal fade" id="pwModal2" tabindex="-1" role="dialog" aria-labelledby="pwModal" aria-hidden="true" style="z-index:1053">
+            <div class="modal-dialog" style="width:80%;">
+                <div class="modal-content">
+                	<div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel2"></h4>
+		            </div>
+                    <div class="modal-body">
+                        <div id="detailsDiv2">
+				        	<div class="detailsDivBocy" >
+				        		<!-- <iframe id="detailsIframe" src="views/data/detailIframe/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe> -->
+				        		<iframe id="detailsIframe2" src="views/data/detailIframe/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe>
+				        	</div>
+				        </div>
+                    </div>
+                   
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+	
+	
+	<!-- 即将到期企业数量模态框（Modal） -->
+	<div class="modal fade enterBaseTable" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content"  id="warn_myModal">
+	        	<div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel2">历史六六六企业</h4>
+	            </div>
+	            <div class="modal-body">
+	            	
+	            	
+	            	<table id="666Table"></table>
+
+	            </div>
+	            
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	
+	<div class="modal fade enterBaseTable" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content"  id="warn_myModal4">
+	        	<div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel4">历史DDT企业</h4>
+	            </div>
+	            <div class="modal-body">
+	            	
+	            	
+	            	<table id="ddtTable"></table>
+
+	            </div>
+	            
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	
+	<!-- 名称与污染地块关联分析 -->
+	<div class="modal fade enterBaseTable" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true" style="z-index:1052">
+	    <div class="modal-dialog">
+	        <div class="modal-content"  id="warn_myModal5">
+	        	<div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel5">历史DDT企业</h4>
+	            </div>
+	            <div class="modal-body">
+	            	
+	            	
+	            	<table id="nameWrdkTable"></table>
+
+	            </div>
+	            
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	
+</div>
+<div id ="yc"></div>
+<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "../../../extras"
+        }
+    }; 
+    //环评建设项目快速分析切换
+    $(".pesticideDiv1 label").on("click", function() {
+    	$(this).parent(".pesticideDiv1").addClass("active");
+    	$(".pesticideDiv2").removeClass("active");
+    	$(".pesticideDiv3").removeClass("active");
+    	$(this).addClass("pesticideRadio_active");
+    	$(".pesticideDiv2 label").removeClass("pesticideRadio_active");
+    	$(".pesticideDiv3 label").removeClass("pesticideRadio_active");
+    	//关闭事件
+    	$(".pesticideDiv1 i").on("click", function() {
+    		$(this).parent(".pesticideDiv1").removeClass("active");
+    		$(this).siblings(".pesticideDiv1 label").removeClass("pesticideRadio_active");
+    		
+    		//关闭弹出框
+			$("#tongjituDiv").hide();
+			//关闭弹出框
+			$("#tongjituDiv_2").hide();
+			
+			//地图图层操作
+			//地图图层操作
+			app.circleLayer.clear();
+			app.tidituSearchLayer.clear();
+			app.yzconsLayer.clear();
+			app.pesticideLayer.clear();
+			app.pesticideLayer.setVisibility(true);
+			app.map.setExtent(extent);
+			
+			pes.searchPar.jgmco = $("#jgmco").val();
+			pes.searchPar.status = $("#status").val();
+			pes.searchPar.province = $("#province").val();
+			pes.searchPar.city = $("#city").val();
+			pes.searchPar.county = $("#county").val();
+			pes.searchPar.lCloumnStr = $("label.pesticideRadio_active input").val();
+			
+			//添加农药厂数据到地图上
+			addPesticideGraphic();
+			
+			//添加农药厂数据到表格上
+			addPesticideToTable();
+    	})
+    })
+    $(".pesticideDiv2 label").on("click", function() {
+    	$(this).parent(".pesticideDiv2").addClass("active");
+    	$(".pesticideDiv1").removeClass("active");
+    	$(".pesticideDiv3").removeClass("active");
+    	$(this).addClass("pesticideRadio_active");
+    	$(".pesticideDiv1 label").removeClass("pesticideRadio_active");
+    	$(".pesticideDiv3 label").removeClass("pesticideRadio_active");
+    	//关闭事件
+    	$(".pesticideDiv2 i").on("click", function() {
+    		$(this).parent(".pesticideDiv2").removeClass("active");
+    		$(this).siblings(".pesticideDiv2 label").removeClass("pesticideRadio_active");
+    		
+    		//关闭弹出框
+			$("#tongjituDiv").hide();
+			//关闭弹出框
+			$("#tongjituDiv_2").hide();
+			
+			//地图图层操作
+			//地图图层操作
+			app.circleLayer.clear();
+			app.tidituSearchLayer.clear();
+			app.yzconsLayer.clear();
+			app.pesticideLayer.clear();
+			app.pesticideLayer.setVisibility(true);
+			app.map.setExtent(extent);
+			
+			pes.searchPar.jgmco = $("#jgmco").val();
+			pes.searchPar.status = $("#status").val();
+			pes.searchPar.province = $("#province").val();
+			pes.searchPar.city = $("#city").val();
+			pes.searchPar.county = $("#county").val();
+			pes.searchPar.lCloumnStr = $("label.pesticideRadio_active input").val();
+			
+			//添加农药厂数据到地图上
+			addPesticideGraphic();
+			
+			//添加农药厂数据到表格上
+			addPesticideToTable();    		
+    	})
+    })
+    $(".pesticideDiv3 label").on("click", function() {
+    	$(this).parent(".pesticideDiv3").addClass("active");
+    	$(".pesticideDiv1").removeClass("active");
+    	$(".pesticideDiv2").removeClass("active");
+    	$(this).addClass("pesticideRadio_active");
+    	$(".pesticideDiv1 label").removeClass("pesticideRadio_active");
+    	$(".pesticideDiv2 label").removeClass("pesticideRadio_active");
+    	//关闭事件
+    	$(".pesticideDiv3 i").on("click", function() {
+    		$(this).parent(".pesticideDiv3").removeClass("active");
+    		$(this).siblings(".pesticideDiv3 label").removeClass("pesticideRadio_active");
+    		
+    		//关闭弹出框
+			$("#tongjituDiv").hide();
+			//关闭弹出框
+			$("#tongjituDiv_2").hide();
+			
+			pes.searchPar.jgmco = $("#jgmco").val();
+			pes.searchPar.status = $("#status").val();
+			pes.searchPar.province = $("#province").val();
+			pes.searchPar.city = $("#city").val();
+			pes.searchPar.county = $("#county").val();
+			pes.searchPar.lCloumnStr = $("label.pesticideRadio_active input").val();
+			
+			//地图图层操作
+			//地图图层操作
+			app.circleLayer.clear();
+			app.tidituSearchLayer.clear();
+			app.yzconsLayer.clear();
+			app.pesticideLayer.clear();
+			app.pesticideLayer.setVisibility(true);
+			app.map.setExtent(extent);
+			
+			//添加农药厂数据到地图上
+			addPesticideGraphic();
+			
+			//添加农药厂数据到表格上
+			addPesticideToTable();    		
+    	})
+    })
+</script>
+<script type="text/javascript" src="js/arcgisPublic.js"></script>
+<script type="text/javascript" src="js/app/warn/pesticideLand2.js"></script>

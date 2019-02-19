@@ -1,0 +1,238 @@
+<style>
+    .pull-right{
+        float: right !important;
+        margin-top: 0px;
+    }
+    #buwei .news-li:first-child a,
+    #part1 .news-li:first-child a,
+    #part2 .news-li:first-child a,
+    #part3 .news-li:first-child a,
+    #part4 .news-li:first-child a,
+    #part10 .news-li:first-child a,
+    #difang .news-li:first-child a,
+    #other .news-li:first-child a{
+    	display:block !important;
+    	position:relative !important;
+    }
+    #buwei .news-li:first-child a .rt,
+    #part1 .news-li:first-child a .rt,
+    #part2 .news-li:first-child a .rt,
+    #part3 .news-li:first-child a .rt,
+    #part4 .news-li:first-child a .rt,
+    #part10 .news-li:first-child a .rt,
+    #difang .news-li:first-child a .rt,
+    #other .news-li:first-child a .rt{
+    	position: absolute !important;
+    	right: 0 !important;
+    }
+    #part9 .news-li:first-child{
+    	width: 100%;
+    	position: relative;
+    }
+    #part9 .news-li:first-child .rt{
+    	position: absolute;
+    	right: 0;
+    }
+    #buwei .news-li:nth-child(2n+1),
+    #difang  .news-li:nth-child(2n+1),
+    #other  .news-li:nth-child(2n+1){
+    	margin-right:4%;
+    }
+    #buwei .news-li,
+    #difang  .news-li,
+    #other  .news-li{
+    	width:48%;
+    }
+</style>
+<div class="news">
+    <div class="news-words ">
+        <!-- <div class="news-carousel lt" style="height: 394px">
+            <div class="map-table ">
+                <div class="lt map-table-color img-speed"><span class="home_title"><i
+                        class="glyphicon glyphicon-picture"></i>&nbsp&nbsp&nbsp图片资讯</span></div>
+                <div class="rt more no-margin"><span class="home_title"></span></div>
+            </div>
+            <div class="carousel-con">
+                <div class="fluid">
+                    <div id="index-slide" class="carousel slide" data-ride="carousel" style="width:100%;height:100%;">
+                        <ul class="carousel-indicators news-zixun">
+                        </ul>
+                        <div class="carousel-inner" role="listbox" style="width:100%;height:100%;cursor:pointer;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="news-report">
+            <div class="map-table  news-skew"  style="position: relative;z-index: 10;overflow:hidden;">
+                <div class="map-area lt map-table-color newTop1">
+                	<div class="home_title">
+                		<img src="img/newTopR1.png">&nbsp&nbsp&nbsp部委动态
+                	</div>
+                </div>
+                <div class="table-area lt newTop2">
+                	<div class="home_title">
+                		<img src="img/newTopR2Black.png">&nbsp&nbsp&nbsp地方动态
+                	</div>           	
+                </div>
+                <div class="other-area lt newTop3">
+                	<div class="home_title">
+                		<img src="img/newTopR3Black.png">&nbsp&nbsp&nbsp其他资讯
+                	</div>
+                </div>
+
+               	<img src="img/news/news-line2.png"  class="imgs1">
+               	<img src="img/news/news-line.png"  class="imgs2">
+               	<img src="img/news/news-line.png"  class="imgs3">
+                <div class="rt more" id="tab1"  style="margin: 0;line-height: 50px !important;"><a href="#newList?type=1" class=""><span class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news bw1  clearfix">
+            	<div class="col-lg-12  col-md-12  col-sm-12">
+            		<ul id="buwei1"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+                	<ul id="buwei2"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+            	</div>
+            </div>
+            <div class="table-contain all-news none bw2  clearfix">
+            	<div class="col-lg-12  col-md-12  col-sm-12">
+            		<ul id="difang1"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+                	<ul id="difang2"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+            	</div>
+            </div>
+            <div class="other-contain all-news none bw3  clearfix">
+                <div class="col-lg-12  col-md-12  col-sm-12">
+            		<ul id="other1"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+                	<ul id="other2"  class="col-lg-6  col-md-6  col-sm-6">
+                	</ul>
+            	</div>
+            </div>
+        </div>
+    </div>
+    <div class="news-img clearfix">
+        <div class="news-image lt pull-left" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newTj.png">&nbsp&nbsp&nbsp资讯统计</span>
+                </p>
+                <div class="rt more text-center" style="margin: 0;line-height: 50px !important;"><a href="#newList?type=0"><span class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news row"  style="padding-left: 0;padding-right: 0;overflow: hidden; width: 100%;margin: 0;">
+                <div class="col-xs-12">
+                    <div class="col-xs-6" id="mychart1" style="height: 330px;"></div>
+                    <div class="col-xs-6" id="mychart2" style="height: 330px;padding:0"></div>
+                </div>
+            </div>
+        </div>
+        <div class="news-image lt pull-right" style="height: 402px">
+            <div class="news-report lt" style="width: 100%">
+                <div class="map-table">
+                    <div class="word-area lt map-table-color newTop4"><span class="home_title"><img
+                            src="img/newTopR1.png">&nbsp&nbsp&nbsp关键词</span></div>
+                    <div class="city-area lt newTop5"><span class="home_title"><img src="img/newTopR2Black.png">&nbsp&nbsp&nbsp地方排名</span>
+                    </div>
+                    <div class="visit-area lt newTop6"><span class="home_title"><img src="img/newTopR3Black.png">&nbsp&nbsp&nbsp访问量排名</span>
+                    </div>
+                   <!-- <div class="rt more" id="tab4"><a class=""><span class=""></span></a></div>-->
+                </div>
+                <div class=" all-news bw4" style="text-align: center;margin: 0 auto">
+                    <canvas width="600" height="350" id="myCanvas"></canvas>
+                    <div id="tags">
+                    </div>
+                   <!-- <ul id="hotWord">
+                    </ul>-->
+                </div>
+                <div class=" all-news none bw5">
+                    <ul id="cityRank">
+                    </ul>
+                </div>
+                <div class=" all-news none bw6">
+                    <ul id="visitRank">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="news-image lt pull-left" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newZc.png">&nbsp&nbsp&nbsp政策法规专题</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=4"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part1">
+                </ul>
+            </div>
+            <!--<div class="image-layer">
+
+                &lt;!&ndash;<a href="#detail?type=4"><img src="img/news/bom-one.png" alt=""></a>&ndash;&gt;
+            </div>-->
+        </div>
+        <div class="news-image lt pull-right" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newBz.png">&nbsp&nbsp&nbsp标准规范专题</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=5"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part2">
+                </ul>
+            </div>
+        </div>
+        <div class="news-image lt pull-left" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newTr.png">&nbsp&nbsp&nbsp土壤详查专题</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=6"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part3">
+                </ul>
+            </div>
+        </div>
+        <div class="news-image lt pull-right" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newXf.png">&nbsp&nbsp&nbsp修复治理专题</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=7"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part4">
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="news-image lt pull-left" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newXz.png">&nbsp&nbsp&nbsp行动计划编制</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=9"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part9">
+                </ul>
+            </div>
+        </div>
+        <div class="news-image lt pull-right" style="height: 402px">
+            <div class="image-tip">
+                <p class="pull-left"><span class="home_title"><img src="img/newXf.png">&nbsp&nbsp&nbsp文献资料专题</span>
+                </p>
+                <div class="rt more" style="line-height: 44px; text-align: center"><a href="#detail?type=10"><span
+                        class="">更多</span></a></div>
+            </div>
+            <div class="map-contain all-news">
+                <ul id="part10">
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</div>

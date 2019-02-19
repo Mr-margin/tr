@@ -1,0 +1,75 @@
+{
+  "wrwfxpg": [
+    {
+      "id": 1,
+      "samplingPointCode": 431225501,
+      "altitude": 480,
+      "landUseType": "林地",
+      "organicMatter": 4.33,
+      "pH": 5,
+      "latitude": 26.94106,
+      "longitude": 109.8947,
+      "totalNitrogen": 1.1,
+      "Hg": 0.12,
+      "Cu": 16
+    },
+    {
+      "id": 2,
+      "samplingPointCode": 431225502,
+      "altitude": 572,
+      "landUseType": "林地",
+      "organicMatter": 1.45,
+      "pH": 4.4,
+      "latitude": 26.95275,
+      "longitude": 109.9121,
+      "totalNitrogen": 0.08,
+      "Hg": 5.94,
+      "Cu": 6
+    },
+    {
+      "id": 3,
+      "samplingPointCode": 431225503,
+      "altitude": 248,
+      "landUseType": "林地",
+      "organicMatter": 1.94,
+      "pH": 4.6,
+      "latitude": 26.96261,
+      "longitude": 109.9353,
+      "totalNitrogen": 0.08,
+      "Hg": 0.3,
+      "Cu": 96
+    },
+    {
+      "id": 4,
+      "samplingPointCode": 431225504,
+      "altitude": 269,
+      "landUseType": "水田",
+      "organicMatter": 1.79,
+      "pH": 4.8,
+      "latitude": 26.89725,
+      "longitude": 109.9475,
+      "totalNitrogen": 0.66,
+      "Hg": 0.098,
+      "Cu": 17
+    },
+    {
+      "id": 5,
+      "samplingPointCode": 431225505,
+      "altitude": 260,
+      "landUseType": "林地",
+      "organicMatter": 1.22,
+      "pH": 4.4,
+      "latitude": 26.9,
+      "longitude": 109.936,
+      "totalNitrogen": 0.9,
+      "Hg": 0.533,
+      "Cu": 44
+    }
+  ]
+}
+
+
+
+
+
+

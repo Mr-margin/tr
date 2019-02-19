@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>土壤网格</title>
+	<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+	<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../alifonts/iconfont.css">
+	<link href="../../css/public/public.css" rel="stylesheet">
+	<link href="../../css/system.css" rel="stylesheet">
+	<link href="../../css/warn/qianzaiwurandikuai.css" rel="stylesheet">
+	<link href="../../css/dataOld.css" rel="stylesheet">
+	<link href="../../css/data.css" rel="stylesheet">
+	<link href="../../css/toastr.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css"/>
+	<link href="../../css/sweetalert.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="col-xs-12 data_bottom_upload">
+        <div class="col-xs-6">
+            <div class="col-sm-3  no-padding text-right">
+                <span style="font-size:1.5rem;">接口名称<code>*</code></span>
+            </div>
+            <div class="col-sm-8 ">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-sm-3  no-padding text-right">
+                <span style="font-size:1.5rem;">接口类型<code>*</code></span>
+            </div>
+            <div class="col-sm-8 ">
+                <select class="form-control province2">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-sm-3  no-padding text-right">
+                <span style="font-size:1.5rem;">提供单位<code>*</code></span>
+            </div>
+            <div class="col-sm-8 ">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-sm-3  no-padding text-right">
+                <span style="font-size:1.5rem;">服务地址<code>*</code></span>
+            </div>
+            <div class="col-sm-8 ">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-sm-3  no-padding text-right">
+                <span style="font-size:1.5rem;">参数</span>
+            </div>
+            <div class="col-sm-8 ">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-sm-3  text-right">
+                <span style="font-size:1.5rem;">说明文档</span>
+            </div>
+            <div class="col-sm-8 ">
+                <input type="file">
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-sm-2 text-right" style="width: 12%; padding-right: 0;">
+                <span style="font-size:1.5rem;">示例数据</span>
+            </div>
+            <div class="col-sm-10 " style="width: 84%;">
+                <textarea class="form-control" style="min-height:100px;" id="roleDesc"></textarea>
+            </div>
+        </div>
+        <div class="col-sm-12 pt-5 " style="text-align:center;">
+            <button type="button" class="btn btn-w-m btn-info ml-5" style="width: 120px;margin-right: 200px"
+                    onclick="addUser()"><i class="fa fa-check"></i> 确定添加
+            </button>
+            <button type="button" class="btn btn-white ml-5" style="width: 120px"
+                    onclick="showBottomData()">
+                <i class="fa fa-undo"></i> 取消
+            </button>
+        </div>
+    </div>
+	<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../../extras"
+        }
+    };
+</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	
+	<script type="text/javascript" src="../../js/dateFormat.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script src="../../js/toastr.min.js"></script>
+	<script src="../../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../../js/arcgisUrl.js"></script>
+	<script type="text/javascript" src="../../js/app/data/dataJiekou.js"></script>
+	<script>
+		function center(){            
+			//判断显示器分辨率           
+			var winWidth  = document.documentElement.clientWidth; 
+			console.log(winWidth)
+			if(winWidth<=1100){                
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/extra.css" }) .appendTo("head")        
+			}else if(winWidth>1100){
+				$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "../../css/origin.css" }) .appendTo("head")        
+			}
+			console.log(winWidth)
+		}
+		center()
+	</script>
+</body>

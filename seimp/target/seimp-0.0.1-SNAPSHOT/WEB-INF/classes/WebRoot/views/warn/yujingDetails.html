@@ -1,0 +1,92 @@
+
+<div class="potential">
+	<div class="yujing_map" >
+		<div id="map" style="width:100%;height:100%;"></div>
+		<ul class="wrdk_tabs">
+			<li  class="active" data="污染地块安全利用率" id="bl" style="cursor:pointer;"><i class="glyphicon glyphicon-eye-open"></i>污染地块安全利用率</li>
+			<li data ="污染地块分布" id="dk" style="cursor:pointer;"><i class="glyphicon glyphicon-eye-close"></i>污染地块分布</li>
+
+		</ul>
+		<ul class="wrdk_type">
+			<li class="iconfont icon-map active" data="地图" style="cursor:pointer;"></li>
+			<li class="iconfont icon-table" style="padding-left: 2px;cursor:pointer;" data="表格" ></li>
+		</ul>
+		<div id="tongjituDiv" class="mobile_table" style="display: none;">
+            <div class="table-title" id="main_tabletitle">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                   	<div><span id="title" title="数据">数据</span></div>
+                    
+                    <p>
+                        <i data="1" class="large"></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+            </div>
+        </div>
+        <div id="tongjituDiv_2" class="mobile_table" style="display:none;">
+            <div class="table-title" id="main_tabletitle2">
+                <div class="clearfix" style="width: 98%;margin: 0 1%;border-bottom: 1px solid #DEDFE1;">
+                    <span id="title1">数据</span>
+                    <p>
+                        <i data="1" class="large" style="background:none;"></i><a class="switch" href="javascript:void(0);"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="table-body clearfix">
+
+            </div>
+
+        </div>
+	</div>
+	<hr />
+	<ul class="wrdk_type1 clearfix">
+		<li class="iconfont icon-table active" data="表格" style="cursor:pointer;"></li>
+		<li class="iconfont icon-map " style="padding-left: 2px;cursor:pointer;" data="地图"></li>
+
+	</ul>
+	<div class="yujing_box">
+		<div class="row m0">
+			<select class="col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control" id="wrdk1" onchange="getCity()">
+		      <option value="">请选择省、自治区</option>
+		    </select>
+		    <select class="col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control" id="wrdk2" onchange="getCounty()">
+		      <option value="">请选择市、自治州</option>
+		    </select>
+		    <select class="col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control" id="wrdk3" >
+		      <option value="">请选择区、县</option>
+		    </select>
+			<select class="col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control" id="wrdk5" style="display:none">
+				<option value="">请选择区、县</option>
+			</select>
+		    <select class="col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control" id="wrdk6">
+		     ` <option value="">请选择地块所处阶段</option>
+				<option value="S0">疑似地块</option>
+				<option value="S1">初步调查</option>
+				<option value="S2">详细调查</option>
+				<option value="S3">风险评估</option>
+				<option value="S4">风险管控</option>
+				<option value="S5">土壤修复与治理</option>
+				<option value="S6">土壤修复与治理评估</option>
+		    </select>
+		    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 input-group" id="wrdk4">
+	            <input type="text" class="form-control" placeholder="请输入污染地块编码">
+	            <span class="input-group-addon" onclick="search()" style="cursor:pointer;">搜索</span>
+	        </div>
+		</div>
+		<div class="yujing_table">
+			<table class="table table-striped table-bordered pgfx-table" id="wrdkTable">
+			</table>
+		</div>
+	</div>
+</div>
+<div id ="yc"></div>
+<script type="text/javascript">
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "../../../extras"
+        }
+    };
+</script>
+<script type="text/javascript" src="js/arcgisPublic.js"></script>
+<script type="text/javascript" src="js/app/warn/wrdk.js"></script>

@@ -1,0 +1,303 @@
+<div class="potential">
+	<div class="mb14">
+		<h2 class="pgfx_title clearfix">疑似污染地块数据概览</h2>
+		<div class="pgfx_box1 pwhz">
+			<div  style="cursor: initial;">
+				<dl>
+					<dt>重点行业排污许可企业</dt>
+					<dd id="pw1"></dd>
+				</dl>
+				<span class="iconfont icon-seimp6" style="background: #347ab6;"></span>
+			</div>
+			<div id="undoCountDiv">
+				
+				<dl>
+					<dt>重点行业排污许可注销/撤销企业</dt>
+					<dd id="pw2"></dd>
+				</dl>
+				<span class="iconfont icon-seimp7" style="background: #da534f;"></span>
+				
+			</div>
+			<div data-toggle="modal" data-target="#myModal">
+				<dl>
+					<dt>即将到期企业数量（30天到期）</dt>
+					<dd id="pw3"></dd>
+				</dl>
+				<span class="iconfont icon-seimp8" style="background: #5bb85d;"></span>
+			</div>
+			<div>
+				<dl>
+					<dt>已上传至污染地块系统</dt>
+					<dd id="pw4"></dd>
+				</dl>
+				<span class="iconfont icon-seimp9" style="background: #efad4f;"></span>
+			</div>
+			<div style="margin-right:0;">
+				<dl>
+					<dt>已确认非污染地块</dt>
+					<dd id="pw5"></dd>
+				</dl>
+				<span class="iconfont icon-seimp10" style="background: #5cbee1;"></span>
+			</div>
+		</div>
+	</div>
+	<div class="mb14">
+		<h2 class="pgfx_title clearfix">排污许可证注销/撤销数据<span class="warn_UPDATETIME"></span></h2>
+		<div class="pgfx_box1"  style="position: relative;">
+			<div class="row pgfx_form1">
+				 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-group clearfix w-22"  style="width:20%">
+				    <label for="lastname" class="control-label pull-left">注销/撤销类型</label>
+				    <div class="pull-left">
+				    	<select id="pot_1"  class="form-control"  style="width:120px">
+				    		<option value="">请选择</option>
+				    		<option value="1">注销</option>
+				      		<option value="2">撤销</option>
+				    	</select>
+				    </div>
+				  </div>
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-group clearfix w-22"  style="width:20%">
+				    <label for="lastname" class="control-label pull-left">单位名称</label>
+				    <div class="pull-left">
+				      <input type="text" class="form-control" id="pot_2"  style="width:120px">
+				    </div>
+				  </div>
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-group clearfix w-22"  style="width:20%">
+				    <label for="lastname" class="control-label pull-left">注销/撤销原因</label>
+				    <div class="pull-left">
+				    	<select class="form-control" id="pot_3" style="width:120px"></select>
+				    </div>
+				  </div>
+				  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-group clearfix w-34"  style="width:30%">
+				    <label for="lastname" class="control-label pull-left">注销/撤销时间</label>
+				    <div class="pull-left clearfix cancel_time">
+				    	<div class="pull-left startTime">
+				    	  <input class="form_date form-control" onchange="RefreshData()" size="16" type="text" value="" id="startTime"  style="width:120px">
+					     
+					      <i class="glyphicon glyphicon-calendar"></i>
+					    </div>
+					    <div class="pull-left m105">~</div>
+					    <div class="pull-left endTime">
+					      <input class="form_date form-control" onchange="RefreshData()" size="16" type="text" value="" id="endTime"  style="width:120px">
+					      
+					      <i class="glyphicon glyphicon-calendar"></i>
+					    </div>
+				    </div>
+				  </div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-group clearfix w-22"  style="width:10%">
+					<button class="btn btn-primary pull-right" onclick="search()"><i class="iconfont"  style="margin-right: 5px;">&#xe62d;</i>查询</button>
+				</div>
+									
+			</div>
+			<div class="clearfix pgfx_form2">
+				<div class="mb14 clearfix" id="undoTableLabel">
+					<div class="pull-left clearfix" style="line-height: 22px;">
+						<label class="pull-left radioShow" style="color: #333;">
+							<span>最近</span>
+			            </label>
+			            <label class="pull-left radioShow w-3" style="color: #333;">
+							<span>|</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1 radioShow_active">
+							<input type="radio" name="time1" data="全部"  value="" id="options1" class="radioItem" checked/>
+			                <span>全部</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1">
+							<input type="radio" name="time1" data="当天"  value="1天" id="options1" class="radioItem"/>
+			                <span>当天</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1">
+							<input type="radio" name="time1" data="7天" value="7天" id="options2" class="radioItem"/>
+			                <span>7天</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1 ">
+							<input type="radio" name="time1" data="30天" value="30天" id="options3" class="radioItem"  />
+			                <span>30天</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1">
+							<input type="radio" name="time1" data="90天" value="90天" id="options4" class="radioItem"/>
+			                <span>90天</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1">
+							<input type="radio" name="time1" data="半年" value="6月" id="options5" class="radioItem"/>
+			                <span>半年</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow1">
+							<input type="radio" name="time1" data="1年" value="1年" id="options6" class="radioItem"/>
+			                <span>1年</span>
+			            </label>
+			        </div>   
+					<div class="pull-left clearfix">
+						<label class="pull-left radioShow" style="color: #333;">
+							<span>排序</span>
+			            </label>
+			            <label class="pull-left radioShow w-3" style="color: #333;margin-right: 15px !important;">
+							<span>|</span>
+			            </label>
+						<label class="pull-left radioShow radioShow2 radioShow_active" >
+							<input type="radio" name="time2" data="最新日期" value="DESC" class="radioItem" checked/>
+			                <span>最新日期</span>
+			            </label>
+			            <label class="pull-left radioShow radioShow2">
+							<input type="radio" name="time2" data="最早日期" value="ASC" class="radioItem"/>
+			                <span>最早日期</span>
+			            </label>
+					</div>
+					<div class="pull-right clearfix"  style="margin-top:-8px;">
+						<button class="btn btn-warning pull-right" onclick="shangbao()"  style="padding: 3px 12px 6px;"><i class="iconfont"  style="font-size: 18px; margin-right: 5px;">&#xe632;</i>批量上传至污染地块系统</button>
+						<button class="btn btn-success pull-right" onclick="warnGetExcelFile()"  style="padding: 5px 12px;"><i class="iconfont"  style="font-size: 17px;margin-right: 5px;">&#xe610;</i>下载</button>
+
+					</div>
+					
+				</div>
+					
+				
+				
+			</div>
+			<table id="potential_table" class="table table-striped table-bordered pgfx-table">
+					
+			</table>		
+			
+		</div>
+	</div>
+	<div class="row clearfix potential-show">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
+			<h2 class="pgfx_title1">排污许可证注销/撤销分省统计</h2>
+			<div class="pgfx_box2">
+				<div id="myChart1" style="width: 100%;height:340px;"></div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+			<h2 class="pgfx_title1">排污许可证注销/撤销分行业统计</h2>
+			<div class="pgfx_box3">
+				<div id="myChart2" style="width:100%;height:340px;"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 即将到期企业数量模态框（Modal） -->
+	<div class="modal fade enterBaseTable" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content"  id="warn_myModal">
+	        	<div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel2">即将到期企业信息</h4>
+	            </div>
+	            <div class="modal-body">
+	            	
+	            	<div class="clearfix ">
+	            		<div class="pull-left form-group clearfix mr20">
+						    <label for="work" class="control-label pull-left">企业信息</label>
+						    <div class="pull-left">
+						    	<input type="text" class="form-control" id="devcompany" placeholder="单位名称或许可证书编号">
+						    </div>
+					    </div>
+					    <div class="pull-left form-group clearfix">
+						    <label for="deadline" class="control-label pull-left">到期时间</label>
+						    <div class="pull-left clearfix cancel_time">
+						    	<div class="pull-left startTime">
+						    	  <input class="form_date form-control" onchange="RefreshData()" size="16" type="text" value="" id="valiTimesStart">
+							     
+							      <i class="glyphicon glyphicon-calendar"></i>
+							    </div>
+							    <div class="pull-left m105">~</div>
+						    	<div class="pull-left startTime">
+						    	  <input class="form_date form-control"  size="16" type="text" value="" id="valiTimesEnd">
+							     
+							      <i class="glyphicon glyphicon-calendar"></i>
+							    </div>
+						    </div>
+						</div>
+						<div class="pull-right text-right">
+							<button class="btn btn-primary" onclick="updateEnterBaseTable()" style="padding: 6px 30px;"><i class="iconfont"  style="margin-right: 5px;">&#xe62d;</i>查询</button>
+						</div> 
+	            	</div>
+	            	
+	            	<!-- 最近条件 -->
+	            	<div class="clearfix" id="baseTableLabel" style="margin-bottom:15px;">
+		            	<div class="pull-left clearfix" style="line-height: 22px;">
+							<label class="pull-left radioShow" style="color: #333;">
+								<span>最近</span>
+				            </label>
+				            <label class="pull-left radioShow w-3" style="color: #333;">
+								<span>|</span>
+				            </label>
+				            <label class="pull-left radioShow radioShow3 ">
+								<input type="radio" name="time3" data="全部"  value="" id="options1" class="radioItem" />
+				                <span>全部</span>
+				            </label>
+				            <label class="pull-left radioShow radioShow3">
+								<input type="radio" name="time3" data="一周"  value="一周" id="options1" class="radioItem"/>
+				                <span>一周</span>
+				            </label>
+				            <label class="pull-left radioShow radioShow3 radioShow_active">
+								<input type="radio" name="time3" data="一月" value="一月" id="options2" class="radioItem" checked/>
+				                <span>一月</span>
+				            </label>
+				            <label class="pull-left radioShow radioShow3 ">
+								<input type="radio" name="time3" data="半年" value="半年" id="options3" class="radioItem"  />
+				                <span>半年</span>
+				            </label>
+				            <label class="pull-left radioShow radioShow3">
+								<input type="radio" name="time3" data="一年" value="一年" id="options4" class="radioItem"/>
+				                <span>一年</span>
+				            </label>
+				            
+				        </div>   
+	            	</div>
+	            	<table id="enterBaseTable"></table>
+
+	            </div>
+	            
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+
+	<!-- 数据详情弹出框 -->
+        <div class="modal fade" id="pwModal2" tabindex="-1" role="dialog" aria-labelledby="pwModal" aria-hidden="true" >
+            <div class="modal-dialog" style="width:80%;">
+                <div class="modal-content">
+                	<div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:none !important;">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel3"></h4>
+		            </div>
+                    <div class="modal-body">
+                        <div id="detailsDiv2">
+				        	<div class="detailsDivBocy" >
+				        		<!-- <iframe id="detailsIframe" src="views/data/detailIframe/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe> -->
+				        		<iframe id="detailsIframe2" src="views/data/detailIframe/enterpriseDetails.html" style="width: 100%;height: 600px;" class="pwModal"></iframe>
+				        	</div>
+				        </div>
+                    </div>
+                   
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+</div>
+<script>
+$(".radioShow1").on("click",function(){  //点击label 
+     var _in = $(this).children("input:radio[name='time1']");         
+     $(this).addClass("radioShow_active").siblings().removeClass("radioShow_active");     
+ });
+ $(".radioShow2").on("click",function(){  //点击label 
+     var _in = $(this).children("input:radio[name='time2']");         
+     $(this).addClass("radioShow_active").siblings().removeClass("radioShow_active");
+     
+ });
+ $(".radioShow3").on("click",function(){  //点击label 
+     var _in = $(this).children("input:radio[name='time3']");         
+     $(this).addClass("radioShow_active").siblings().removeClass("radioShow_active");
+     
+ });
+function center(){            
+	//判断显示器分辨率           
+	var winWidth  = document.documentElement.clientWidth; 
+	console.log(winWidth)
+	if(winWidth<=1580){                
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/extra.css" }) .appendTo("head")        
+	}else if(winWidth>1600){
+		$("<link>").attr({ rel: "stylesheet", type: "text/css", href: "css/origin.css" }) .appendTo("head")        
+	}
+	console.log(winWidth)
+}
+center()
+</script>

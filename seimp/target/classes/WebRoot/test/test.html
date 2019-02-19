@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>google</title>
+    <link href="../css/public/public.css" rel="stylesheet">
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/plugins/toastr/toastr.css" rel="stylesheet">
+    <link href="../css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" >
+    <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+    <link href="../css/public/public.css" rel="stylesheet">
+    <link href="../css/information/diaocha.css" rel="stylesheet">
+    <link href="../css/sweetalert.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/jquery-ui.min.css" rel="stylesheet">
+    <style type="text/css">
+        #map{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body class="tundra">
+    <input id="Button1" type="button" value="距离测量" onclick="toolbar.activate(esri.toolbars.Draw.LINE);" />
+    <input id="Button2" type="button" value="面积测量" onclick="toolbar.activate(esri.toolbars.Draw.POLYGON);" />
+    <input id="Button3" type="button" value="导出" onclick="export_click()" />
+    <div id="map" class="tundra" ></div>
+<!--<div>-->
+    <!--<input id="Button1" type="button" value="距离测量" onclick="toolbar.activate(esri.toolbars.Draw.LINE);map.hideZoomSlider();" />-->
+    <!--<input id="Button2" type="button" value="面积测量" onclick="toolbar.activate(esri.toolbars.Draw.POLYGON);map.hideZoomSlider();" />-->
+
+<!--</div>-->
+<!--<div id="map" >-->
+    <!--<button onclick="showOrHide();">显示隐藏</button>-->
+<!--</div>-->
+<div style="position:absolute;left:7%;top:5%;z-index:4;width:400px">
+    <button type="button" class="btn btn-primary" id="tuceng">图层控制</button>
+    <div id="tucengDiv" class="" style="background-color:#fff;margin-top:10px;width:300px;overflow-y: auto;overflow-x: hidden;height:200px;display:none;">
+        <!--<div class="row" id="div_1">-->
+            <!--<div class="col-sm-6">-->
+                <!--<div class="" style="padding:10px;">-->
+                    <!--<i id="ss1" class="fa fa-lg eye fa-eye" checked="checked"></i>-->
+                    <!--<span>统计图层</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-6" style="padding:10px;">-->
+                <!--<div class="sjTm" style="width:90%"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row"  id="div_3" style="display:none;" data="gewangLayer" >-->
+            <!--<div  class="col-sm-6">-->
+                <!--<div class="" style="padding:10px;">-->
+                    <!--<i id="ss3" class="fa fa-eye fa-lg eye" checked="true"></i>-->
+                    <!--<span>公里网格</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-6" style="padding:10px;">-->
+                <!--<div class="glwgTm" style="width:90%"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="tcDiv" class="sortable-list connectList agile-list">
+            <div class="row warning-element"  id="div_1" data="countryFeatureLayer">
+                <div  class="col-sm-6">
+                    <div class="" style="padding:10px;">
+                        <i id="ss1" class="fa fa-eye fa-lg eye" checked="true"></i>
+                        <span style="cursor: move;">图层</span>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding:10px;">
+                    <div class="sjTms" style="width:90%"></div>
+                </div>
+            </div><div class="row warning-element"  id="div_9" data="googleLayer">
+            <div  class="col-sm-6">
+                <div class="" style="padding:10px;">
+                    <i id="ss9" class="fa fa-eye fa-lg eye" checked="true"></i>
+                    <span style="cursor: move;">谷歌影像</span>
+                </div>
+            </div>
+            <div class="col-sm-6" style="padding:10px;">
+                <div class="google" style="width:90%"></div>
+            </div>
+        </div>
+            <div class="row warning-element"  id="div_8" data="vectorNoteLayer">
+                <div  class="col-sm-6">
+                    <div class="" style="padding:10px;">
+                        <i id="ss8" class="fa fa-eye fa-lg eye" checked="true"></i>
+                        <span style="cursor: move;">中文注记</span>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding:10px;">
+                    <div class="zwTm" style="width:90%"></div>
+                </div>
+            </div>
+
+            <!--<div class="row warning-element" id="div_4" style="display:none;" data="imageLayer">-->
+                <!--<div  class="col-sm-6">-->
+                    <!--<div class="" style="padding:10px;">-->
+                        <!--<i id="ss4" class="fa fa-eye fa-lg eye" checked="true"></i>-->
+                        <!--<span style="cursor: move;">影像图层</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6" style="padding:10px;">-->
+                    <!--<div class="yxTm" style="width:90%"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row warning-element" id="div_5" style="display:none;" data="gaosuLayer-shengdaoLayer">-->
+                <!--<div  class="col-sm-6">-->
+                    <!--<div class="" style="padding:10px;">-->
+                        <!--<i id="ss5" class="fa fa-eye fa-lg eye" checked="true"></i>-->
+                        <!--<span style="cursor: move;">道路图层</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6" style="padding:10px;">-->
+                    <!--<div class="dlTm" style="width:90%"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row warning-element" id="div_6" style="display:none;">-->
+                <!--<div  class="col-sm-6">-->
+                    <!--<div class="" style="padding:10px;">-->
+                        <!--<i id="ss6" class="fa fa-eye fa-lg eye" checked="true"></i>-->
+                        <!--<span style="cursor: move;">河流图层</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6" style="padding:10px;">-->
+                    <!--<div class="hlTm" style="width:90%"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row warning-element" id="div_7" style="display:none;" data="gasLayer">-->
+                <!--<div  class="col-sm-6">-->
+                    <!--<div class="" style="padding:10px;">-->
+                        <!--<i id="ss7" class="fa fa-eye fa-lg eye" checked="true"></i>-->
+                        <!--<span style="cursor: move;">加油站图层</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6" style="padding:10px;">-->
+                    <!--<div class="jyzTm" style="width:90%"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="row warning-element" id="div_2" data="vectorLayer">
+                <div  class="col-sm-6">
+                    <div class="" style="padding:10px;">
+                        <i id="ss2" class="fa fa-eye fa-lg eye" checked="true"></i>
+                        <span style="cursor: move;">基础地图</span>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding:10px;">
+                    <div class="dtTm" style="width:90%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="meaDiv" style="background-color:#fff;margin-top:10px;width:250px;overflow-y: auto;display:none;">
+        <div id="measurementDiv"></div>
+    </div>
+</div>
+<script>
+    var dojoConfig = {
+        paths: {
+            extras: location.pathname.replace(/\/[^/]+$/, "") + "/../test/extras"
+        }
+    };
+</script>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/plugins/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-slider.js"></script>
+<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../js/sweetalert.min.js"></script>
+
+<script type="text/javascript" src="../js/arcgisUrl.js"></script>
+
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/tianditu.js"></script>
+<script type="text/javascript" src="test.js"></script>
+</body>
+</html>
